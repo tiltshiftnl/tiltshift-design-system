@@ -955,7 +955,7 @@
   --footer-rotation-accent: 12deg;
   --footer-actual-width: 400px; /* Basis container breedte */
   --footer-height: 150px; /* Praktische footer hoogte */
-  --safety-margin: 30px;
+  --safety-margin: 50px;
   
   /* Voor 12° rotatie: sin(12°) ≈ 0.208, maar conservatief berekend */
   margin-top: calc(
