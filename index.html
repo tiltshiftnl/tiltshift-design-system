@@ -280,6 +280,56 @@
             }
             
         }
+        
+        /* Navigation demo containers */
+        .nav-demo-container {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .nav-demo-container-mobile {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow: hidden;
+            max-width: 400px;
+            position: relative;
+        }
+        
+        .nav-demo-container .ts-nav {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+        
+        .nav-demo-container-mobile .ts-nav {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+        
+        /* Force desktop nav to show desktop version in demo */
+        .nav-demo-container .ts-nav .ts-nav__links {
+            display: flex !important;
+        }
+        
+        .nav-demo-container .ts-mobile-menu-toggle {
+            display: none !important;
+        }
+        
+        /* Force mobile nav to show mobile version in demo */
+        .nav-demo-container-mobile .ts-nav .ts-nav__links {
+            display: none !important;
+        }
+        
+        .nav-demo-container-mobile .ts-mobile-menu-toggle {
+            display: block !important;
+        }
+        
     </style>
 </head>
 <body>
@@ -301,37 +351,46 @@
                     <a href="#brand-guidelines" class="sidebar__nav-link">Brand Guidelines</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#navigatie" class="sidebar__nav-link">1. Navigatie</a>
+                    <a href="#navigatie" class="sidebar__nav-link">Navigatie</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#header" class="sidebar__nav-link">2. Header Content</a>
+                    <a href="#header" class="sidebar__nav-link">Header Content</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#tekstblokken" class="sidebar__nav-link">3. Tekstblokken</a>
+                    <a href="#tekstblokken" class="sidebar__nav-link">Tekstblokken</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#citaten" class="sidebar__nav-link">4. Citaten</a>
+                    <a href="#citaten" class="sidebar__nav-link">Citaten</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#buttons" class="sidebar__nav-link">5. Buttons</a>
+                    <a href="#buttons" class="sidebar__nav-link">Buttons</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#projecten" class="sidebar__nav-link">6. Project Previews</a>
+                    <a href="#projecten" class="sidebar__nav-link">Project Previews</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#team" class="sidebar__nav-link">7. Team Members</a>
+                    <a href="#auto-tint" class="sidebar__nav-link">Auto-Tint Effects</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#cards" class="sidebar__nav-link">8. Cards</a>
+                    <a href="#team" class="sidebar__nav-link">Team Members</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#cta" class="sidebar__nav-link">9. Call-to-Action</a>
+                    <a href="#cards" class="sidebar__nav-link">Cards</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#footer" class="sidebar__nav-link">10. Footer</a>
+                    <a href="#cta" class="sidebar__nav-link">Call-to-Action</a>
                 </li>
                 <li class="sidebar__nav-item">
-                    <a href="#extra" class="sidebar__nav-link">Extra Componenten</a>
+                    <a href="#footer" class="sidebar__nav-link">Footer</a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#labels" class="sidebar__nav-link">Labels</a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#logo" class="sidebar__nav-link">Logo</a>
+                </li>
+                <li class="sidebar__nav-item">
+                    <a href="#utilities" class="sidebar__nav-link">Utilities</a>
                 </li>
             </ul>
         </nav>
@@ -674,25 +733,43 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
 
             <main class="main-content">
                 
-                <!-- 1. NAVIGATION (Top of page) -->
+                <!-- NAVIGATION -->
                 <section class="section" id="navigatie">
-                    <h2 class="section__title">1. Navigatie</h2>
+                    <h2 class="section__title">Navigatie</h2>
                     
                     <div class="showcase">
-                        <h3 class="showcase__title">Desktop Navigation</h3>
-                        <nav class="ts-nav demo-nav">
-                            <div class="ts-nav__logo">
-                                <img src="assets/img/logo_cropped.svg" alt="TILTSHIFT">
-                            </div>
-                            <div class="ts-nav__right">
-                                <ul class="ts-nav__links">
-                                    <li><a href="#" class="ts-nav__link">Aanpak</a></li>
-                                    <li><a href="#" class="ts-nav__link">Projecten</a></li>
-                                    <li><a href="#" class="ts-nav__link">Over ons</a></li>
-                                    <li><a href="#" class="ts-nav__link ts-nav__link--active">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
+                        <h3 class="showcase__title">Navigation (Responsive)</h3>
+                        <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="margin: 0; font-size: 0.875rem; color: #666;">Desktop versie (>768px breed):</p>
+                        </div>
+                        <div class="nav-demo-container">
+                            <nav class="ts-nav">
+                                <div class="ts-nav__logo">
+                                    <img src="assets/img/logo_cropped.svg" alt="TILTSHIFT">
+                                </div>
+                                <div class="ts-nav__right">
+                                    <ul class="ts-nav__links">
+                                        <li><a href="#" class="ts-nav__link">Aanpak</a></li>
+                                        <li><a href="#" class="ts-nav__link">Projecten</a></li>
+                                        <li><a href="#" class="ts-nav__link">Over ons</a></li>
+                                        <li><a href="#" class="ts-nav__link ts-nav__link--active">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        
+                        <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <p style="margin: 0; font-size: 0.875rem; color: #666;">Mobile versie (<768px breed):</p>
+                        </div>
+                        <div class="nav-demo-container-mobile">
+                            <nav class="ts-nav ts-nav--mobile">
+                                <div class="ts-nav__logo">
+                                    <img src="assets/img/logo_cropped.svg" alt="TILTSHIFT">
+                                </div>
+                                <button class="ts-mobile-menu-toggle">☰</button>
+                            </nav>
+                        </div>
+                        
                         <div class="showcase__code">&lt;nav class="ts-nav"&gt;
   &lt;div class="ts-nav__logo"&gt;
     &lt;img src="logo.svg" alt="TILTSHIFT"&gt;
@@ -704,27 +781,11 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
   &lt;/div&gt;
 &lt;/nav&gt;</div>
                     </div>
-
-                    <div class="showcase">
-                        <h3 class="showcase__title">Mobile Navigation</h3>
-                        <nav class="ts-nav--mobile" style="position: relative; z-index: 1;">
-                            <div class="ts-nav__logo">
-                                <img src="assets/img/logo_cropped.svg" alt="TILTSHIFT">
-                            </div>
-                            <button class="ts-mobile-menu-toggle">☰</button>
-                        </nav>
-                        <div class="showcase__code">&lt;nav class="ts-nav--mobile"&gt;
-  &lt;div class="ts-nav__logo"&gt;
-    &lt;img src="logo.svg" alt="TILTSHIFT"&gt;
-  &lt;/div&gt;
-  &lt;button class="ts-mobile-menu-toggle"&gt;☰&lt;/button&gt;
-&lt;/nav&gt;</div>
-                    </div>
                 </section>
 
-                <!-- 2. HEADER CONTENT -->
+                <!-- HEADER CONTENT -->
                 <section class="section" id="header">
-                    <h2 class="section__title">2. Header Content</h2>
+                    <h2 class="section__title">Header Content</h2>
                     
                     <div class="showcase">
                         <h3 class="showcase__title">Page Header</h3>
@@ -743,9 +804,9 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- 3. TEXT BLOCKS -->
+                <!-- TEXT BLOCKS -->
                 <section class="section" id="tekstblokken">
-                    <h2 class="section__title">3. Tekstblokken</h2>
+                    <h2 class="section__title">Tekstblokken</h2>
                     
                     <div class="showcase">
                         <h3 class="showcase__title">Standaard Tekstblok</h3>
@@ -787,9 +848,9 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- 4. BLOCKQUOTES -->
+                <!-- BLOCKQUOTES -->
                 <section class="section" id="citaten">
-                    <h2 class="section__title">4. Citaten</h2>
+                    <h2 class="section__title">Citaten</h2>
                     
                     <div class="showcase">
                         <h3 class="showcase__title">Blockquote</h3>
@@ -804,9 +865,9 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- 5. BUTTONS -->
+                <!-- BUTTONS -->
                 <section class="section" id="buttons">
-                    <h2 class="section__title">5. Buttons</h2>
+                    <h2 class="section__title">Buttons</h2>
                     
                     <div class="showcase">
                         <h3 class="showcase__title">Button Varianten</h3>
@@ -823,9 +884,9 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- 6. PROJECT PREVIEWS -->
+                <!-- PROJECT PREVIEWS -->
                 <section class="section" id="projecten">
-                    <h2 class="section__title">6. Project Previews</h2>
+                    <h2 class="section__title">Project Previews</h2>
                     
                     <div class="showcase">
                         <h3 class="showcase__title">Project Grid</h3>
@@ -926,9 +987,9 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- 7. AUTO-TINT IMAGE EFFECTS -->
+                <!-- AUTO-TINT IMAGE EFFECTS -->
                 <section class="section" id="auto-tint">
-                    <h2 class="section__title">7. Auto-Tint Image Effects</h2>
+                    <h2 class="section__title">Auto-Tint Image Effects</h2>
                     <p class="section__description">
                         Gebruik gewone kleurenfoto's met automatische zwart-wit conversie + gekleurde overlay effecten via CSS mix-blend-mode.
                     </p>
@@ -1013,9 +1074,9 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- 8. PEOPLE BLOCKS -->
+                <!-- PEOPLE BLOCKS -->
                 <section class="section" id="team">
-                    <h2 class="section__title">8. Team Members</h2>
+                    <h2 class="section__title">Team Members</h2>
                     
                     <div class="showcase">
                         <h3 class="showcase__title">Person Blocks</h3>
@@ -1054,9 +1115,9 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- 8. CARDS -->
+                <!-- CARDS -->
                 <section class="section" id="cards">
-                    <h2 class="section__title">8. Cards</h2>
+                    <h2 class="section__title">Cards</h2>
                     
                     <div class="showcase">
                         <h3 class="showcase__title">Content Cards</h3>
@@ -1106,9 +1167,9 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- 9. CTA SECTION -->
+                <!-- CTA SECTION -->
                 <section class="section" id="cta">
-                    <h2 class="section__title">9. Call-to-Action</h2>
+                    <h2 class="section__title">Call-to-Action</h2>
                     
                     <div class="showcase">
                         <h3 class="showcase__title">Contact CTA</h3>
@@ -1150,9 +1211,9 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- 10. FOOTER -->
+                <!-- FOOTER -->
                 <section class="section" id="footer">
-                    <h2 class="section__title">10. Footer</h2>
+                    <h2 class="section__title">Footer</h2>
                     
                     <div class="showcase">
                         <h3 class="showcase__title">Website Footer</h3>
@@ -1254,12 +1315,12 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     </div>
                 </section>
 
-                <!-- EXTRA COMPONENTS -->
-                <section class="section" id="extra">
-                    <h2 class="section__title">Extra Componenten</h2>
+                <!-- LABELS -->
+                <section class="section" id="labels">
+                    <h2 class="section__title">Labels</h2>
                     
                     <div class="showcase">
-                        <h3 class="showcase__title">Labels</h3>
+                        <h3 class="showcase__title">Label Varianten</h3>
                         <div style="display: flex; gap: var(--ts-space-2); flex-wrap: wrap; align-items: center;">
                             <span class="ts-label">Default Label</span>
                             <span class="ts-label ts-label--primary">Primary Label</span>
@@ -1269,9 +1330,14 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
 &lt;span class="ts-label ts-label--primary"&gt;Primary&lt;/span&gt;
 &lt;span class="ts-label ts-label--dark"&gt;Dark&lt;/span&gt;</div>
                     </div>
+                </section>
 
+                <!-- LOGO -->
+                <section class="section" id="logo">
+                    <h2 class="section__title">Logo</h2>
+                    
                     <div class="showcase">
-                        <h3 class="showcase__title">Logo</h3>
+                        <h3 class="showcase__title">Logo Groottes</h3>
                         <div style="display: flex; gap: var(--ts-space-4); align-items: center;">
                             <a href="#" class="ts-logo">
                                 <img src="assets/img/logo_cropped.svg" alt="TILTSHIFT" class="ts-logo__image ts-logo__image--small">
@@ -1291,25 +1357,110 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
 &lt;/a&gt;</div>
                     </div>
 
+                </section>
+
+                <!-- UTILITY CLASSES -->
+                <section class="section" id="utilities">
+                    <h2 class="section__title">Utility Classes</h2>
+                    <p class="section__description">
+                        Utility classes voor snelle styling zonder custom CSS. Alle classes gebruiken TILTSHIFT design tokens.
+                    </p>
+                    
                     <div class="showcase">
-                        <h3 class="showcase__title">Mobile Menu Page</h3>
-                        <p style="margin-bottom: var(--ts-space-3);">Full-page mobile menu styling with theme support:</p>
-                        <div style="background: #f8f9fa; padding: var(--ts-space-3); border-radius: var(--ts-radius-md); height: 300px; overflow: hidden; position: relative;">
-                            <iframe style="width: 125%; height: 125%; border: none; border-radius: var(--ts-radius-sm); transform: scale(0.8); transform-origin: top left;" 
-                                    srcdoc="<html><head><link rel='stylesheet' href='tiltshift-tokens.css'><link rel='stylesheet' href='tiltshift-base.css'><link rel='stylesheet' href='tiltshift-components.css'><link rel='stylesheet' href='tiltshift-themes.css'></head><body class='ts-nav--mobile ts-style-modern'><div class='ts-menu-page'><h2 style='font-family: var(--ts-font-heading); font-size: var(--ts-text-xl); margin-bottom: var(--ts-space-4); color: white;'>Menu</h2><nav><a href='#' style='display: block; color: white; text-decoration: none; padding: var(--ts-space-2) 0; font-size: var(--ts-text-lg);'>Home</a><a href='#' style='display: block; color: white; text-decoration: none; padding: var(--ts-space-2) 0; font-size: var(--ts-text-lg);'>About</a><a href='#' style='display: block; color: white; text-decoration: none; padding: var(--ts-space-2) 0; font-size: var(--ts-text-lg);'>Projects</a><a href='#' style='display: block; color: white; text-decoration: none; padding: var(--ts-space-2) 0; font-size: var(--ts-text-lg);'>Contact</a></nav></div></body></html>">
-                            </iframe>
+                        <h3 class="showcase__title">Spacing Utilities</h3>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="mb-3">
+                                <strong>Margin:</strong> <code>.mt-1</code> <code>.mb-2</code> <code>.ml-3</code> <code>.mr-4</code> <code>.m-auto</code> <code>.mx-auto</code>
+                            </div>
+                            <div class="mb-3">
+                                <strong>Padding:</strong> <code>.pt-1</code> <code>.pb-2</code> <code>.pl-3</code> <code>.pr-4</code> <code>.p-3</code>
+                            </div>
+                            <div>
+                                <strong>Scale:</strong> 0, xs, 1, 2, 3, 4, 5, 6 (van 0rem tot 3rem)
+                            </div>
                         </div>
-                        <div class="showcase__code">&lt;body class="ts-nav--mobile ts-style-modern"&gt;
-  &lt;div class="ts-menu-page"&gt;
-    &lt;h2&gt;Menu&lt;/h2&gt;
-    &lt;nav&gt;
-      &lt;a href="#"&gt;Home&lt;/a&gt;
-      &lt;a href="#"&gt;About&lt;/a&gt;
-      &lt;a href="#"&gt;Projects&lt;/a&gt;
-      &lt;a href="#"&gt;Contact&lt;/a&gt;
-    &lt;/nav&gt;
-  &lt;/div&gt;
-&lt;/body&gt;</div>
+                        <div class="showcase__code">&lt;div class="mt-4 mb-3 p-2"&gt;Content&lt;/div&gt;
+&lt;div class="mx-auto"&gt;Centered&lt;/div&gt;</div>
+                    </div>
+
+                    <div class="showcase">
+                        <h3 class="showcase__title">Layout Utilities</h3>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="mb-3">
+                                <strong>Display:</strong> <code>.block</code> <code>.flex</code> <code>.grid</code> <code>.hidden</code>
+                            </div>
+                            <div class="mb-3">
+                                <strong>Flexbox:</strong> <code>.justify-center</code> <code>.items-center</code> <code>.flex-col</code> <code>.gap-3</code>
+                            </div>
+                            <div>
+                                <strong>Width:</strong> <code>.w-full</code> <code>.w-auto</code>
+                            </div>
+                        </div>
+                        <div class="showcase__code">&lt;div class="flex justify-center items-center gap-3"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;</div>
+                    </div>
+
+                    <div class="showcase">
+                        <h3 class="showcase__title">Typography Utilities</h3>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="mb-3">
+                                <strong>Size:</strong> <code>.text-xs</code> <code>.text-sm</code> <code>.text-md</code> <code>.text-lg</code> <code>.text-xl</code> <code>.text-2xl</code>
+                            </div>
+                            <div class="mb-3">
+                                <strong>Align:</strong> <code>.text-left</code> <code>.text-center</code> <code>.text-right</code>
+                            </div>
+                            <div>
+                                <strong>Font:</strong> <code>.font-primary</code> <code>.font-heading</code> <code>.font-script</code>
+                            </div>
+                        </div>
+                        <div class="showcase__code">&lt;h1 class="text-2xl font-heading text-center"&gt;Title&lt;/h1&gt;
+&lt;p class="text-md text-primary"&gt;Text&lt;/p&gt;</div>
+                    </div>
+
+                    <div class="showcase">
+                        <h3 class="showcase__title">Color Utilities</h3>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="mb-3">
+                                <strong>Text:</strong> <code>.text-primary</code> <code>.text-primary-dark</code> <code>.text-white</code> <code>.text-black</code>
+                            </div>
+                            <div>
+                                <strong>Background:</strong> <code>.bg-primary</code> <code>.bg-white</code> <code>.bg-off-white</code> <code>.bg-grey</code>
+                            </div>
+                        </div>
+                        <div class="showcase__code">&lt;div class="bg-primary text-white p-3"&gt;Primary background&lt;/div&gt;
+&lt;span class="text-primary"&gt;Primary text&lt;/span&gt;</div>
+                    </div>
+
+                    <div class="showcase">
+                        <h3 class="showcase__title">Styling Utilities</h3>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="mb-3">
+                                <strong>Border Radius:</strong> <code>.rounded-sm</code> <code>.rounded-md</code> <code>.rounded-lg</code>
+                            </div>
+                            <div>
+                                <strong>Shadow:</strong> <code>.shadow-sm</code> <code>.shadow-md</code> <code>.shadow-lg</code>
+                            </div>
+                        </div>
+                        <div class="showcase__code">&lt;div class="bg-white rounded-md shadow-md p-4"&gt;
+  Card with shadow and rounded corners
+&lt;/div&gt;</div>
+                    </div>
+
+                    <div class="showcase">
+                        <h3 class="showcase__title">Navigation Utilities</h3>
+                        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <div class="mb-3">
+                                <strong>Navigation Spacing:</strong> <code>.mt-nav</code> <code>.pt-nav</code>
+                            </div>
+                            <div>
+                                Automatische margin/padding voor fixed navigation (4rem mobile, 70px desktop)
+                            </div>
+                        </div>
+                        <div class="showcase__code">&lt;main class="pt-nav"&gt;
+  Content below fixed navigation
+&lt;/main&gt;</div>
                     </div>
                 </section>
 
