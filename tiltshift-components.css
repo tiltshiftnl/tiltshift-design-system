@@ -1122,12 +1122,7 @@
   
   .ts-cta__image {
     margin-right: 0;
-    justify-content: center;
-  }
-  
-  .ts-cta__right {
-    align-items: center;
-    text-align: center;
+    margin-bottom: var(--ts-space-3);
   }
 }
 
@@ -1150,7 +1145,6 @@
   
   .ts-cta__body {
     flex-direction: column;
-    text-align: center;
   }
   
   /* Hide desktop navigation */
