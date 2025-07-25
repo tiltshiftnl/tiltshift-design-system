@@ -347,32 +347,100 @@
                     <div class="ts-text-block ts-text-block--highlight" style="margin: 2rem 0;">
                         <h3>🎨 Theme Switcher - Test live hoe themes werken!</h3>
                         <p style="margin-bottom: 1rem;">Klik op een theme om direct het verschil te zien:</p>
+                        <h4>🎨 Huisstijl Modificaties</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #666;">
+                            Test verschillende stijlvarianten van dezelfde basiskleuren:
+                        </p>
                         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
-                            <button class="ts-button ts-button--small" onclick="setTheme('')">Normaal</button>
-                            <button class="ts-button ts-button--small ts-button--secondary" onclick="setTheme('ts-theme-subtle')">Subtiel</button>
-                            <button class="ts-button ts-button--small ts-button--primary" onclick="setTheme('ts-theme-bold')">Gedurfd</button>
-                            <button class="ts-button ts-button--small ts-button--primary" onclick="setTheme('ts-theme-daring')">Zeer Gedurfd</button>
-                        </div>
-                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            <button class="ts-button ts-button--small" onclick="setTheme('ts-theme-conservative')">Conservatief</button>
-                            <button class="ts-button ts-button--small" onclick="setTheme('ts-theme-modern')">Modern</button>
-                            <button class="ts-button ts-button--small" onclick="setTheme('ts-theme-creative')">Creatief</button>
-                            <button class="ts-button ts-button--small" onclick="setTheme('ts-theme-elegant')">Elegant</button>
+                            <button class="ts-button ts-button--small" onclick="setTheme('')">🏠 Normaal</button>
+                            <button class="ts-button ts-button--small ts-button--secondary" onclick="setTheme('ts-style-subtiel')">📖 Subtiel</button>
+                            <button class="ts-button ts-button--small ts-button--primary" onclick="setTheme('ts-style-gedurfd')">🔥 Gedurfd</button>
+                            <button class="ts-button ts-button--small" onclick="setTheme('ts-style-modern')">💻 Modern</button>
+                            <button class="ts-button ts-button--small" onclick="setTheme('ts-style-elegant')">✨ Elegant</button>
                         </div>
                         <script>
+                            // Theme names mapping
+                            const themeNames = {
+                                '': 'Normaal',
+                                'ts-style-subtiel': 'Subtiel (kleinere fonts)',
+                                'ts-style-gedurfd': 'Gedurfd (grote fonts & contrast)',
+                                'ts-style-modern': 'Modern (gradient roze→oranje)',
+                                'ts-style-elegant': 'Elegant (verfijnde verhoudingen)'
+                            };
+                            
+                            // URL parameter names voor themes
+                            const themeParams = {
+                                '': 'normaal',
+                                'ts-style-subtiel': 'subtiel',
+                                'ts-style-gedurfd': 'gedurfd',
+                                'ts-style-modern': 'modern',
+                                'ts-style-elegant': 'elegant'
+                            };
+                            
+                            // Reverse mapping voor URL naar class
+                            const paramToTheme = {
+                                'normaal': '',
+                                'subtiel': 'ts-style-subtiel',
+                                'gedurfd': 'ts-style-gedurfd',
+                                'modern': 'ts-style-modern',
+                                'elegant': 'ts-style-elegant'
+                            };
+                            
                             function setTheme(themeClass) {
                                 document.body.className = themeClass;
+                                
+                                // Update URL parameter
+                                const url = new URL(window.location);
+                                if (themeClass) {
+                                    url.searchParams.set('modifier', themeParams[themeClass]);
+                                } else {
+                                    url.searchParams.delete('modifier');
+                                }
+                                window.history.replaceState({}, '', url);
+                                
                                 // Update current theme indicator
                                 const indicator = document.getElementById('current-theme');
                                 if (indicator) {
-                                    indicator.textContent = themeClass || 'Normaal';
+                                    indicator.textContent = themeNames[themeClass] || themeClass;
+                                }
+                                
+                                // Subtiele transition voor smooth theme changes
+                                document.body.style.transition = 'all 0.2s ease';
+                                setTimeout(() => {
+                                    document.body.style.transition = '';
+                                }, 200);
+                            }
+                            
+                            // Load theme from URL on page load
+                            function loadThemeFromURL() {
+                                const url = new URL(window.location);
+                                const modifier = url.searchParams.get('modifier');
+                                if (modifier && paramToTheme[modifier]) {
+                                    setTheme(paramToTheme[modifier]);
                                 }
                             }
+                            
+                            // Initialize theme on page load
+                            document.addEventListener('DOMContentLoaded', loadThemeFromURL);
                         </script>
                         <p style="font-size: 0.9rem; margin-top: 1rem; color: #666;">
-                            <strong>Huidig theme:</strong> <span id="current-theme">Normaal</span><br>
-                            <em>Let op hoe logo's, spacing, schaduwen en kleuren veranderen!</em>
+                            <strong>Huidig stijl:</strong> <span id="current-theme">Normaal</span><br>
+                            <em>Let op hoe fontgroottes, logo's en spacing veranderen terwijl kleuren hetzelfde blijven!</em>
                         </p>
+                        
+                        <details style="margin-top: 1rem; font-size: 0.85rem;">
+                            <summary style="cursor: pointer; color: #666;">📋 Directe links naar modifiers</summary>
+                            <div style="margin-top: 0.5rem; padding: 0.5rem; background: #f8f9fa; border-radius: 4px;">
+                                <p style="margin: 0 0 0.5rem 0;"><strong>Kopieer deze URLs:</strong></p>
+                                <ul style="margin: 0; padding-left: 1rem;">
+                                    <li><code>?modifier=normaal</code> - Originele TILTSHIFT stijl</li>
+                                    <li><code>?modifier=subtiel</code> - Kleinere fonts, compact</li>
+                                    <li><code>?modifier=gedurfd</code> - Grote fonts, veel contrast</li>
+                                    <li><code>?modifier=modern</code> - Gradient effecten</li>
+                                    <li><code>?modifier=elegant</code> - Verfijnde verhoudingen</li>
+                                </ul>
+                            </div>
+                        </details>
                     </div>
                     
                     <div class="instructions" id="instructies">

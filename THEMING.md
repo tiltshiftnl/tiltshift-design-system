@@ -146,6 +146,12 @@ Je kunt themes combineren voor precies het effect dat je wilt:
 <!-- Levendige kleuren, alles groter, veel ruimte -->
 ```
 
+### "Ultra gedurfd met alle effecten"
+```html
+<body class="ts-ultra-bold ts-dramatic-shadows ts-spacious">
+<!-- Maximum visual impact: dramatische kleuren, glows, grote spacing -->
+```
+
 ## 🛠️ Custom Aanpassingen
 
 Voor brand-specifieke aanpassingen kun je de CSS custom properties overschrijven:
@@ -184,6 +190,19 @@ function makeItSubtle() {
 
 function makeItModern() {
   document.body.className = 'ts-theme-modern ts-dramatic-shadows';
+}
+
+// Ultra gedurfd met animaties (zoals de "Gedurfd" button)
+function makeItUltraBold() {
+  document.body.className = 'ts-ultra-bold ts-dramatic-shadows ts-spacious';
+  
+  // Voeg dramatische animatie toe
+  document.body.style.transition = 'all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+  document.body.style.transform = 'scale(1.05)';
+  
+  setTimeout(() => {
+    document.body.style.transform = 'scale(1)';
+  }, 600);
 }
 ```
 
