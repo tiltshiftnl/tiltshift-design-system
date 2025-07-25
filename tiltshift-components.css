@@ -951,17 +951,16 @@
   position: relative;
   z-index: 10;
   
-  /* Berekende marge voor gedraaide vlakken */
-  --footer-rotation-main: 6deg;
+  /* Berekende marge voor gedraaide vlakken - praktische waarde */
   --footer-rotation-accent: 12deg;
-  --footer-width: 125vw;
-  --footer-height: 200vh;
-  --safety-margin: 20px;
+  --footer-actual-width: 400px; /* Basis container breedte */
+  --footer-height: 150px; /* Praktische footer hoogte */
+  --safety-margin: 30px;
   
-  /* Voor 12° rotatie (ergste case): sin(12°) ≈ 0.208 */
+  /* Voor 12° rotatie: sin(12°) ≈ 0.208, maar conservatief berekend */
   margin-top: calc(
-    (var(--footer-width) * 0.208) + 
-    (100px * 0.208) + 
+    (var(--footer-actual-width) * 0.15) + 
+    (var(--footer-height) * 0.15) + 
     var(--safety-margin)
   );
 }
