@@ -600,13 +600,13 @@
    MOBILE NAVIGATION PANEL THEMING
    ============================================================================= */
 
-/* MODERN - Mobile panel met gradient effecten */
+/* MODERN - Mobile panel met HER-stijl gradient effecten */
 .ts-style-modern .ts-nav--mobile {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #3e2723 0%, #5d4037 100%) !important;
 }
 
 .ts-style-modern .ts-nav__mobile-panel {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #3e2723 0%, #5d4037 100%) !important;
 }
 
 /* GEDURFD - Mobile panel met intensere kleuren */
