@@ -264,8 +264,11 @@
         /* Mobile adjustments */
         @media (max-width: 768px) {
             .sidebar {
+                width: 100vw;
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
+                z-index: 1000;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             }
             
             .sidebar--open {
@@ -1112,6 +1115,11 @@ Line height: 1.2 (tight) tot 1.5 (normal)</div>
                     // Update active state
                     document.querySelectorAll('.sidebar__nav-link').forEach(l => l.classList.remove('sidebar__nav-link--active'));
                     this.classList.add('sidebar__nav-link--active');
+                    
+                    // Close mobile menu after selection
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('sidebar').classList.remove('sidebar--open');
+                    }
                 }
             });
         });
