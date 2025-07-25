@@ -45,12 +45,12 @@
   --ts-space-6: 4rem;     /* 64px */
 
   /* Font sizes */
-  --ts-text-xs: 0.7rem;
-  --ts-text-sm: 0.8rem;
-  --ts-text-md: 1rem;
-  --ts-text-lg: 1.2rem;
-  --ts-text-xl: 1.5rem;
-  --ts-text-2xl: 2rem;
+  --ts-text-xs: 0.8rem;    /* 12.8px */
+  --ts-text-sm: 1rem;      /* 16px */
+  --ts-text-md: 1.125rem;  /* 18px */
+  --ts-text-lg: 1.25rem;   /* 20px */
+  --ts-text-xl: 1.5rem;    /* 24px */
+  --ts-text-2xl: 2.5rem;   /* 40px */
 
   /* Font weights */
   --ts-font-weight-normal: 400;

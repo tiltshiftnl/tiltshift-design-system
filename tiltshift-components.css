@@ -466,7 +466,7 @@
 .ts-cta {
   max-width: var(--ts-container-sm);
   margin: 0 auto var(--ts-space-6);
-  padding: 20px;
+  padding: var(--ts-space-4);
 }
 
 .ts-cta__title {
@@ -501,7 +501,7 @@
 .ts-cta__right {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex: 1;
 }
@@ -509,13 +509,15 @@
 .ts-cta__right p {
   margin: 0;
   font-family: var(--ts-font-primary);
+  font-size: var(--ts-text-md);
   line-height: var(--ts-leading-normal);
 }
 
 .ts-cta__right a {
-  text-align: center;
   color: var(--ts-color-primary-dark);
   text-decoration: none;
+  font-size: var(--ts-text-md);
+  font-weight: var(--ts-font-weight-bold);
 }
 
 .ts-cta__right a:hover {
