@@ -549,3 +549,46 @@
   box-shadow: 0 3px 8px rgba(214, 54, 56, 0.25);
 }
 
+/* =============================================================================
+   MOBILE NAVIGATION PANEL THEMING
+   ============================================================================= */
+
+/* MODERN - Mobile panel met gradient effecten */
+.ts-style-modern .ts-nav--mobile {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.ts-style-modern .ts-nav__mobile-panel {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+/* GEDURFD - Mobile panel met intensere kleuren */
+.ts-style-gedurfd .ts-nav--mobile {
+  background-color: #1a1a1a;
+  box-shadow: 0 0 20px rgba(214, 54, 56, 0.3);
+}
+
+.ts-style-gedurfd .ts-nav__mobile-panel {
+  background-color: #1a1a1a;
+  border-left: 3px solid var(--ts-color-primary);
+}
+
+/* SUBTIEL - Mobile panel met zachte achtergrond */
+.ts-style-subtiel .ts-nav--mobile {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.ts-style-subtiel .ts-nav__mobile-panel {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* ELEGANT - Mobile panel met verfijnde styling */
+.ts-style-elegant .ts-nav--mobile {
+  background-color: #2c3e50;
+}
+
+.ts-style-elegant .ts-nav__mobile-panel {
+  background-color: #2c3e50;
+  border-left: 1px solid rgba(214, 54, 56, 0.2);
+}
+
