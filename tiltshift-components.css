@@ -117,7 +117,7 @@
 .ts-header__container {
   max-width: var(--ts-container-lg);
   margin: 0 auto;
-  padding: 0 var(--ts-space-3);
+  padding: 0 var(--ts-space-5);
 }
 
 .ts-header__title {
@@ -905,7 +905,7 @@
 .ts-footer__inner {
   max-width: var(--ts-container-lg);
   margin: 0 auto;
-  padding: var(--ts-space-6) var(--ts-space-3);
+  padding: var(--ts-space-6) var(--ts-space-5);
   position: relative;
   z-index: 10;
   margin-top: 100px;
