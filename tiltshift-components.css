@@ -805,8 +805,8 @@
    MOBILE MENU PAGE STYLING
    ============================================================================= */
 
-/* Full page mobile navigation styling */
-.ts-nav--mobile {
+/* Full page mobile navigation styling - when used as body class */
+body.ts-nav--mobile {
   min-height: 100vh;
   margin: 0;
   padding: 2rem;
