@@ -802,6 +802,27 @@
 }
 
 /* =============================================================================
+   MOBILE MENU PAGE STYLING
+   ============================================================================= */
+
+/* Full page mobile navigation styling */
+.ts-nav--mobile {
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  font-family: var(--ts-font-heading);
+  background-color: var(--ts-color-black);
+  color: var(--ts-color-white);
+}
+
+/* Mobile menu page container */
+.ts-menu-page {
+  max-width: 400px;
+  margin: 0 auto;
+  color: var(--ts-color-white);
+}
+
+/* =============================================================================
    UTILITY COMPONENTS
    ============================================================================= */
 

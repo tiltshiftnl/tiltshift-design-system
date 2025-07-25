@@ -629,3 +629,31 @@
   border-left: 1px solid rgba(214, 54, 56, 0.2);
 }
 
+/* =============================================================================
+   MOBILE MENU PAGE THEMING - For full-page mobile menus
+   ============================================================================= */
+
+/* MODERN - Full page mobile menu with gradient */
+.ts-style-modern.ts-nav--mobile {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #ff4757 100%);
+}
+
+/* GEDURFD - Full page mobile menu with dramatic styling */
+.ts-style-gedurfd.ts-nav--mobile {
+  background-color: #1a1a1a;
+  border-left: 4px solid var(--ts-color-primary);
+  box-shadow: inset 0 0 50px rgba(214, 54, 56, 0.1);
+}
+
+/* SUBTIEL - Full page mobile menu with soft styling */
+.ts-style-subtiel.ts-nav--mobile {
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* ELEGANT - Full page mobile menu with refined styling */
+.ts-style-elegant.ts-nav--mobile {
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  border-left: 2px solid rgba(214, 54, 56, 0.3);
+}
+
