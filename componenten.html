@@ -446,7 +446,15 @@
                     <div class="instructions" id="instructies">
                         <h3>Instructies voor gebruik</h3>
                         <ul>
-                            <li><strong>CSS Files:</strong> Include de vier CSS bestanden in de juiste volgorde: <code>tiltshift-base.css</code>, <code>tiltshift-tokens.css</code>, <code>tiltshift-utilities.css</code>, <code>tiltshift-components.css</code></li>
+                            <li><strong>CSS Files:</strong> Include de vijf CSS bestanden in de juiste volgorde: <code>tiltshift-tokens.css</code>, <code>tiltshift-base.css</code>, <code>tiltshift-components.css</code>, <code>tiltshift-utilities.css</code>, <code>tiltshift-themes.css</code></li>
+                            <li><strong>Huisstijl Modificaties:</strong> Voeg een modifier class toe aan <code>&lt;body&gt;</code> voor verschillende stijlvarianten:
+                                <ul style="margin-top: 0.5rem;">
+                                    <li><code>&lt;body class="ts-style-gedurfd"&gt;</code> - Grote fonts, veel contrast</li>
+                                    <li><code>&lt;body class="ts-style-modern"&gt;</code> - Gradient effecten roze→oranje</li>
+                                    <li><code>&lt;body class="ts-style-subtiel"&gt;</code> - Kleinere fonts, compact</li>
+                                    <li><code>&lt;body class="ts-style-elegant"&gt;</code> - Verfijnde verhoudingen</li>
+                                </ul>
+                            </li>
                             <li><strong>Font Support:</strong> AtkinsonHyperlegible en HelveticaNeue fonts zijn inbegrepen voor toegankelijkheid</li>
                             <li><strong>BEM Methodology:</strong> Alle componenten gebruiken Block Element Modifier naming convention</li>
                             <li><strong>Design Tokens:</strong> Gebruik CSS custom properties (<code>--ts-*</code>) voor consistente styling</li>
@@ -465,10 +473,11 @@
                             <div class="showcase__code">
                                 <button class="copy-button" onclick="copyCode(this)">📋 Copy</button>
                                 &lt;!-- TILTSHIFT Design System --&gt;
-&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-base.css"&gt;
 &lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-tokens.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-base.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-components.css"&gt;
 &lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-utilities.css"&gt;
-&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-components.css"&gt;</div>
+&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-themes.css"&gt;</div>
                             
                             <h4 style="color: white; margin: var(--ts-space-4) 0 var(--ts-space-3);">Design Tokens Gebruiken</h4>
                             <p style="margin-bottom: var(--ts-space-3);">Gebruik CSS custom properties voor consistente styling:</p>
@@ -483,6 +492,25 @@ padding: var(--ts-space-2) var(--ts-space-4);
 /* Typography */
 font-family: var(--ts-font-primary);
 font-size: var(--ts-text-lg);</div>
+
+                            <h4 style="color: white; margin: var(--ts-space-4) 0 var(--ts-space-3);">Huisstijl Modificaties</h4>
+                            <p style="margin-bottom: var(--ts-space-3);">Voeg een modifier class toe aan je body tag voor verschillende stijlvarianten:</p>
+                            <div class="showcase__code">
+                                <button class="copy-button" onclick="copyCode(this)">📋 Copy</button>
+                                &lt;!-- Normale TILTSHIFT stijl --&gt;
+&lt;body&gt;
+
+&lt;!-- Gedurfde variant (grote fonts, veel contrast) --&gt;
+&lt;body class="ts-style-gedurfd"&gt;
+
+&lt;!-- Modern variant (gradient effecten) --&gt;
+&lt;body class="ts-style-modern"&gt;
+
+&lt;!-- Subtiele variant (kleinere fonts, compact) --&gt;
+&lt;body class="ts-style-subtiel"&gt;
+
+&lt;!-- Elegante variant (verfijnde verhoudingen) --&gt;
+&lt;body class="ts-style-elegant"&gt;</div>
 
                             <h4 style="color: white; margin: var(--ts-space-4) 0 var(--ts-space-3);">Utility Classes</h4>
                             <p style="margin-bottom: var(--ts-space-3);">Gebruik utility classes voor snelle styling:</p>
