@@ -65,6 +65,27 @@
 .p-5 { padding: var(--ts-space-5); }
 .p-6 { padding: var(--ts-space-6); }
 
+/* Navigation spacing utilities */
+.mt-nav {
+  margin-top: 4rem; /* Standard nav height */
+}
+
+@media (min-width: 1024px) {
+  .mt-nav {
+    margin-top: 70px; /* Desktop nav height */
+  }
+}
+
+.pt-nav {
+  padding-top: 4rem; /* Standard nav height */
+}
+
+@media (min-width: 1024px) {
+  .pt-nav {
+    padding-top: 70px; /* Desktop nav height */
+  }
+}
+
 /* Display utilities */
 .block { display: block; }
 .inline-block { display: inline-block; }

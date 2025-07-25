@@ -118,6 +118,17 @@ main {
   padding: 0 var(--ts-space-3);
 }
 
+/* Main with fixed navigation spacing */
+main.with-fixed-nav {
+  margin-top: 4rem; /* Standard nav height */
+}
+
+@media (min-width: 1024px) {
+  main.with-fixed-nav {
+    margin-top: 70px; /* Desktop nav height */
+  }
+}
+
 /* Images */
 img {
   max-width: 100%;
