@@ -639,8 +639,50 @@
   height: 22px;
 }
 
+/* Mobile Header */
+.ts-nav--mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--ts-color-black);
+  height: var(--ts-nav-height-mobile);
+  z-index: 100;
+  padding: 0 var(--ts-space-3);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ts-nav--mobile .ts-nav__logo {
+  margin: 0;
+  width: auto;
+  position: static;
+}
+
+.ts-nav--mobile .ts-nav__logo img {
+  height: 2.5rem;
+  width: auto;
+}
+
 /* Mobile Menu Toggle Button */  
 .ts-mobile-menu-toggle {
+  background: none;
+  border: none;
+  color: var(--ts-color-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--ts-space-1);
+  border-radius: var(--ts-radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.ts-mobile-menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Legacy mobile menu toggle - for backward compatibility */
+.mobile-menu-toggle {
   position: fixed;
   top: var(--ts-space-3);
   left: var(--ts-space-3);
@@ -1109,6 +1151,16 @@
   .ts-cta__body {
     flex-direction: column;
     text-align: center;
+  }
+  
+  /* Hide desktop navigation */
+  .ts-nav:not(.ts-nav--mobile) {
+    display: none;
+  }
+  
+  /* Show mobile navigation */
+  .ts-nav--mobile {
+    display: flex;
   }
   
   .ts-nav__links {

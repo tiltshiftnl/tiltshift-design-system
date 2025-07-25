@@ -231,6 +231,10 @@ input:focus, textarea:focus, select:focus {
   h2 { font-size: var(--ts-text-lg); }
   h3 { font-size: var(--ts-text-md); }
   
+  body {
+    margin-top: var(--ts-nav-height-mobile);
+  }
+  
   main {
     padding: 0 var(--ts-space-2);
   }
