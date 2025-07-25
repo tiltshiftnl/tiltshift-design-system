@@ -359,6 +359,10 @@
   box-shadow: 0 10px 30px rgba(255, 71, 87, 0.2);
 }
 
+.ts-style-modern .ts-project-preview__overlay {
+  background: linear-gradient(135deg, rgba(255, 71, 87, 0.9) 0%, rgba(255, 99, 72, 0.9) 100%);
+}
+
 .ts-style-modern .ts-social-links__link {
   background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
 }
