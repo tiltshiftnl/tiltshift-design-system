@@ -369,6 +369,57 @@
   backdrop-filter: blur(2px);
 }
 
+/* Auto-tint overlays ook theme-aware maken */
+.ts-style-modern .ts-project-preview__image--auto-tint::before {
+  background: linear-gradient(135deg, rgba(244, 81, 30, 1) 0%, rgba(255, 112, 67, 0.7) 100%);
+  mix-blend-mode: plus-lighter;
+}
+.ts-style-modern .ts-project-preview__image--auto-tint::after {
+  background: linear-gradient(135deg, rgba(244, 81, 30, 0.6) 0%, rgba(255, 112, 67, 0.3) 100%);
+  mix-blend-mode: multiply;
+}
+.ts-style-modern .ts-project-preview__image--auto-tint .ts-project-preview__overlay {
+  background: linear-gradient(135deg, rgba(244, 81, 30, 0.9) 0%, rgba(255, 112, 67, 0.9) 100%);
+}
+
+.ts-style-gedurfd .ts-project-preview__image--auto-tint::before {
+  background: linear-gradient(135deg, rgba(214, 54, 56, 1) 0%, rgba(214, 54, 56, 0.8) 100%);
+  mix-blend-mode: plus-lighter;
+}
+.ts-style-gedurfd .ts-project-preview__image--auto-tint::after {
+  background: linear-gradient(135deg, rgba(214, 54, 56, 0.7) 0%, rgba(214, 54, 56, 0.4) 100%);
+  mix-blend-mode: multiply;
+}
+.ts-style-gedurfd .ts-project-preview__image--auto-tint .ts-project-preview__overlay {
+  background: rgba(214, 54, 56, 0.95);
+  box-shadow: inset 0 0 20px rgba(214, 54, 56, 0.3);
+}
+
+.ts-style-subtiel .ts-project-preview__image--auto-tint::before {
+  background: linear-gradient(135deg, rgba(30, 89, 166, 0.9) 0%, rgba(30, 89, 166, 0.6) 100%);
+  mix-blend-mode: plus-lighter;
+}
+.ts-style-subtiel .ts-project-preview__image--auto-tint::after {
+  background: linear-gradient(135deg, rgba(30, 89, 166, 0.5) 0%, rgba(30, 89, 166, 0.2) 100%);
+  mix-blend-mode: multiply;
+}
+.ts-style-subtiel .ts-project-preview__image--auto-tint .ts-project-preview__overlay {
+  background: rgba(30, 89, 166, 0.75);
+}
+
+.ts-style-elegant .ts-project-preview__image--auto-tint::before {
+  background: linear-gradient(135deg, rgba(30, 89, 166, 0.9) 0%, rgba(30, 89, 166, 0.6) 100%);
+  mix-blend-mode: plus-lighter;
+}
+.ts-style-elegant .ts-project-preview__image--auto-tint::after {
+  background: linear-gradient(135deg, rgba(30, 89, 166, 0.5) 0%, rgba(30, 89, 166, 0.25) 100%);
+  mix-blend-mode: multiply;
+}
+.ts-style-elegant .ts-project-preview__image--auto-tint .ts-project-preview__overlay {
+  background: rgba(30, 89, 166, 0.8);
+  backdrop-filter: blur(1px);
+}
+
 .ts-style-modern .ts-social-links__link {
   background: linear-gradient(135deg, #f4511e 0%, #ff7043 100%);
   border-radius: 50%;
