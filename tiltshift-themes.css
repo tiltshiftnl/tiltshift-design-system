@@ -389,10 +389,10 @@
 }
 
 .ts-style-modern .ts-nav__logo img {
+  /* Voor navigatie logo's geen hue-rotate, maar wel subtiele glow */
   filter: 
-    hue-rotate(20deg)
-    saturate(1.3)
-    drop-shadow(0 0 6px rgba(255, 71, 87, 0.3));
+    brightness(1.1)
+    drop-shadow(0 0 8px rgba(255, 71, 87, 0.4));
 }
 
 /* ELEGANT - Zelfde kleuren, maar verfijnde verhoudingen */
