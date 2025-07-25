@@ -597,6 +597,7 @@
   margin-right: var(--ts-space-3);
   text-decoration: none;
   font-family: var(--ts-font-primary);
+  font-weight: var(--ts-font-weight-bold);
 }
 
 .ts-nav__link:hover,
@@ -726,6 +727,7 @@
   font-size: var(--ts-text-md);
   margin: 0;
   text-decoration: none;
+  font-weight: var(--ts-font-weight-bold);
 }
 
 .ts-nav__mobile-toggle {
