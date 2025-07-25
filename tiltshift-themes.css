@@ -1,0 +1,232 @@
+/* TILTSHIFT Theme System - Voor eenvoudige globale aanpassingen */
+
+/* =============================================================================
+   THEME MODIFIERS - Voeg deze classes toe aan <body> of <html>
+   ============================================================================= */
+
+/* INTENSITEIT THEMES */
+.ts-theme-subtle {
+  --ts-spacing-multiplier: var(--ts-intensity-subtle);
+  --ts-scale-multiplier: var(--ts-intensity-subtle);
+  --ts-shadow-multiplier: var(--ts-intensity-subtle);
+}
+
+.ts-theme-bold {
+  --ts-spacing-multiplier: var(--ts-intensity-bold);
+  --ts-scale-multiplier: var(--ts-intensity-bold);
+  --ts-shadow-multiplier: var(--ts-intensity-bold);
+}
+
+.ts-theme-daring {
+  --ts-spacing-multiplier: var(--ts-intensity-daring);
+  --ts-scale-multiplier: var(--ts-intensity-daring);
+  --ts-shadow-multiplier: var(--ts-intensity-daring);
+}
+
+/* PERSOONLIJKHEID THEMES */
+
+/* Conservative/Zakelijk - Minder contrast, meer rust */
+.ts-theme-conservative {
+  --ts-spacing-multiplier: 0.8;
+  --ts-scale-multiplier: 0.9;
+  --ts-shadow-multiplier: 0.6;
+  
+  /* Zachtere kleuren */
+  --ts-color-primary: #d63638;
+  --ts-color-primary-dark: #2d6bb3;
+  
+  /* Kleinere border radius */
+  --ts-radius-sm: 0.15rem;
+  --ts-radius-md: 0.3rem;
+  --ts-radius-lg: 0.6rem;
+}
+
+/* Modern/Tech - Strakke lijnen, meer contrast */
+.ts-theme-modern {
+  --ts-spacing-multiplier: 1.1;
+  --ts-scale-multiplier: 1.05;
+  --ts-shadow-multiplier: 1.2;
+  
+  /* Fellere, digitale kleuren */
+  --ts-color-primary: #ff3333;
+  --ts-color-primary-dark: #0066ff;
+  
+  /* Strakke borders */
+  --ts-radius-sm: 0.125rem;
+  --ts-radius-md: 0.25rem;
+  --ts-radius-lg: 0.5rem;
+}
+
+/* Creative/Gedurfd - Grote spacing, veel contrast */
+.ts-theme-creative {
+  --ts-spacing-multiplier: 1.4;
+  --ts-scale-multiplier: 1.2;
+  --ts-shadow-multiplier: 1.5;
+  
+  /* Levendige kleuren */
+  --ts-color-primary: #ff4757;
+  --ts-color-primary-dark: #3742fa;
+  
+  /* Rondere vormen */
+  --ts-radius-sm: 0.4rem;
+  --ts-radius-md: 0.8rem;
+  --ts-radius-lg: 1.2rem;
+}
+
+/* Elegant/Minimaal - Verfijnde spacing, subtiele schaduwen */
+.ts-theme-elegant {
+  --ts-spacing-multiplier: 0.9;
+  --ts-scale-multiplier: 0.95;
+  --ts-shadow-multiplier: 0.4;
+  
+  /* Gedempte, elegante kleuren */
+  --ts-color-primary: #c0392b;
+  --ts-color-primary-dark: #34495e;
+  
+  /* Subtiele afronding */
+  --ts-radius-sm: 0.2rem;
+  --ts-radius-md: 0.35rem;
+  --ts-radius-lg: 0.7rem;
+}
+
+/* =============================================================================
+   COMPONENT OVERRIDES - Gebruik computed values voor thema-bewustheid
+   ============================================================================= */
+
+/* Logo's gebruiken nu theme-aware sizes */
+.ts-theme-subtle .ts-logo__image,
+.ts-theme-bold .ts-logo__image,
+.ts-theme-daring .ts-logo__image,
+.ts-theme-conservative .ts-logo__image,
+.ts-theme-modern .ts-logo__image,
+.ts-theme-creative .ts-logo__image,
+.ts-theme-elegant .ts-logo__image {
+  height: var(--ts-computed-logo-md);
+  width: var(--ts-computed-logo-md);
+}
+
+.ts-theme-subtle .ts-logo__image--small,
+.ts-theme-bold .ts-logo__image--small,
+.ts-theme-daring .ts-logo__image--small,
+.ts-theme-conservative .ts-logo__image--small,
+.ts-theme-modern .ts-logo__image--small,
+.ts-theme-creative .ts-logo__image--small,
+.ts-theme-elegant .ts-logo__image--small {
+  height: var(--ts-computed-logo-sm);
+  width: var(--ts-computed-logo-sm);
+}
+
+.ts-theme-subtle .ts-logo__image--medium,
+.ts-theme-bold .ts-logo__image--medium,
+.ts-theme-daring .ts-logo__image--medium,
+.ts-theme-conservative .ts-logo__image--medium,
+.ts-theme-modern .ts-logo__image--medium,
+.ts-theme-creative .ts-logo__image--medium,
+.ts-theme-elegant .ts-logo__image--medium {
+  height: var(--ts-computed-logo-lg);
+  width: var(--ts-computed-logo-lg);
+}
+
+.ts-theme-subtle .ts-logo__image--large,
+.ts-theme-bold .ts-logo__image--large,
+.ts-theme-daring .ts-logo__image--large,
+.ts-theme-conservative .ts-logo__image--large,
+.ts-theme-modern .ts-logo__image--large,
+.ts-theme-creative .ts-logo__image--large,
+.ts-theme-elegant .ts-logo__image--large {
+  height: var(--ts-computed-logo-xl);
+  width: var(--ts-computed-logo-xl);
+}
+
+/* Spacing gebruikt computed values */
+.ts-theme-subtle .ts-button,
+.ts-theme-bold .ts-button,
+.ts-theme-daring .ts-button,
+.ts-theme-conservative .ts-button,
+.ts-theme-modern .ts-button,
+.ts-theme-creative .ts-button,
+.ts-theme-elegant .ts-button {
+  padding: var(--ts-computed-space-2) var(--ts-computed-space-3);
+}
+
+.ts-theme-subtle .ts-header,
+.ts-theme-bold .ts-header,
+.ts-theme-daring .ts-header,
+.ts-theme-conservative .ts-header,
+.ts-theme-modern .ts-header,
+.ts-theme-creative .ts-header,
+.ts-theme-elegant .ts-header {
+  padding: var(--ts-computed-space-4) 0;
+}
+
+/* Shadows gebruiken computed values */
+.ts-theme-subtle .ts-card,
+.ts-theme-bold .ts-card,
+.ts-theme-daring .ts-card,
+.ts-theme-conservative .ts-card,
+.ts-theme-modern .ts-card,
+.ts-theme-creative .ts-card,
+.ts-theme-elegant .ts-card {
+  box-shadow: var(--ts-computed-shadow-md);
+}
+
+.ts-theme-subtle .ts-project-preview,
+.ts-theme-bold .ts-project-preview,
+.ts-theme-daring .ts-project-preview,
+.ts-theme-conservative .ts-project-preview,
+.ts-theme-modern .ts-project-preview,
+.ts-theme-creative .ts-project-preview,
+.ts-theme-elegant .ts-project-preview {
+  box-shadow: var(--ts-computed-shadow-sm);
+}
+
+.ts-theme-subtle .ts-project-preview:hover,
+.ts-theme-bold .ts-project-preview:hover,
+.ts-theme-daring .ts-project-preview:hover,
+.ts-theme-conservative .ts-project-preview:hover,
+.ts-theme-modern .ts-project-preview:hover,
+.ts-theme-creative .ts-project-preview:hover,
+.ts-theme-elegant .ts-project-preview:hover {
+  box-shadow: var(--ts-computed-shadow-lg);
+}
+
+/* =============================================================================
+   QUICK MODIFIERS - Voor specifieke aanpassingen
+   ============================================================================= */
+
+/* Maak alles 20% groter */
+.ts-scale-up {
+  --ts-spacing-multiplier: 1.2;
+  --ts-scale-multiplier: 1.2;
+}
+
+/* Maak alles 20% kleiner */
+.ts-scale-down {
+  --ts-spacing-multiplier: 0.8;
+  --ts-scale-multiplier: 0.8;
+}
+
+/* Meer dramatische schaduwen */
+.ts-dramatic-shadows {
+  --ts-shadow-multiplier: 2;
+}
+
+/* Subtiele schaduwen */
+.ts-subtle-shadows {
+  --ts-shadow-multiplier: 0.3;
+}
+
+/* Geen schaduwen */
+.ts-no-shadows {
+  --ts-shadow-multiplier: 0;
+}
+
+/* Extra spacing */
+.ts-spacious {
+  --ts-spacing-multiplier: 1.5;
+}
+
+/* Compact spacing */
+.ts-compact {
+  --ts-spacing-multiplier: 0.7;
+}

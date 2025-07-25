@@ -6,10 +6,11 @@
     <title>TILTSHIFT Design System</title>
     
     <!-- TILTSHIFT CSS Files -->
-    <link rel="stylesheet" href="tiltshift-base.css">
     <link rel="stylesheet" href="tiltshift-tokens.css">
-    <link rel="stylesheet" href="tiltshift-utilities.css">
+    <link rel="stylesheet" href="tiltshift-base.css">
     <link rel="stylesheet" href="tiltshift-components.css">
+    <link rel="stylesheet" href="tiltshift-utilities.css">
+    <link rel="stylesheet" href="tiltshift-themes.css">
     
     <style>
         /* Page styling */
@@ -338,6 +339,38 @@
                 <div class="header__content">
                     <h1 class="header__title">TILTSHIFT Design System</h1>
                     <p class="header__subtitle">Een complete component library voor digitale transformatie projecten</p>
+                    
+                    <!-- Theme Switcher -->
+                    <div class="ts-text-block ts-text-block--highlight" style="margin: 2rem 0;">
+                        <h3>🎨 Theme Switcher - Test live hoe themes werken!</h3>
+                        <p style="margin-bottom: 1rem;">Klik op een theme om direct het verschil te zien:</p>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                            <button class="ts-button ts-button--small" onclick="setTheme('')">Normaal</button>
+                            <button class="ts-button ts-button--small ts-button--secondary" onclick="setTheme('ts-theme-subtle')">Subtiel</button>
+                            <button class="ts-button ts-button--small ts-button--primary" onclick="setTheme('ts-theme-bold')">Gedurfd</button>
+                            <button class="ts-button ts-button--small ts-button--primary" onclick="setTheme('ts-theme-daring')">Zeer Gedurfd</button>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <button class="ts-button ts-button--small" onclick="setTheme('ts-theme-conservative')">Conservatief</button>
+                            <button class="ts-button ts-button--small" onclick="setTheme('ts-theme-modern')">Modern</button>
+                            <button class="ts-button ts-button--small" onclick="setTheme('ts-theme-creative')">Creatief</button>
+                            <button class="ts-button ts-button--small" onclick="setTheme('ts-theme-elegant')">Elegant</button>
+                        </div>
+                        <script>
+                            function setTheme(themeClass) {
+                                document.body.className = themeClass;
+                                // Update current theme indicator
+                                const indicator = document.getElementById('current-theme');
+                                if (indicator) {
+                                    indicator.textContent = themeClass || 'Normaal';
+                                }
+                            }
+                        </script>
+                        <p style="font-size: 0.9rem; margin-top: 1rem; color: #666;">
+                            <strong>Huidig theme:</strong> <span id="current-theme">Normaal</span><br>
+                            <em>Let op hoe logo's, spacing, schaduwen en kleuren veranderen!</em>
+                        </p>
+                    </div>
                     
                     <div class="instructions" id="instructies">
                         <h3>Instructies voor gebruik</h3>
