@@ -813,6 +813,7 @@ body.ts-nav--mobile {
   font-family: var(--ts-font-heading);
   background-color: var(--ts-color-black);
   color: var(--ts-color-white);
+  display: block !important; /* Override display: none from component styling */
 }
 
 /* Mobile menu page container */
