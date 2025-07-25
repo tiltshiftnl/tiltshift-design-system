@@ -1,0 +1,205 @@
+/* TILTSHIFT Base Element Styling */
+
+/* Reset and normalize */
+* {
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: var(--ts-font-primary);
+  font-size: var(--ts-text-md);
+  line-height: var(--ts-leading-normal);
+  color: var(--ts-color-text);
+  margin: 0;
+  padding: 0;
+  background-color: var(--ts-color-white);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ts-font-heading);
+  font-weight: var(--ts-font-weight-bold);
+  color: var(--ts-color-text);
+  line-height: var(--ts-leading-tight);
+  margin: 0 0 var(--ts-space-3) 0;
+}
+
+h1 { 
+  font-size: var(--ts-text-2xl);
+  margin-bottom: var(--ts-space-4);
+}
+
+h2 { 
+  font-size: var(--ts-text-xl);
+  margin-bottom: var(--ts-space-3);
+}
+
+h3 { 
+  font-size: var(--ts-text-lg);
+  margin-bottom: var(--ts-space-3);
+}
+
+h4 { 
+  font-size: var(--ts-text-md);
+  margin-bottom: var(--ts-space-2);
+}
+
+h5 { 
+  font-size: var(--ts-text-sm);
+  margin-bottom: var(--ts-space-2);
+}
+
+h6 { 
+  font-size: var(--ts-text-xs);
+  margin-bottom: var(--ts-space-2);
+}
+
+/* Paragraphs */
+p {
+  font-family: var(--ts-font-primary);
+  font-size: var(--ts-text-md);
+  line-height: var(--ts-leading-normal);
+  margin: 0 0 var(--ts-space-3) 0;
+}
+
+/* Links */
+a {
+  color: var(--ts-color-primary-dark);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--ts-color-primary);
+  outline-offset: 2px;
+}
+
+/* Lists */
+ul, ol {
+  font-family: var(--ts-font-primary);
+  font-size: var(--ts-text-md);
+  line-height: var(--ts-leading-normal);
+  margin: 0 0 var(--ts-space-3) 0;
+  padding-left: var(--ts-space-4);
+}
+
+li {
+  margin-bottom: var(--ts-space-1);
+}
+
+/* Main content container */
+main {
+  max-width: var(--ts-container-lg);
+  margin: 0 auto;
+  padding: 0 var(--ts-space-3);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Code */
+code {
+  font-family: 'Courier New', monospace;
+  font-size: var(--ts-text-sm);
+  background-color: var(--ts-color-off-white);
+  padding: var(--ts-space-1) var(--ts-space-2);
+  border-radius: var(--ts-radius-sm);
+}
+
+pre {
+  font-family: 'Courier New', monospace;
+  font-size: var(--ts-text-sm);
+  background-color: var(--ts-color-off-white);
+  padding: var(--ts-space-3);
+  border-radius: var(--ts-radius-md);
+  overflow-x: auto;
+  margin: 0 0 var(--ts-space-3) 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 var(--ts-space-3) 0;
+  font-family: var(--ts-font-primary);
+  font-size: var(--ts-text-md);
+}
+
+th, td {
+  padding: var(--ts-space-2);
+  text-align: left;
+  border-bottom: 1px solid var(--ts-color-grey);
+}
+
+th {
+  font-family: var(--ts-font-heading);
+  font-weight: var(--ts-font-weight-bold);
+  background-color: var(--ts-color-off-white);
+}
+
+/* Form elements */
+input, textarea, select {
+  font-family: var(--ts-font-primary);
+  font-size: var(--ts-text-md);
+  line-height: var(--ts-leading-normal);
+  padding: var(--ts-space-2);
+  border: 1px solid var(--ts-color-grey);
+  border-radius: var(--ts-radius-sm);
+  background-color: var(--ts-color-white);
+  color: var(--ts-color-text);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--ts-color-primary);
+  outline-offset: 2px;
+  border-color: var(--ts-color-primary);
+}
+
+/* Responsive containers */
+.container-sm, .container-md, .container-lg {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--ts-space-3);
+  padding-right: var(--ts-space-3);
+}
+
+.container-sm {
+  max-width: var(--ts-container-sm);
+}
+
+.container-md {
+  max-width: var(--ts-container-md);
+}
+
+.container-lg {
+  max-width: var(--ts-container-lg);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: var(--ts-text-xl); }
+  h2 { font-size: var(--ts-text-lg); }
+  
+  main {
+    padding: 0 var(--ts-space-2);
+  }
+  
+  .container-sm, .container-md, .container-lg {
+    padding-left: var(--ts-space-2);
+    padding-right: var(--ts-space-2);
+  }
+}
