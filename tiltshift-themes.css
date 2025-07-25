@@ -389,30 +389,13 @@
 }
 
 .ts-style-modern .ts-nav__logo img {
-  /* Gradient effect met mix-blend-mode */
+  /* Subtiele warme tint zonder overdreven effecten */
   filter: 
-    brightness(1.2)
-    contrast(1.1)
-    drop-shadow(0 0 8px rgba(255, 71, 87, 0.4));
-}
-
-/* Gradient overlay voor navigatie logo */
-.ts-style-modern .ts-nav__logo {
-  position: relative;
-}
-
-.ts-style-modern .ts-nav__logo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
-  mix-blend-mode: multiply;
-  opacity: 0.4;
-  pointer-events: none;
-  border-radius: 50%;
+    sepia(0.3)
+    hue-rotate(10deg)
+    saturate(1.2)
+    brightness(1.1)
+    drop-shadow(0 0 6px rgba(255, 99, 72, 0.3));
 }
 
 /* ELEGANT - Zelfde kleuren, maar verfijnde verhoudingen */
