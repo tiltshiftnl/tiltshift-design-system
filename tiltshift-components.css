@@ -11,24 +11,24 @@
 }
 
 .ts-logo__image {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   vertical-align: middle;
 }
 
 .ts-logo__image--small {
-  height: 30px;
-  width: 30px;
+  height: 45px;
+  width: 45px;
 }
 
 .ts-logo__image--medium {
-  height: 75px;
-  width: 75px;
+  height: 100px;
+  width: 100px;
 }
 
 .ts-logo__image--large {
-  height: 120px;
-  width: 120px;
+  height: 160px;
+  width: 160px;
 }
 
 /* Button Component */
@@ -39,7 +39,7 @@
   padding: var(--ts-space-2) var(--ts-space-3);
   font-family: var(--ts-font-primary);
   font-size: var(--ts-text-md);
-  font-weight: var(--ts-font-weight-normal);
+  font-weight: 600;
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -122,7 +122,7 @@
 
 .ts-header__title {
   font-family: var(--ts-font-heading);
-  font-weight: var(--ts-font-weight-bold);
+  font-weight: 800;
   font-size: var(--ts-text-2xl);
   color: var(--ts-color-text);
   margin: 0 0 var(--ts-space-3) 0;
@@ -163,7 +163,7 @@
 
 .ts-text-block__title {
   font-family: var(--ts-font-heading);
-  font-weight: var(--ts-font-weight-bold);
+  font-weight: 800;
   font-size: var(--ts-text-xl);
   color: var(--ts-color-text);
   margin: 0 0 var(--ts-space-3) 0;
@@ -265,7 +265,7 @@
 
 .ts-card__title {
   font-family: var(--ts-font-heading);
-  font-weight: var(--ts-font-weight-bold);
+  font-weight: 800;
   font-size: var(--ts-text-lg);
   color: var(--ts-color-text);
   margin: 0 0 var(--ts-space-2) 0;
@@ -434,7 +434,7 @@
 .ts-person-block__image {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: var(--ts-radius-md);
   overflow: hidden;
   margin: 0 auto var(--ts-space-3) auto;
 }
@@ -773,8 +773,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: var(--ts-color-primary-dark);
   color: var(--ts-color-white);
@@ -787,29 +787,29 @@
 }
 
 .ts-social-links__link--small {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
 }
 
 .ts-social-links__link--large {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
 }
 
 .ts-social-links__icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   fill: currentColor;
 }
 
 .ts-social-links__link--small .ts-social-links__icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .ts-social-links__link--large .ts-social-links__icon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 /* Contact Info Block Component */
@@ -1014,8 +1014,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--ts-radius-sm);
   background: rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease;
@@ -1028,8 +1028,8 @@
 }
 
 .ts-footer__socials svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   fill: currentColor;
 }
 
