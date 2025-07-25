@@ -941,7 +941,20 @@
 .ts-footer {
   position: relative;
   overflow: hidden;
-  margin-top: var(--ts-space-6);
+  
+  /* Berekende marge voor gedraaide vlakken */
+  --footer-rotation-main: 6deg;
+  --footer-rotation-accent: 12deg;
+  --footer-width: 125vw;
+  --footer-height: 200vh;
+  --safety-margin: 20px;
+  
+  /* Voor 12° rotatie (ergste case): sin(12°) ≈ 0.208 */
+  margin-top: calc(
+    (var(--footer-width) * 0.208) + 
+    (100px * 0.208) + 
+    var(--safety-margin)
+  );
 }
 
 .ts-footer__inner {
