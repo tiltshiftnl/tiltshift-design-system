@@ -432,8 +432,8 @@
 }
 
 .ts-person-block__image {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: var(--ts-radius-md);
   overflow: hidden;
   margin: 0 auto var(--ts-space-3) auto;
@@ -492,8 +492,8 @@
 }
 
 .ts-cta__image img {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: var(--ts-radius-md);
   object-fit: cover;
 }
