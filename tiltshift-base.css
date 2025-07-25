@@ -90,8 +90,8 @@ a:hover {
 }
 
 a:focus {
-  outline: 2px solid var(--ts-color-primary);
-  outline-offset: 2px;
+  outline: var(--ts-space-0) solid var(--ts-color-primary);
+  outline-offset: var(--ts-space-0);
 }
 
 /* Lists */
@@ -125,7 +125,7 @@ main.with-fixed-nav {
 
 @media (min-width: 1024px) {
   main.with-fixed-nav {
-    margin-top: 70px; /* Desktop nav height */
+    margin-top: var(--ts-nav-height-desktop);
   }
 }
 
@@ -143,7 +143,7 @@ code {
   background-color: var(--ts-color-off-white);
   padding: var(--ts-space-1) var(--ts-space-2);
   border-radius: var(--ts-radius-sm);
-  border: 1px solid var(--ts-color-grey-light, #e5e5e5);
+  border: 1px solid var(--ts-color-grey-light);
 }
 
 pre {
@@ -152,7 +152,7 @@ pre {
   background-color: var(--ts-color-off-white);
   padding: var(--ts-space-3);
   border-radius: var(--ts-radius-md);
-  border: 1px solid var(--ts-color-grey-light, #e5e5e5);
+  border: 1px solid var(--ts-color-grey-light);
   overflow-x: auto;
   margin-bottom: var(--ts-space-3);
   line-height: var(--ts-leading-relaxed, 1.6);
@@ -198,8 +198,8 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus, select:focus {
-  outline: 2px solid var(--ts-color-primary);
-  outline-offset: 2px;
+  outline: var(--ts-space-0) solid var(--ts-color-primary);
+  outline-offset: var(--ts-space-0);
   border-color: var(--ts-color-primary);
 }
 
@@ -220,25 +220,10 @@ input:focus, textarea:focus, select:focus {
   max-width: var(--ts-container-md);
 }
 
-/* Legacy support */
-.container-sm, .container-md, .container-lg {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--ts-space-3);
-  padding-right: var(--ts-space-3);
-}
-
-.container-sm {
-  max-width: var(--ts-container-sm);
-}
-
-.container-md {
-  max-width: var(--ts-container-md);
-}
-
-.container-lg {
+.ts-container--lg {
   max-width: var(--ts-container-lg);
 }
+
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
@@ -250,14 +235,13 @@ input:focus, textarea:focus, select:focus {
     padding: 0 var(--ts-space-2);
   }
   
-  .ts-container,
-  .container-sm, .container-md, .container-lg {
+  .ts-container {
     padding-left: var(--ts-space-2);
     padding-right: var(--ts-space-2);
   }
   
   /* Better touch targets on mobile */
   input, textarea, select {
-    min-height: 44px;
+    min-height: 2.75rem;
   }
 }

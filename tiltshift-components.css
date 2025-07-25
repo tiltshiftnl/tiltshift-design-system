@@ -11,24 +11,24 @@
 }
 
 .ts-logo__image {
-  height: 60px;
-  width: 60px;
+  height: var(--ts-logo-md);
+  width: var(--ts-logo-md);
   vertical-align: middle;
 }
 
 .ts-logo__image--small {
-  height: 45px;
-  width: 45px;
+  height: var(--ts-logo-sm);
+  width: var(--ts-logo-sm);
 }
 
 .ts-logo__image--medium {
-  height: 100px;
-  width: 100px;
+  height: var(--ts-logo-lg);
+  width: var(--ts-logo-lg);
 }
 
 .ts-logo__image--large {
-  height: 160px;
-  width: 160px;
+  height: var(--ts-logo-xl);
+  width: var(--ts-logo-xl);
 }
 
 /* Button Component */
@@ -59,7 +59,7 @@
 .ts-button--secondary {
   background-color: var(--ts-color-white);
   color: var(--ts-color-primary-dark);
-  border: 2px solid var(--ts-color-primary-dark);
+  border: var(--ts-border-width) solid var(--ts-color-primary-dark);
 }
 
 .ts-button--secondary:hover {
@@ -79,9 +79,9 @@
 /* Label Component */
 .ts-label {
   display: inline-block;
-  background-color: #f4b4b4;
+  background-color: var(--ts-color-label-default);
   color: var(--ts-color-black);
-  padding: 2px 4px;
+  padding: var(--ts-space-0) var(--ts-space-xs);
   font-size: var(--ts-text-xs);
   border-radius: var(--ts-radius-sm);
   font-family: var(--ts-font-primary);
@@ -95,7 +95,7 @@
 }
 
 .ts-label--secondary {
-  background-color: #b4b4f4;
+  background-color: var(--ts-color-label-info);
   color: var(--ts-color-black);
 }
 
@@ -158,7 +158,7 @@
   background-color: var(--ts-color-off-white);
   padding: var(--ts-space-4);
   border-radius: var(--ts-radius-lg);
-  border-left: 4px solid var(--ts-color-primary);
+  border-left: var(--ts-border-accent) solid var(--ts-color-primary);
 }
 
 .ts-text-block__title {
@@ -206,7 +206,7 @@
 .ts-blockquote {
   max-width: var(--ts-container-sm);
   margin: 0 auto var(--ts-space-4);
-  border-left: 4px solid var(--ts-color-primary);
+  border-left: var(--ts-border-accent) solid var(--ts-color-primary);
   padding: var(--ts-space-3) var(--ts-space-3);
 }
 
@@ -525,7 +525,7 @@
 }
 
 .ts-cta__text {
-  margin-bottom: 1rem;
+  margin-bottom: var(--ts-space-2);
 }
 
 /* =============================================================================
@@ -539,7 +539,7 @@
   top: 0;
   right: 0;
   width: 100%;
-  height: 4rem;
+  height: var(--ts-nav-height-mobile);
   display: flex;
   justify-content: space-between;
   z-index: 10;
@@ -547,7 +547,7 @@
 
 .ts-nav--desktop {
   background-color: var(--ts-color-black);
-  height: 70px;
+  height: var(--ts-nav-height-desktop);
   justify-content: flex-end;
 }
 
@@ -638,8 +638,8 @@
   height: 22px;
 }
 
-/* Mobile Menu Toggle Button */
-.mobile-menu-toggle {
+/* Mobile Menu Toggle Button */  
+.ts-mobile-menu-toggle {
   position: fixed;
   top: var(--ts-space-3);
   left: var(--ts-space-3);
@@ -650,9 +650,9 @@
   padding: var(--ts-space-2);
   border-radius: var(--ts-radius-sm);
   cursor: pointer;
-  font-size: 16px;
-  width: 40px;
-  height: 40px;
+  font-size: var(--ts-text-sm);
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -660,11 +660,11 @@
   transition: background-color 0.2s ease;
 }
 
-.mobile-menu-toggle:hover {
+.ts-mobile-menu-toggle:hover {
   background: var(--ts-color-primary-dark);
 }
 
-.mobile-menu-toggle:active {
+.ts-mobile-menu-toggle:active {
   transform: scale(0.95);
 }
 
@@ -703,8 +703,8 @@
   position: absolute;
   right: var(--ts-space-3);
   top: var(--ts-space-3);
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
@@ -739,8 +739,8 @@
 }
 
 .ts-nav__mobile-toggle span {
-  width: 25px;
-  height: 3px;
+  width: 1.5625rem;
+  height: 0.1875rem;
   background-color: var(--ts-color-text);
   transition: all 0.3s ease;
 }
@@ -754,7 +754,7 @@
 }
 
 .ts-nav__mobile-toggle--open span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  transform: rotate(-45deg) translate(0.4375rem, -0.375rem);
 }
 
 /* =============================================================================
@@ -817,7 +817,7 @@
   background-color: var(--ts-color-off-white);
   padding: var(--ts-space-4);
   border-radius: var(--ts-radius-lg);
-  border-left: 4px solid var(--ts-color-primary);
+  border-left: var(--ts-border-accent) solid var(--ts-color-primary);
 }
 
 .ts-contact-info--card {
@@ -1148,7 +1148,7 @@
 
 @media (min-width: 768px) {
   .ts-nav {
-    height: 70px;
+    height: var(--ts-nav-height-desktop);
     background-color: var(--ts-color-black);
     justify-content: flex-end;
   }

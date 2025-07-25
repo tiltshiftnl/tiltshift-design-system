@@ -161,25 +161,43 @@
 .w-full { width: 100%; }
 .w-auto { width: auto; }
 
-/* Container utilities */
-.container-sm { 
-  max-width: var(--ts-container-sm); 
-  margin-left: auto; 
-  margin-right: auto; 
-  padding-left: var(--ts-space-3); 
-  padding-right: var(--ts-space-3); 
-}
-.container-md { 
-  max-width: var(--ts-container-md); 
-  margin-left: auto; 
-  margin-right: auto; 
-  padding-left: var(--ts-space-3); 
-  padding-right: var(--ts-space-3); 
-}
-.container-lg { 
-  max-width: var(--ts-container-lg); 
-  margin-left: auto; 
-  margin-right: auto; 
-  padding-left: var(--ts-space-3); 
-  padding-right: var(--ts-space-3); 
-}
+/* Margin auto utilities */
+.m-auto { margin: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.my-auto { margin-top: auto; margin-bottom: auto; }
+
+/* Gap utilities for flexbox/grid */
+.gap-0 { gap: var(--ts-space-0); }
+.gap-xs { gap: var(--ts-space-xs); }
+.gap-1 { gap: var(--ts-space-1); }
+.gap-2 { gap: var(--ts-space-2); }
+.gap-3 { gap: var(--ts-space-3); }
+.gap-4 { gap: var(--ts-space-4); }
+.gap-5 { gap: var(--ts-space-5); }
+.gap-6 { gap: var(--ts-space-6); }
+
+/* Additional spacing utilities */
+.m-0 { margin: var(--ts-space-0); }
+.m-xs { margin: var(--ts-space-xs); }
+.p-0 { padding: var(--ts-space-0); }
+.p-xs { padding: var(--ts-space-xs); }
+
+.mt-0 { margin-top: var(--ts-space-0); }
+.mt-xs { margin-top: var(--ts-space-xs); }
+.mb-0 { margin-bottom: var(--ts-space-0); }
+.mb-xs { margin-bottom: var(--ts-space-xs); }
+.ml-0 { margin-left: var(--ts-space-0); }
+.ml-xs { margin-left: var(--ts-space-xs); }
+.mr-0 { margin-right: var(--ts-space-0); }
+.mr-xs { margin-right: var(--ts-space-xs); }
+
+.pt-0 { padding-top: var(--ts-space-0); }
+.pt-xs { padding-top: var(--ts-space-xs); }
+.pb-0 { padding-bottom: var(--ts-space-0); }
+.pb-xs { padding-bottom: var(--ts-space-xs); }
+.pl-0 { padding-left: var(--ts-space-0); }
+.pl-xs { padding-left: var(--ts-space-xs); }
+.pr-0 { padding-right: var(--ts-space-0); }
+.pr-xs { padding-right: var(--ts-space-xs); }
+
+
