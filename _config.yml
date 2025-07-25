@@ -1,0 +1,31 @@
+# Jekyll Configuration for TILTSHIFT Design System CDN
+
+# Basic settings
+title: "TILTSHIFT Design System"
+description: "CDN for TILTSHIFT design system components"
+baseurl: ""
+url: "https://cdn.tiltshift.nl"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+safe: false
+
+# Exclude from processing
+exclude:
+  - run.sh
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+
+# Include static files
+include:
+  - ".htaccess"
+
+# Plugin settings
+plugins:
+  - jekyll-github-metadata
+
+# GitHub metadata (optional)
+repository: tiltshift/design-system
