@@ -387,8 +387,8 @@
 /* Logo styling voor Modern theme */
 .ts-style-modern .ts-logo__image {
   filter: 
-    hue-rotate(20deg)
-    saturate(1.3)
+    brightness(1.1)
+    saturate(1.1)
     drop-shadow(0 0 8px rgba(255, 71, 87, 0.4));
 }
 
@@ -473,8 +473,8 @@
 .ts-style-modern .ts-logo__image--medium,
 .ts-style-modern .ts-logo__image--large {
   filter: 
-    hue-rotate(20deg)
-    saturate(1.3)
+    brightness(1.1)
+    saturate(1.1)
     drop-shadow(0 0 8px rgba(255, 71, 87, 0.4));
 }
 
