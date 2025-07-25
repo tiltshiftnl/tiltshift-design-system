@@ -287,98 +287,108 @@
   --ts-space-6: 1.5rem;      /* was 3rem */
 }
 
-/* MODERN - Gradient kleuren van roze-rood naar oranje-rood */
+/* MODERN - "HER" film esthetiek: warme, zachte futuristische tinten */
 .ts-style-modern {
-  /* Gradient kleurenpallet: roze-rood → oranje-rood */
-  --ts-color-primary: #ff6b6b;        /* oranje-rood */
-  --ts-color-primary-dark: #ee5a52;   /* dieper oranje-rood */
-  --ts-color-primary-light: #ff8e8e;  /* licht oranje-rood */
+  /* HER-geïnspireerde kleurenpallet: warm oranje-rood spectrum */
+  --ts-color-primary: #f4511e;        /* warm oranje (HER accent) */
+  --ts-color-primary-dark: #d84315;   /* diep warm oranje */
+  --ts-color-primary-light: #ff8a65;  /* licht perzik-oranje */
   
-  /* Extra gradient kleuren voor accenten */
-  --ts-color-accent-pink: #ff4757;    /* roze-rood */
-  --ts-color-accent-orange: #ff6348;  /* oranje */
+  /* Extra warme tinten voor HER-gevoel */
+  --ts-color-accent-warm: #ff7043;    /* warm koper */
+  --ts-color-accent-soft: #ffab91;    /* zachte perzik */
+  --ts-color-text: #3e2723;           /* warme donkerbruine tekst */
+  --ts-color-grey: #d7ccc8;           /* warme beige */
+  --ts-color-off-white: #fff8e1;      /* warme crème */
   
-  /* Tech-achtige font ratios */
+  /* Zachte, futuristische font ratios */
   --ts-text-xs: 0.75rem;
   --ts-text-sm: 0.875rem;
   --ts-text-md: 1rem;
-  --ts-text-lg: 1.125rem;    /* minder contrast */
-  --ts-text-xl: 1.375rem;    /* minder contrast */
-  --ts-text-2xl: 1.75rem;    /* minder contrast */
+  --ts-text-lg: 1.25rem;     /* iets meer contrast voor leesbaarheid */
+  --ts-text-xl: 1.5rem;      /* zachte stappen */
+  --ts-text-2xl: 2rem;       /* elegante verhoudingen */
   
-  /* Consistente logo groottes */
+  /* Harmonische logo groottes */
   --ts-logo-sm: 2rem;
-  --ts-logo-md: 2.5rem;
-  --ts-logo-lg: 3rem;        /* minder variatie */
-  --ts-logo-xl: 3.5rem;      /* minder variatie */
+  --ts-logo-md: 2.75rem;
+  --ts-logo-lg: 3.5rem;      /* zachte progressie */
+  --ts-logo-xl: 4.5rem;      /* warme aanwezigheid */
   
-  /* Strakke spacing */
-  --ts-space-4: 1.5rem;
-  --ts-space-5: 2rem;
-  --ts-space-6: 2.5rem;      /* minder variatie */
+  /* Warme, uitnodigende spacing */
+  --ts-space-4: 1.75rem;
+  --ts-space-5: 2.25rem;
+  --ts-space-6: 3rem;        /* ruimere, zachte spacing */
 }
 
-/* MODERN THEME - Gradient effecten toevoegen */
+/* MODERN THEME - HER-geïnspireerde gradient effecten */
 .ts-style-modern .ts-button--primary {
-  background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
+  background: linear-gradient(135deg, #f4511e 0%, #ff7043 100%);
   border: none;
-  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+  box-shadow: 0 4px 20px rgba(244, 81, 30, 0.25);
+  border-radius: var(--ts-radius-lg);
 }
 
 .ts-style-modern .ts-button--primary:hover {
-  background: linear-gradient(135deg, #ff3742 0%, #ff5533 100%);
+  background: linear-gradient(135deg, #d84315 0%, #f4511e 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+  box-shadow: 0 8px 25px rgba(244, 81, 30, 0.35);
 }
 
 .ts-style-modern .ts-button--secondary {
-  background: linear-gradient(135deg, #ff8e8e 0%, #ffb8b8 100%);
-  color: #333;
-  border: 2px solid #ff6b6b;
+  background: linear-gradient(135deg, #fff8e1 0%, #ffab91 100%);
+  color: #3e2723;
+  border: 2px solid #f4511e;
+  border-radius: var(--ts-radius-lg);
 }
 
 .ts-style-modern .ts-label--primary {
-  background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
+  background: linear-gradient(135deg, #f4511e 0%, #ff7043 100%);
 }
 
 .ts-style-modern .ts-nav {
-  background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(90deg, #3e2723 0%, #5d4037 100%);
 }
 
 .ts-style-modern .ts-footer__red-sheet {
-  background: linear-gradient(45deg, #ff4757 0%, #ff6348 50%, #ff7675 100%);
+  background: linear-gradient(45deg, #f4511e 0%, #ff7043 50%, #ffab91 100%);
 }
 
 .ts-style-modern .ts-footer__blue-sheet {
-  background: linear-gradient(45deg, #1e59a6 0%, #2980b9 50%, #3498db 100%);
+  background: linear-gradient(45deg, #6d4c41 0%, #8d6e63 50%, #a1887f 100%);
 }
 
-/* Gradient effecten voor andere componenten */
+/* HER-stijl gradient effecten voor andere componenten */
 .ts-style-modern .ts-project-preview:hover {
-  border-image: linear-gradient(135deg, #ff4757, #ff6348) 1;
-  box-shadow: 0 10px 30px rgba(255, 71, 87, 0.2);
+  border-image: linear-gradient(135deg, #f4511e, #ff7043) 1;
+  box-shadow: 0 15px 40px rgba(244, 81, 30, 0.2);
 }
 
 .ts-style-modern .ts-project-preview__overlay {
-  background: linear-gradient(135deg, rgba(255, 71, 87, 0.9) 0%, rgba(255, 99, 72, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(244, 81, 30, 0.85) 0%, rgba(255, 112, 67, 0.85) 100%);
+  backdrop-filter: blur(2px);
 }
 
 .ts-style-modern .ts-social-links__link {
-  background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
+  background: linear-gradient(135deg, #f4511e 0%, #ff7043 100%);
+  border-radius: 50%;
 }
 
 .ts-style-modern .ts-social-links__link:hover {
-  background: linear-gradient(135deg, #ff3742 0%, #ff5533 100%);
+  background: linear-gradient(135deg, #d84315 0%, #f4511e 100%);
   transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(244, 81, 30, 0.3);
 }
 
 .ts-style-modern .ts-blockquote {
   border-left: 4px solid transparent;
-  border-image: linear-gradient(180deg, #ff4757 0%, #ff6348 100%) 1;
+  border-image: linear-gradient(180deg, #f4511e 0%, #ff7043 100%) 1;
+  background: rgba(255, 248, 225, 0.3);
+  border-radius: var(--ts-radius-md);
 }
 
 .ts-style-modern .ts-blockquote__text {
-  background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
+  background: linear-gradient(135deg, #f4511e 0%, #ff7043 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -633,9 +643,10 @@
    MOBILE MENU PAGE THEMING - For full-page mobile menus
    ============================================================================= */
 
-/* MODERN - Full page mobile menu with gradient */
+/* MODERN - HER-stijl full page mobile menu */
 body.ts-style-modern.ts-nav--mobile {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #ff4757 100%);
+  background: linear-gradient(135deg, #3e2723 0%, #5d4037 30%, #f4511e 100%);
+  backdrop-filter: blur(20px);
 }
 
 /* GEDURFD - Full page mobile menu with dramatic styling */
