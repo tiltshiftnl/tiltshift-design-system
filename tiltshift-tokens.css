@@ -1,0 +1,83 @@
+/* TILTSHIFT Design Tokens */
+
+/* AtkinsonHyperlegible Font Faces */
+@font-face {
+    font-family: "AtkinsonHyperlegible";
+    src:  url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2'),
+        url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102.woff') format('woff');
+}
+@font-face {
+    font-family: "AtkinsonHyperlegible";
+    src:  url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2'),
+        url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Bold-102.woff') format('woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: "AtkinsonHyperlegible";
+    src:  url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Italic-102a.woff2') format('woff2'),
+    url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Italic-102.woff') format('woff');
+    font-style: italic;
+}
+@font-face {
+    font-family: "AtkinsonHyperlegible";
+    src:  url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-BoldItalic-102a.woff2') format('woff2'),
+    url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-BoldItalic-102.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+:root {
+  /* Colors */
+  --ts-color-primary: #E64544;
+  --ts-color-primary-dark: #1E59A6;
+  --ts-color-black: #1D1621;
+  --ts-color-white: #ffffff;
+  --ts-color-off-white: #F9F9F6;
+  --ts-color-grey: #EFEFEF;
+  --ts-color-text: #1C1C1B;
+
+  /* Spacing */
+  --ts-space-1: 0.3rem;   /* 4.8px */
+  --ts-space-2: 0.6rem;   /* 9.6px */
+  --ts-space-3: 1.1rem;   /* 17.6px */
+  --ts-space-4: 2rem;     /* 32px */
+  --ts-space-5: 3rem;     /* 48px */
+  --ts-space-6: 4rem;     /* 64px */
+
+  /* Font sizes */
+  --ts-text-xs: 0.7rem;
+  --ts-text-sm: 0.8rem;
+  --ts-text-md: 1rem;
+  --ts-text-lg: 1.2rem;
+  --ts-text-xl: 1.5rem;
+  --ts-text-2xl: 2rem;
+
+  /* Font weights */
+  --ts-font-weight-normal: 400;
+  --ts-font-weight-bold: 700;
+
+  /* Font families */
+  --ts-font-primary: 'AtkinsonHyperlegible', 'HelveticaNeueRegular', sans-serif;
+  --ts-font-primary-bold: 'HelveticaNeueLTPro-Bd', 'AtkinsonHyperlegible', sans-serif;
+  --ts-font-heading: 'HelveticaNeueLTPro-Bd', 'AtkinsonHyperlegible', sans-serif;
+
+  /* Line heights */
+  --ts-leading-tight: 1.2;
+  --ts-leading-normal: 1.5;
+  --ts-leading-loose: 1.8;
+
+  /* Border radius */
+  --ts-radius-sm: 0.2rem;
+  --ts-radius-md: 0.4rem;
+  --ts-radius-lg: 0.8rem;
+
+  /* Shadows */
+  --ts-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ts-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --ts-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Container widths */
+  --ts-container-sm: 720px;
+  --ts-container-md: 1024px;
+  --ts-container-lg: 1024px;
+}
