@@ -389,13 +389,8 @@
 }
 
 .ts-style-modern .ts-nav__logo img {
-  /* Subtiele warme tint zonder overdreven effecten */
-  filter: 
-    sepia(0.3)
-    hue-rotate(10deg)
-    saturate(1.2)
-    brightness(1.1)
-    drop-shadow(0 0 6px rgba(255, 99, 72, 0.3));
+  /* Terug naar origineel - geen speciale effecten voor nav logo */
+  filter: none;
 }
 
 /* ELEGANT - Zelfde kleuren, maar verfijnde verhoudingen */
