@@ -941,6 +941,15 @@
 .ts-footer {
   position: relative;
   overflow: hidden;
+  margin-top: var(--ts-space-6);
+}
+
+.ts-footer__inner {
+  max-width: var(--ts-container-lg);
+  margin: 0 auto;
+  padding: var(--ts-space-6) var(--ts-space-5);
+  position: relative;
+  z-index: 10;
   
   /* Berekende marge voor gedraaide vlakken */
   --footer-rotation-main: 6deg;
@@ -955,15 +964,6 @@
     (100px * 0.208) + 
     var(--safety-margin)
   );
-}
-
-.ts-footer__inner {
-  max-width: var(--ts-container-lg);
-  margin: 0 auto;
-  padding: var(--ts-space-6) var(--ts-space-5);
-  position: relative;
-  z-index: 10;
-  margin-top: 0;
 }
 
 .ts-footer__blue-sheet {
