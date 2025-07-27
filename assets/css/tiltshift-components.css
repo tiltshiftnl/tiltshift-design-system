@@ -877,11 +877,33 @@
   position: absolute;
   right: var(--ts-space-3);
   top: var(--ts-space-3);
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.5625rem;
+  height: 1.5625rem;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+}
+
+.ts-nav__mobile-close::before,
+.ts-nav__mobile-close::after {
+  content: '';
+  position: absolute;
+  width: 1.5625rem;
+  height: 0.1875rem;
+  background-color: white;
+}
+
+.ts-nav__mobile-close::before {
+  transform: rotate(45deg);
+}
+
+.ts-nav__mobile-close::after {
+  transform: rotate(-45deg);
 }
 
 .ts-nav__mobile-close img {
