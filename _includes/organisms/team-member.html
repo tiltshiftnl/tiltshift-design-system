@@ -1,0 +1,16 @@
+<!-- Team Member Organism -->
+<div class="organism-showcase">
+    <h3 class="organism-showcase__title">Team Member</h3>
+    <p class="organism-showcase__description">Team member card. Combineert <code>atom-block</code>, <code>molecule-image-container</code>, en typography atoms.</p>
+    <div class="atom-flex atom-gap-3 atom-mb-3 atom-flex-wrap atom-justify-center">
+        {% for member in site.data.team.members %}
+        <div class="atom-block atom-clickable ts-person-block atom-min-w-48">
+            <div class="atom-rounded-md atom-overflow-hidden atom-mx-auto atom-mb-3 ts-person-block__image">
+                <img src="{{ member.image | relative_url }}" alt="{{ member.name }}">
+            </div>
+            <h4 class="atom-heading atom-text-lg atom-mb-1 ts-person-block__name">{{ member.name }}</h4>
+            <p class="atom-text atom-text-sm atom-m-0 ts-person-block__type">{{ member.role }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>

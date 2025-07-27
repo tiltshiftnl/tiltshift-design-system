@@ -1,0 +1,12 @@
+# Main Navigation Items
+main:
+  - text: Home
+    url: /
+  - text: Utilities
+    url: /utilities/
+  - text: Atoms
+    url: /atoms/
+  - text: Molecules
+    url: /molecules/
+  - text: Organisms
+    url: /organisms/

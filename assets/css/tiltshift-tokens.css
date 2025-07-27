@@ -37,17 +37,19 @@
   --ts-color-label-info: #b4b4f4;
   --ts-color-border-light: #e5e5e5;
 
-  /* Spacing */
-  --ts-space-0: 0.125rem; /* 2px */
-  --ts-space-xs: 0.25rem; /* 4px */
-  --ts-space-1: 0.3rem;   /* 4.8px */
-  --ts-space-2: 0.6rem;   /* 9.6px */
-  --ts-space-3: 1.1rem;   /* 17.6px */
-  --ts-space-4: 2rem;     /* 32px */
-  --ts-space-5: 3rem;     /* 48px */
-  --ts-space-6: 4rem;     /* 64px */
-  --ts-space-7: 5rem;     /* 80px */
-  --ts-space-8: 6rem;     /* 96px */
+  /* Spacing - Vereenvoudigd 4-niveau systeem */
+  --ts-space-0: 0;        /* 0px - geen ruimte */
+  --ts-space-xs: 0.5rem;  /* 8px - extra klein (was space-1) */
+  --ts-space-1: 0.5rem;   /* 8px - klein */
+  --ts-space-2: 1rem;     /* 16px - standaard */
+  --ts-space-3: 2rem;     /* 32px - groot */
+  --ts-space-4: 3rem;     /* 48px - extra groot */
+  
+  /* Legacy mapping voor backward compatibility */
+  --ts-space-5: 3rem;     /* 48px - mapped naar space-4 */
+  --ts-space-6: 4rem;     /* 64px - alleen voor speciale gevallen */
+  --ts-space-7: 5rem;     /* 80px - deprecated */
+  --ts-space-8: 6rem;     /* 96px - deprecated */
 
   /* Font sizes */
   --ts-text-xs: 0.9rem;    /* 14.4px */

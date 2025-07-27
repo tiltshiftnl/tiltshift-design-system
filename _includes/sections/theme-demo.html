@@ -1,0 +1,165 @@
+<!-- Theme Demonstration Section -->
+<section class="organism-section atom-bg-off-white">
+    <div class="organism-section__header">
+        <h2 class="organism-section__title">Stijlvarianten Demo</h2>
+        <p class="organism-section__description">
+            Ervaar hoe het TILTSHIFT Design System zich aanpast aan verschillende stijlen. 
+            Selecteer een variant en zie direct hoe typografie, spacing en verhoudingen veranderen, 
+            terwijl de kernidentiteit behouden blijft.
+        </p>
+    </div>
+    
+    <!-- Theme Selector Card -->
+    <div class="molecule-card molecule-card--centered atom-p-5 atom-mb-5 atom-text-center">
+        <h3 class="molecule-title-sm atom-mb-3">Kies een stijlvariant</h3>
+        
+        <div class="atom-max-w-md atom-mx-auto atom-mb-4">
+            <select id="theme-selector" class="ts-select atom-w-full" onchange="setTheme(this.value)">
+                <option value="">Normaal</option>
+                <option value="ts-style-subtiel">Subtiel (kleinere fonts)</option>
+                <option value="ts-style-gedurfd">Gedurfd (grote fonts & contrast)</option>
+                    <option value="ts-style-modern">Modern (gradient roze→oranje)</option>
+                    <option value="ts-style-elegant">Elegant (verfijnde verhoudingen)</option>
+                </select>
+            </div>
+            
+            <div class="ts-text-block ts-text-block--highlight atom-p-3 atom-rounded-md">
+                <p class="atom-text-sm atom-mb-2">
+                    <strong>Huidige stijl:</strong> <span id="current-theme" class="atom-font-bold atom-text-primary">Normaal</span>
+                </p>
+                <p class="atom-text-xs atom-text-grey-light atom-m-0">
+                    Let op hoe fontgroottes, logo's en spacing veranderen terwijl kleuren hetzelfde blijven
+                </p>
+            </div>
+        </div>
+        
+        <!-- Live Preview -->
+        <div class="molecule-card atom-p-5 atom-mb-5">
+            <h4 class="molecule-title-sm atom-mb-4 atom-text-center">Live Voorbeeld</h4>
+            
+            <div class="atom-max-w-2xl atom-mx-auto">
+                <h3 class="molecule-title atom-mb-3">Hoofdtitel</h3>
+                <h4 class="molecule-title-sm atom-mb-3">Ondertitel</h4>
+                <p class="molecule-content atom-mb-4">
+                    Dit is een voorbeeld van gewone content tekst. 
+                    Je ziet hoe de verhoudingen en spacing veranderen per stijlvariant,
+                    terwijl de leesbaarheid en hiërarchie altijd optimaal blijven.
+                </p>
+                
+                <div class="atom-flex atom-gap-4 atom-mb-4 atom-items-center">
+                    <div class="ts-logo__container">
+                        <img src="{{ "/assets/logo/logo_cropped.svg" | relative_url }}" alt="TILTSHIFT" class="ts-logo__image">
+                    </div>
+                    <div class="atom-flex-1">
+                        <p class="atom-text-sm atom-mb-1 atom-font-bold">TILTSHIFT</p>
+                        <p class="atom-text-xs atom-text-grey-light atom-m-0">Design System</p>
+                    </div>
+                    <button class="ts-button ts-button--primary">Button Voorbeeld</button>
+                </div>
+                
+                <div class="atom-flex atom-gap-3 atom-justify-center">
+                    <div class="atom-p-3 atom-bg-off-white atom-rounded-md atom-text-center atom-text-sm atom-min-w-24">
+                        Element A
+                    </div>
+                    <div class="atom-p-3 atom-bg-off-white atom-rounded-md atom-text-center atom-text-sm atom-min-w-24">
+                        Element B
+                    </div>
+                    <div class="atom-p-3 atom-bg-off-white atom-rounded-md atom-text-center atom-text-sm atom-min-w-24">
+                        Element C
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- URL Parameters Info -->
+        <details class="molecule-card atom-p-4">
+            <summary class="molecule-title-sm atom-cursor-pointer">
+                Directe links naar stijlvarianten
+            </summary>
+            <div class="atom-mt-3">
+                <p class="atom-text-sm atom-mb-3">
+                    Gebruik deze URL parameters om direct naar een specifieke stijlvariant te linken:
+                </p>
+                <div class="atom-flex atom-gap-3 atom-flex-wrap atom-justify-center">
+                    <div class="ts-code-block">?modifier=normaal</div>
+                    <div class="ts-code-block">?modifier=subtiel</div>
+                    <div class="ts-code-block">?modifier=gedurfd</div>
+                    <div class="ts-code-block">?modifier=modern</div>
+                    <div class="ts-code-block">?modifier=elegant</div>
+                </div>
+            </div>
+        </details>
+    </div>
+</section>
+
+<script>
+    // Theme names mapping
+    const themeNames = {
+        '': 'Normaal',
+        'ts-style-subtiel': 'Subtiel (kleinere fonts)',
+        'ts-style-gedurfd': 'Gedurfd (grote fonts & contrast)',
+        'ts-style-modern': 'Modern (gradient roze→oranje)',
+        'ts-style-elegant': 'Elegant (verfijnde verhoudingen)'
+    };
+    
+    // URL parameter names voor themes
+    const themeParams = {
+        '': 'normaal',
+        'ts-style-subtiel': 'subtiel',
+        'ts-style-gedurfd': 'gedurfd',
+        'ts-style-modern': 'modern',
+        'ts-style-elegant': 'elegant'
+    };
+    
+    // Reverse mapping voor URL naar class
+    const paramToTheme = {
+        'normaal': '',
+        'subtiel': 'ts-style-subtiel',
+        'gedurfd': 'ts-style-gedurfd',
+        'modern': 'ts-style-modern',
+        'elegant': 'ts-style-elegant'
+    };
+    
+    function setTheme(themeClass) {
+        document.body.className = themeClass;
+        
+        // Update URL parameter
+        const url = new URL(window.location);
+        if (themeClass) {
+            url.searchParams.set('modifier', themeParams[themeClass]);
+        } else {
+            url.searchParams.delete('modifier');
+        }
+        window.history.replaceState({}, '', url);
+        
+        // Update current theme indicator
+        const indicator = document.getElementById('current-theme');
+        if (indicator) {
+            indicator.textContent = themeNames[themeClass] || themeClass;
+        }
+        
+        // Update theme selector dropdown
+        const selector = document.getElementById('theme-selector');
+        if (selector) {
+            selector.value = themeClass;
+        }
+        
+        // Subtiele transition voor smooth theme changes
+        document.body.style.transition = 'all 0.2s ease';
+        setTimeout(() => {
+            document.body.style.transition = '';
+        }, 200);
+    }
+    
+    // Load theme from URL on page load
+    function loadThemeFromURL() {
+        const url = new URL(window.location);
+        const modifier = url.searchParams.get('modifier');
+        if (modifier && paramToTheme[modifier]) {
+            setTheme(paramToTheme[modifier]);
+        }
+    }
+    
+    // Initialize theme on page load
+    document.addEventListener('DOMContentLoaded', loadThemeFromURL);
+</script>

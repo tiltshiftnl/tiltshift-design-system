@@ -1,0 +1,85 @@
+<!-- Desktop Navigation Header (hidden on mobile) -->
+<nav class="atom-bg-black atom-fixed atom-flex-between atom-w-full atom-z-100 ts-nav atom-shadow-sm" style="top: 0; display: flex;">
+    <div class="ts-nav__logo">
+        <img src="{{ "/assets/logo/logo_cropped.svg" | relative_url }}" alt="TILTSHIFT" class="atom-h-60">
+    </div>
+    <div class="ts-nav__right" style="display: flex;">
+        <ul class="atom-flex atom-gap-4 atom-m-0 atom-list-none ts-nav__links">
+            {% for item in site.data.navigation.main %}
+            <li>
+                <a href="{{ site.baseurl }}{{ item.url }}" 
+                   class="atom-text-white atom-clickable ts-nav__link{% if page.url == item.url %} ts-nav__link--active{% endif %}">
+                    {{ item.text }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- Mobile Menu Toggle for desktop nav -->
+    <button class="ts-nav__mobile-toggle" onclick="toggleMobileMenu()" style="display: none;">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<!-- Mobile Navigation Header (only visible on mobile) -->
+<nav class="atom-bg-white atom-fixed atom-flex-between atom-w-full atom-z-100 ts-nav ts-nav--mobile" style="display: none;">
+    <div class="ts-nav__logo">
+        <img src="{{ "/assets/logo/logo_cropped.svg" | relative_url }}" alt="TILTSHIFT" class="atom-h-60">
+    </div>
+    <!-- Mobile Menu Toggle -->
+    <button class="ts-nav__mobile-toggle" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="ts-nav__mobile-menu" id="mobileMenu">
+    <div class="ts-nav__mobile-backdrop" onclick="toggleMobileMenu()"></div>
+    <div class="ts-nav__mobile-panel">
+        <button class="ts-nav__mobile-close" onclick="toggleMobileMenu()">×</button>
+        <div class="ts-nav__mobile-links">
+            {% for item in site.data.navigation.main %}
+            <a href="{{ site.baseurl }}{{ item.url }}" onclick="toggleMobileMenu()">{{ item.text }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const toggle = document.querySelector('.ts-nav__mobile-toggle');
+        
+        menu.classList.toggle('ts-nav__mobile-menu--active');
+        toggle.classList.toggle('ts-nav__mobile-toggle--open');
+    }
+    
+    // Handle responsive navigation
+    function handleResponsiveNav() {
+        const desktopNav = document.querySelector('.ts-nav:not(.ts-nav--mobile)');
+        const mobileNav = document.querySelector('.ts-nav--mobile');
+        const desktopToggle = desktopNav.querySelector('.ts-nav__mobile-toggle');
+        const desktopRight = desktopNav.querySelector('.ts-nav__right');
+        
+        if (window.innerWidth <= 768) {
+            // Mobile view
+            desktopNav.style.display = 'none';
+            mobileNav.style.display = 'flex';
+        } else {
+            // Desktop view
+            desktopNav.style.display = 'flex';
+            mobileNav.style.display = 'none';
+            desktopToggle.style.display = 'none';
+            desktopRight.style.display = 'flex';
+        }
+    }
+    
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', handleResponsiveNav);
+    // Handle on resize
+    window.addEventListener('resize', handleResponsiveNav);
+</script>

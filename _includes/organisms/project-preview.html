@@ -1,0 +1,47 @@
+<!-- Project Preview Organism -->
+<div class="organism-showcase">
+    <h3 class="organism-showcase__title">Project Preview</h3>
+    <p class="organism-showcase__description">Complete project preview component. Combineert <code>molecule-card</code>, <code>molecule-image-container</code>, <code>molecule-title</code>, en utility atoms.</p>
+    <div class="atom-grid-auto atom-gap-3 atom-mb-3">
+        <div class="molecule-card ts-project-preview">
+            <div class="molecule-image-container atom-relative ts-project-preview__image ts-project-preview__image--auto-tint">
+                <img src="{{ "/assets/img/Empathy-Map-Gebruiken-Resultaten-Interviews-Verwerken.jpg" | relative_url }}" alt="Project 1">
+                <div class="atom-overlay atom-flex-center ts-project-preview__overlay">
+                    <span class="atom-heading atom-text-white atom-text-lg ts-project-preview__overlay-text">Bekijk Project</span>
+                </div>
+            </div>
+            <div class="atom-p-4 ts-project-preview__content">
+                <div class="atom-flex atom-gap-2 atom-mb-2 ts-project-preview__meta">
+                    <span class="atom-text atom-text-sm atom-m-0 ts-project-preview__client">TILTSHIFT</span>
+                </div>
+                <h4 class="molecule-title-sm ts-project-preview__title">Design Thinking Workshop</h4>
+                <p class="molecule-content ts-project-preview__description">Een uitgebreide workshop waarin teams leren hoe ze human-centered design kunnen toepassen.</p>
+                <div class="atom-flex atom-gap-1 ts-project-preview__tags">
+                    <span class="molecule-tag ts-project-preview__tag">Workshop</span>
+                    <span class="molecule-tag ts-project-preview__tag">Design</span>
+                    <span class="molecule-tag ts-project-preview__tag">UX</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="molecule-card ts-project-preview">
+            <div class="molecule-image-container atom-relative ts-project-preview__image ts-project-preview__image--green-tint">
+                <img src="{{ "/assets/img/Information-Radiator-War-Room-Wand-met-Stickies.jpg" | relative_url }}" alt="Project 2">
+                <div class="atom-overlay atom-flex-center ts-project-preview__overlay">
+                    <span class="atom-heading atom-text-white atom-text-lg ts-project-preview__overlay-text">Meer Info</span>
+                </div>
+            </div>
+            <div class="atom-p-4 ts-project-preview__content">
+                <div class="atom-flex atom-gap-2 atom-mb-2 ts-project-preview__meta">
+                    <span class="atom-text atom-text-sm atom-m-0 ts-project-preview__client">Gemeente</span>
+                </div>
+                <h4 class="molecule-title-sm ts-project-preview__title">Agile War Room</h4>
+                <p class="molecule-content ts-project-preview__description">Opzetten van een fysieke ruimte voor agile samenwerking en transparante project voortgang.</p>
+                <div class="atom-flex atom-gap-1 ts-project-preview__tags">
+                    <span class="molecule-tag ts-project-preview__tag">Agile</span>
+                    <span class="molecule-tag ts-project-preview__tag">Management</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

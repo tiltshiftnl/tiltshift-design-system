@@ -1,0 +1,68 @@
+            <section class="organism-section" id="implementatie">
+                <div class="organism-section__header">
+                    <h2 class="organism-section__title">Implementatie</h2>
+                    <div class="organism-section__description">
+                    <p class="atom-mb-4">Gedetailleerde instructies voor het integreren van het TILTSHIFT Design System in je project.</p>
+                    
+                    <div class="atom-flex atom-gap-4 atom-flex-wrap">
+                        <div class="molecule-card atom-p-4">
+                            <h3 class="molecule-title-sm">📦 CDN Links</h3>
+                            <p class="molecule-content atom-text-sm atom-mb-3">Gebruik deze CDN URLs voor productie:</p>
+                            <div class="ts-code-block">
+                                <button class="copy-button" onclick="copyCode(this)">📋 Copy</button>
+&lt;!-- TILTSHIFT Design System via CDN --&gt;
+&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-tokens.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-base.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-atomic.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-components.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-utilities.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-themes.css"&gt;
+                            </div>
+                        </div>
+                        <div class="molecule-card atom-p-4">
+                            <h3 class="molecule-title-sm">Design Tokens</h3>
+                            <p class="molecule-content atom-text-sm atom-mb-3">Gebruik CSS custom properties:</p>
+                            <div class="ts-code-block">/* Kleuren */
+color: var(--ts-color-primary);
+background: var(--ts-color-primary-dark);
+
+/* Spacing */
+margin: var(--ts-space-3);
+padding: var(--ts-space-2) var(--ts-space-4);
+
+/* Typography */
+font-family: var(--ts-font-primary);
+font-size: var(--ts-text-lg);
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ts-text-block ts-text-block--highlight atom-mt-4">
+                        <h3>Atomic Design in de praktijk</h3>
+                        <p class="atom-mb-3">Begin met atomic klassen voor maximum flexibiliteit:</p>
+                        <div class="ts-code-block">
+                            <button class="copy-button" onclick="copyCode(this)">📋 Copy</button>
+&lt;!-- Start met utilities en atoms --&gt;
+&lt;div class="atom-flex atom-gap-3 atom-p-4"&gt;
+&lt;button class="molecule-button ts-button ts-button--primary"&gt;
+Primaire actie
+&lt;/button&gt;
+&lt;span class="molecule-tag atom-bg-primary atom-text-white"&gt;
+Tag
+&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Bouw op naar complexere molecules --&gt;
+&lt;div class="molecule-card atom-p-4"&gt;
+&lt;h3 class="molecule-title-sm"&gt;Card titel&lt;/h3&gt;
+&lt;p class="molecule-content"&gt;Card content&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- En gebruik organisms voor volledige secties --&gt;
+&lt;section class="ts-project-preview"&gt;
+&lt;!-- Complex component met alle lagen --&gt;
+&lt;/section&gt;
+                        </div>
+                    </div>
+                </div>
+                </section>

@@ -1,0 +1,25 @@
+{% comment %}
+  Show Source Code Include
+  
+  Usage: {% include show-source.html component="logo" type="atoms" %}
+  
+  This will display the source code of the specified include file
+{% endcomment %}
+
+<details class="molecule-card atom-p-4 atom-mt-4">
+    <summary class="molecule-title-sm atom-cursor-pointer atom-mb-3">
+        <span class="atom-text-primary">📄 Broncode</span> 
+        <span class="atom-text-grey-light atom-text-sm">{{ include.component }}.html</span>
+    </summary>
+    <div class="atom-mt-3">
+        <p class="atom-text-sm atom-text-grey-light atom-mb-2">
+            Om deze component te gebruiken, kopieer de onderstaande HTML:
+        </p>
+        <div class="ts-code-block atom-text-xs" style="max-height: 400px; overflow-y: auto;">
+{% raw %}{% include {% endraw %}{{ include.type }}/{{ include.component }}.html {% raw %}%}{% endraw %}
+
+<!-- Of gebruik de HTML direct: -->
+{% capture component_html %}{% include {{ include.type }}/{{ include.component }}.html %}{% endcapture %}{{ component_html | strip | escape }}
+        </div>
+    </div>
+</details>

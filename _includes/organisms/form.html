@@ -1,0 +1,63 @@
+<!-- Forms Organism -->
+<div class="organism-showcase">
+    <h3 class="organism-showcase__title">Forms</h3>
+    <p class="organism-showcase__description">Form components opgebouwd met atomic design. Combineert <code>atom-border</code>, <code>atom-rounded-sm</code>, en input styling.</p>
+    
+    <div class="atom-mb-4">
+        <form class="atom-flex-column atom-gap-4 atom-max-w-sm">
+            <!-- Text Input -->
+            <div class="atom-flex-column atom-gap-1">
+                <label class="atom-text atom-font-semibold atom-text-sm" for="name">Naam</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    class="atom-border atom-rounded-sm atom-p-2 molecule-input"
+                    placeholder="Voer je naam in">
+            </div>
+            
+            <!-- Email Input -->
+            <div class="atom-flex-column atom-gap-1">
+                <label class="atom-text atom-font-semibold atom-text-sm" for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    class="atom-border atom-rounded-sm atom-p-2 molecule-input"
+                    placeholder="je@email.nl">
+            </div>
+            
+            <!-- Select -->
+            <div class="atom-flex-column atom-gap-1">
+                <label class="atom-text atom-font-semibold atom-text-sm" for="service">Service</label>
+                <select id="service" class="atom-border atom-rounded-sm atom-p-2 molecule-input">
+                    <option>Kies een service</option>
+                    <option>Design Thinking</option>
+                    <option>Softwareontwikkeling</option>
+                    <option>Digitale Transformatie</option>
+                </select>
+            </div>
+            
+            <!-- Textarea -->
+            <div class="atom-flex-column atom-gap-1">
+                <label class="atom-text atom-font-semibold atom-text-sm" for="message">Bericht</label>
+                <textarea 
+                    id="message" 
+                    class="atom-border atom-rounded-sm atom-p-2 molecule-input" 
+                    rows="4"
+                    placeholder="Vertel ons over je project..."></textarea>
+            </div>
+            
+            <!-- Checkbox -->
+            <div class="atom-flex atom-gap-2 atom-items-start">
+                <input type="checkbox" id="newsletter" class="molecule-checkbox">
+                <label class="atom-text atom-text-sm" for="newsletter">
+                    Ik wil graag updates ontvangen over TILTSHIFT projecten
+                </label>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="molecule-button ts-button ts-button--primary">
+                Verstuur Bericht
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+/* TILTSHIFT Legacy Utility Classes - Use atomic classes instead where possible */
+
+/* Legacy aliases for atomic classes - deprecated, use atom-* equivalents */
+
+/* Navigation spacing utilities */
+.mt-nav {
+  margin-top: 4rem; /* Standard nav height */
+}
+
+@media (min-width: 1024px) {
+  .mt-nav {
+    margin-top: 70px; /* Desktop nav height */
+  }
+}
+
+.pt-nav {
+  padding-top: 4rem; /* Standard nav height */
+}
+
+@media (min-width: 1024px) {
+  .pt-nav {
+    padding-top: 70px; /* Desktop nav height */
+  }
+}
+
+/* Project-specific utilities not covered by atomic design system */
+
+/* Mix blend mode utilities */
+.mix-blend-plus-lighter { mix-blend-mode: plus-lighter; }
+.mix-blend-multiply { mix-blend-mode: multiply; }
+.mix-blend-normal { mix-blend-mode: normal; }
+.mix-blend-screen { mix-blend-mode: screen; }
+.mix-blend-overlay { mix-blend-mode: overlay; }
+.mix-blend-darken { mix-blend-mode: darken; }
+.mix-blend-lighten { mix-blend-mode: lighten; }
+.mix-blend-color-dodge { mix-blend-mode: color-dodge; }
+.mix-blend-color-burn { mix-blend-mode: color-burn; }
+.mix-blend-hard-light { mix-blend-mode: hard-light; }
+.mix-blend-soft-light { mix-blend-mode: soft-light; }
+.mix-blend-difference { mix-blend-mode: difference; }
+.mix-blend-exclusion { mix-blend-mode: exclusion; }
+.mix-blend-hue { mix-blend-mode: hue; }
+.mix-blend-saturation { mix-blend-mode: saturation; }
+.mix-blend-color { mix-blend-mode: color; }
+.mix-blend-luminosity { mix-blend-mode: luminosity; }
+
+

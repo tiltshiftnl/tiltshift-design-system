@@ -1,0 +1,49 @@
+# TILTSHIFT Company Information
+name: TILTSHIFT
+legal_name: Tiltshift B.V.
+tagline: Digitale transformatie voor de publieke sector
+
+# Contact Information
+contact:
+  phone: 
+    display: "020 722 02 07"
+    href: "+31207220207"
+  email: info@tiltshift.nl
+  
+# Company Registration
+registration:
+  kvk: "68994222"
+  btw: "NL857680237B01"
+
+# Addresses
+addresses:
+  visiting:
+    name: Vechtclub XL
+    street: Europalaan 2 B
+    postal_code: 3526 KS
+    city: Utrecht
+    maps_url: https://goo.gl/maps/example
+    
+  postal:
+    name: Tiltshift B.V.
+    street: Strawinskylaan 11
+    postal_code: 2102 CM
+    city: Heemstede
+
+# Social Media
+social:
+  linkedin:
+    url: https://www.linkedin.com/company/tiltshift/
+    label: LinkedIn
+  github:
+    url: https://github.com/tiltshift-nl
+    label: GitHub
+
+# Footer Links
+footer_links:
+  - text: Privacy
+    url: /privacy
+  - text: Informatiebeveiliging
+    url: /security
+  - text: Contact
+    url: /contact
