@@ -232,7 +232,7 @@ input:focus, textarea:focus, select:focus {
   h3 { font-size: var(--ts-text-md); }
   
   body {
-    margin-top: var(--ts-nav-height-mobile);
+    /* margin-top: var(--ts-nav-height-mobile); */
   }
   
   main {
