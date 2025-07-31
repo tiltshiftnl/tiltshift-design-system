@@ -1,0 +1,30 @@
+<div class="ts-cta">
+    {% include atoms/heading.html 
+       text="Neem contact op" 
+       level=3 
+       class="ts-cta__title" %}
+    <div class="ts-cta__body">
+        <div class="ts-cta__image">
+{% include atoms/image.html 
+   src="/assets/mensen/Johan-Groenen-Partner-Tiltshift.jpg"
+   alt="Johan Groenen" %}
+        </div>
+        <div class="ts-cta__right">
+            <div class="ts-cta__text">
+                {% include atoms/text.html 
+                   text="Tijdens een vrijblijvend intake- en adviesgesprek bespreken we jouw situatie en hoe we daarbij kunnen helpen." %}
+            </div>
+            <div>
+                <p class="a-m-0">
+                    {% include atoms/link.html 
+                       text=site.data.company.contact.phone.display 
+                       href=site.data.company.contact.phone.href %}
+                    <br>
+                    {% include atoms/link.html 
+                       text="johan@tiltshift.nl" 
+                       href="mailto:johan@tiltshift.nl" %}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

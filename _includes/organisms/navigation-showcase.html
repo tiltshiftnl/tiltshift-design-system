@@ -1,0 +1,27 @@
+{%- comment -%}
+Navigation Showcase - Simple preview wrapper
+Shows navigation in its natural responsive state
+{%- endcomment -%}
+
+<div class="a-border a-rounded-md">
+    <div class="a-bg-gray-100 a-p-2 a-text-sm a-text-gray-600 a-rounded-t-md">
+        Navigation Preview (resize browser to see responsive behavior)
+    </div>
+    <div class="navigation-preview-container a-overflow-visible">
+        {% include organisms/navigation.html %}
+    </div>
+</div>
+
+<style>
+/* Simple container for preview */
+.navigation-preview-container {
+    position: relative;
+    min-height: 60px;
+}
+
+/* Remove fixed positioning from preview navigation */
+.navigation-preview-container .o-navigation__desktop,
+.navigation-preview-container .o-navigation__mobile {
+    position: relative !important;
+}
+</style>

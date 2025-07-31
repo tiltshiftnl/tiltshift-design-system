@@ -2,8 +2,6 @@
 main:
   - text: Home
     url: /
-  - text: Utilities
-    url: /utilities/
   - text: Atoms
     url: /atoms/
   - text: Molecules

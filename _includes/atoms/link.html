@@ -1,0 +1,28 @@
+{%- comment -%}
+Link Atom
+Parameters:
+- text: Link text (required)
+- href: Link URL (default: #)
+- size: Text size (xs, sm, md, lg, default: inherit)
+- color: Link color (e.g., primary-dark, white, default: primary-dark)
+- target: Link target (e.g., _blank)
+- rel: Link rel attribute
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign link_href = include.href | default: "#" -%}
+{%- assign link_color = include.color | default: "primary-dark" -%}
+
+{%- capture link_classes -%}
+a-clickable
+{%- if include.size %} a-text-{{ include.size }}{%- endif -%}
+{%- unless link_color == "inherit" %} a-text-{{ link_color }}{%- endunless -%}
+{%- if include.class %} {{ include.class }}{%- endif -%}
+{%- endcapture -%}
+
+<a href="{{ link_href }}" 
+   class="{{ link_classes | strip }}"
+   {%- if include.target %} target="{{ include.target }}"{% endif -%}
+   {%- if include.rel %} rel="{{ include.rel }}"{% endif -%}>
+  {{- include.text -}}
+</a>

@@ -1,10 +1,13 @@
-<!-- Logo Atom -->
-<div class="molecule-card atom-p-4 atom-mb-4">
-    <h3 class="molecule-title-sm">Logo</h3>
-    <p class="molecule-content atom-mb-3">Het Tiltshift logo in verschillende groottes. Combineer met utility classes voor positioning.</p>
-    <div class="atom-flex atom-gap-4 atom-items-center atom-mb-3 atom-p-3 atom-bg-off-white atom-rounded-md">
-        <img src="{{ "/assets/logo/logo_cropped.svg" | relative_url }}" alt="TILTSHIFT" class="ts-logo__image ts-logo__image--small">
-        <img src="{{ "/assets/logo/logo_cropped.svg" | relative_url }}" alt="TILTSHIFT" class="ts-logo__image">
-        <img src="{{ "/assets/logo/logo_cropped.svg" | relative_url }}" alt="TILTSHIFT" class="ts-logo__image ts-logo__image--large">
-    </div>
+<div class="a-flex a-gap-4 a-items-center a-p-3 a-bg-off-white a-rounded-md a-flex-wrap">
+    <!-- Small Logo (24px) -->
+    {% include atoms/logo-atom.html size="small" %}
+
+    <!-- Medium Logo (36px) -->
+    {% include atoms/logo-atom.html size="medium" %}
+
+    <!-- Large Logo (48px) -->
+    {% include atoms/logo-atom.html size="large" %}
+
+    <!-- Extra Large Logo (140px) -->
+    {% include atoms/logo-atom.html size="xlarge" %}
 </div>

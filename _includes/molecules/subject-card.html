@@ -1,0 +1,74 @@
+{%- comment -%}
+Subject Card Molecule
+Parameters:
+- icon: Icon name or emoji for the subject
+- title: Subject title
+- description: Subject description
+- category: Subject category (e.g., "Workshop", "Development", "Design")
+- duration: Duration or time indication (optional)
+- tags: Array of tag strings (optional)
+- href: Link URL (optional - if provided, card becomes clickable)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{% if include.href %}
+<a href="{{ include.href }}" class="m-subject-card a-card a-clickable {{ include.class }}">
+{% else %}
+<div class="m-subject-card a-card {{ include.class }}">
+{% endif %}
+    {% assign subject_icon = include.icon | default: "" %}
+    {% assign subject_title = include.title | default: "Subject Title" %}
+    {% assign subject_description = include.description | default: "Subject description" %}
+    {% assign subject_category = include.category | default: "Category" %}
+    
+    <div class="m-subject-card__content a-p-4">
+        <div class="m-subject-card__header a-mb-3">
+            {% if subject_icon and subject_icon != "" %}
+            <div class="a-flex a-items-start a-gap-3">
+                <div class="m-subject-card__icon a-text-2xl">
+                    {{ subject_icon }}
+                </div>
+                <div class="a-flex-1">
+            {% endif %}
+                    {% include atoms/text.html 
+                       text=subject_category
+                       size="xs" 
+                       color="primary"
+                       weight="bold"
+                       class="m-subject-card__category a-uppercase a-tracking-wide a-mb-1" %}
+                    {% include atoms/heading.html 
+                       text=subject_title 
+                       level=4 
+                       class="m-subject-card__title" %}
+            {% if subject_icon and subject_icon != "" %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        {% include atoms/text.html 
+           text=subject_description 
+           class="m-subject-card__description a-mb-3" %}
+        
+        {% if include.duration %}
+        <div class="m-subject-card__meta a-flex a-items-center a-gap-2 a-mb-3">
+            {% include atoms/text.html 
+               text=include.duration
+               size="sm" 
+               color="gray-600" %}
+        </div>
+        {% endif %}
+        
+        {% if include.tags %}
+        <div class="m-subject-card__tags a-flex a-gap-1 a-flex-wrap">
+            {% for tag in include.tags %}
+                {% include atoms/tag.html text=tag size="sm" %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+{% if include.href %}
+</a>
+{% else %}
+</div>
+{% endif %}

@@ -1,0 +1,39 @@
+<div class="a-space-y-3">
+    <!-- Default Link -->
+    {% include atoms/link.html 
+       text="Standaard link" 
+       href="/contact" %}
+    
+    <!-- External Link -->
+    {% include atoms/link.html 
+       text="Externe link (opent in nieuw tabblad)" 
+       href="https://tiltshift.nl" 
+       target="_blank" 
+       rel="noopener" %}
+    
+    <!-- Different Sizes -->
+    <div class="a-flex a-gap-4 a-items-center">
+        {% include atoms/link.html 
+           text="Extra klein" 
+           size="xs" %}
+        
+        {% include atoms/link.html 
+           text="Klein" 
+           size="sm" %}
+        
+        {% include atoms/link.html 
+           text="Medium" 
+           size="md" %}
+        
+        {% include atoms/link.html 
+           text="Groot" 
+           size="lg" %}
+    </div>
+    
+    <!-- Different Colors -->
+    <div class="a-flex a-gap-4 a-bg-black a-p-3 a-rounded">
+        {% include atoms/link.html 
+           text="Witte link op donkere achtergrond" 
+           color="white" %}
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{%- comment -%}
+Organization Grid Organism
+Uses organization-card molecules in a responsive grid layout
+Parameters:
+- columns: Number of columns (default: 3)
+- class: Additional CSS classes
+- limit: Maximum number of organizations to show (optional)
+{%- endcomment -%}
+
+{%- assign grid_columns = include.columns | default: 3 -%}
+{%- assign org_limit = include.limit | default: site.data.organizations.organizations.size -%}
+
+<div class="o-organization-grid ts-grid ts-grid--cols-{{ grid_columns }} {{ include.class }}">
+    {% for organization in site.data.organizations.organizations limit: org_limit %}
+        {% include molecules/organization-card.html 
+           name=organization.name
+           type=organization.type
+           description=organization.description
+           logo=organization.logo
+           href=organization.href
+        %}
+    {% endfor %}
+</div>

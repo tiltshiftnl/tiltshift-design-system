@@ -1,0 +1,19 @@
+<!-- Page Intro Showcase - Standaard variant -->
+{% include molecules/page-intro.html 
+   title="Welkom bij het Design System"
+   description="Dit is een voorbeeld van een page-intro molecule. Het wordt gebruikt voor consistente pagina headers door het hele design system." %}
+
+<!-- Zonder description -->
+<div class="a-mt-6">
+{% include molecules/page-intro.html 
+   title="Alleen een titel"
+   title_element="h2" %}
+</div>
+
+<!-- Met lange description -->
+<div class="a-mt-6">
+{% include molecules/page-intro.html 
+   title="Uitgebreide Introductie"
+   description="Deze page-intro heeft een langere beschrijving om te laten zien hoe de component omgaat met meer tekst. De component zorgt voor de juiste spacing, typography en responsive gedrag. Perfect voor het introduceren van complexe onderwerpen of secties binnen je applicatie."
+   title_element="h2" %}
+</div>

@@ -1,0 +1,62 @@
+{%- comment -%}
+Subject Grid Organism
+Uses subject-card molecules in a responsive grid layout
+Parameters:
+- subjects: Array of subject objects (optional - uses default subjects if not provided)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+<div class="o-subject-grid ts-grid ts-grid--cols-3 {{ include.class }}">
+    {% if include.subjects %}
+        {% for subject in include.subjects %}
+        <div class="o-subject-grid__item">
+            {% include molecules/subject-card.html 
+               icon=subject.icon
+               title=subject.title
+               description=subject.description
+               category=subject.category
+               duration=subject.duration
+               tags=subject.tags
+               href=subject.href
+            %}
+        </div>
+        {% endfor %}
+    {% else %}
+        {%- comment -%} Default subjects for demo purposes {%- endcomment -%}
+        <div class="o-subject-grid__item">
+            {% assign tags1 = "Innovatie,Co-creatie,Strategie" | split: "," %}
+            {% include molecules/subject-card.html 
+               icon=""
+               title="Design Thinking workshops"
+               description="Samen met teams ontdekken we kansen en creëren we innovatieve oplossingen voor complexe uitdagingen."
+               category="Workshop"
+               duration="1-3 dagen"
+               tags=tags1
+            %}
+        </div>
+        
+        <div class="o-subject-grid__item">
+            {% assign tags2 = "Validatie,UX,Testing" | split: "," %}
+            {% include molecules/subject-card.html 
+               icon=""
+               title="Prototyping en user testing"
+               description="Snel ideeën valideren door werkende prototypes te bouwen en direct te testen met echte gebruikers."
+               category="Design"
+               duration="2-4 weken"
+               tags=tags2
+            %}
+        </div>
+        
+        <div class="o-subject-grid__item">
+            {% assign tags3 = "Scrum,DevOps,CI/CD" | split: "," %}
+            {% include molecules/subject-card.html 
+               icon=""
+               title="Agile softwareontwikkeling"
+               description="Flexibel en iteratief bouwen met continue feedback loops voor optimale resultaten."
+               category="Development"
+               duration="Doorlopend"
+               tags=tags3
+            %}
+        </div>
+    {% endif %}
+</div>

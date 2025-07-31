@@ -1,0 +1,37 @@
+{%- comment -%}
+Heading Atom
+Parameters:
+- level: Heading level (1-6, default: 3)
+- text: The heading text
+- size: Size variant (xs, sm, md, lg, xl, 2xl, default: based on level)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign heading_level = include.level | default: 3 -%}
+{%- assign tag = "h" | append: heading_level -%}
+
+{%- unless include.size -%}
+  {%- case heading_level -%}
+    {%- when 1 -%}
+      {%- assign heading_size = "2xl" -%}
+    {%- when 2 -%}
+      {%- assign heading_size = "xl" -%}
+    {%- when 3 -%}
+      {%- assign heading_size = "lg" -%}
+    {%- when 4 -%}
+      {%- assign heading_size = "md" -%}
+    {%- else -%}
+      {%- assign heading_size = "sm" -%}
+  {%- endcase -%}
+{%- else -%}
+  {%- assign heading_size = include.size -%}
+{%- endunless -%}
+
+{%- capture heading_classes -%}
+a-heading a-text-{{ heading_size }}
+{%- if include.class %} {{ include.class }}{%- endif -%}
+{%- endcapture -%}
+
+<{{ tag }} class="{{ heading_classes | strip }}">
+  {{- include.text -}}
+</{{ tag }}>

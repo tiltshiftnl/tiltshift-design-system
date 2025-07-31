@@ -300,7 +300,7 @@ body {
 }
 
 /* Form molecules */
-.molecule-input {
+.m-input {
     font-family: var(--ts-font-primary);
     font-size: var(--ts-text-sm);
     border: 1px solid var(--ts-color-grey);
@@ -308,19 +308,19 @@ body {
     width: 100%;
 }
 
-.molecule-input:focus {
+.m-input:focus {
     outline: none;
     border-color: var(--ts-color-primary);
     box-shadow: 0 0 0 2px rgba(30, 89, 166, 0.1);
 }
 
-.molecule-checkbox {
+.m-checkbox {
     width: 1rem;
     height: 1rem;
     accent-color: var(--ts-color-primary);
 }
 
-.molecule-alert {
+.m-alert {
     display: block;
 }
 

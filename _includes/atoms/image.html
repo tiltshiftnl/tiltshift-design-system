@@ -1,0 +1,15 @@
+{%- comment -%}
+Image Atom
+Parameters:
+- src: Image source URL (required)
+- alt: Alt text for accessibility (required)
+- class: Additional CSS classes
+- loading: Loading strategy (lazy/eager, default: lazy)
+{%- endcomment -%}
+{%- capture image_classes -%}
+{%- if include.class %}{{ include.class }}{% endif -%}
+{%- endcapture -%}
+{%- capture image_tag -%}
+<img src="{{ include.src }}" alt="{{ include.alt }}"{%- if image_classes != "" %} class="{{ image_classes | strip }}"{% endif %} loading="{{ include.loading | default: 'lazy' }}">
+{%- endcapture -%}
+{{- image_tag | strip -}}

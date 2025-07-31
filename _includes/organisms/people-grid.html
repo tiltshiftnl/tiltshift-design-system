@@ -1,0 +1,19 @@
+{%- comment -%}
+People Grid Organism
+Uses people-card molecules in a responsive grid layout
+Parameters:
+- columns: Number of columns (default: 3)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign grid_columns = include.columns | default: 3 -%}
+
+<div class="o-people-grid ts-grid ts-grid--cols-{{ grid_columns }} {{ include.class }}">
+    {% for member in site.data.team.members %}
+        {% include molecules/people-card.html 
+           name=member.name
+           role=member.role
+           image=member.image
+        %}
+    {% endfor %}
+</div>

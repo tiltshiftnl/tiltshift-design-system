@@ -1,0 +1,56 @@
+{%- comment -%}
+Color Swatch Atom
+Parameters:
+- color: Hex color code (e.g., "#E64544")
+- name: Color name (e.g., "Primary Red")
+- description: Color description/usage (optional)
+- text_color: Text color override (optional - auto-calculated if not provided)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign swatch_color = include.color | default: "#000000" -%}
+{%- assign swatch_name = include.name | default: "Color" -%}
+{%- assign swatch_description = include.description | default: "" -%}
+
+{%- comment -%} 
+Auto-determine text color based on background if not provided 
+WCAG AA requires:
+- 4.5:1 for normal text
+- 3:1 for large text (18pt+ or 14pt+ bold)
+
+Contrast ratios:
+- #E64544 (Primary Red) on white: 3.3:1 (needs dark text)
+- #1E59A6 (Primary Blue) on white: 4.8:1 (good with white text)
+- #1D1621 (Black) on white: 18.1:1 (good with white text)
+{%- endcomment -%}
+{%- if include.text_color -%}
+    {%- assign text_color = include.text_color -%}
+{%- else -%}
+    {%- case swatch_color -%}
+        {%- when "#1D1621" -%}
+            {%- assign text_color = "#FFFFFF" -%}
+        {%- when "#E64544" -%}
+            {%- assign text_color = "#FFFFFF" -%}
+        {%- when "#1E59A6" -%}
+            {%- assign text_color = "#FFFFFF" -%}
+        {%- when "#FFFFFF" -%}
+            {%- assign text_color = "#1D1621" -%}
+        {%- else -%}
+            {%- assign text_color = "#FFFFFF" -%}
+    {%- endcase -%}
+{%- endif -%}
+
+<div class="a-color-swatch a-rounded-md a-overflow-hidden a-min-h-24 {{ include.class }}" 
+     style="background-color: {{ swatch_color }}; color: {{ text_color }};">
+    <div class="a-p-4">
+        <div class="a-font-bold a-mb-1" style="color: {{ text_color }};">
+            {{ swatch_name }}
+        </div>
+        <code class="a-font-mono a-text-sm a-font-bold" style="color: {{ text_color }}; background: none;">{{ swatch_color }}</code>
+        {% if swatch_description != "" %}
+            <div class="a-text-sm a-mt-2" style="color: {{ text_color }}; opacity: 0.85;">
+                {{ swatch_description }}
+            </div>
+        {% endif %}
+    </div>
+</div>

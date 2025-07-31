@@ -1,0 +1,32 @@
+{%- comment -%}
+Separator Atom
+Parameters:
+- type: Separator type (slash, pipe, dot, arrow, default: slash)
+- size: Text size (xs, sm, md, lg, default: sm)
+- color: Color class (e.g., grey, primary-dark, default: grey)
+- spacing: Add horizontal spacing (boolean, default: true)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign separator_type = include.type | default: "slash" -%}
+{%- assign separator_size = include.size | default: "sm" -%}
+{%- assign separator_color = include.color | default: "grey" -%}
+{%- assign separator_spacing = include.spacing | default: true -%}
+
+{%- capture separator_content -%}
+  {%- case separator_type -%}
+    {%- when "slash" -%}/
+    {%- when "pipe" -%}|
+    {%- when "dot" -%}•
+    {%- when "arrow" -%}→
+    {%- else -%}/
+  {%- endcase -%}
+{%- endcapture -%}
+
+{%- capture separator_classes -%}
+a-text-{{ separator_size }} a-text-{{ separator_color }}
+{%- if separator_spacing %} a-mx-1{%- endif -%}
+{%- if include.class %} {{ include.class }}{%- endif -%}
+{%- endcapture -%}
+
+<span class="{{ separator_classes | strip }}">{{ separator_content | strip }}</span>

@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/tiltshift-tokens.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/tiltshift-base.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/tiltshift-atomic.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/tiltshift-components.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/tiltshift-utilities.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/tiltshift-themes.css" | relative_url }}">
-</head>
-<body>
-    {% include nav.html %}
+---
+layout: wrapper
+---
+{% include nav.html %}
 
-    <!-- Main Content Container -->
-    <div class="molecule-container molecule-container-lg atom-py-4" style="padding-top: 100px; min-height: calc(100vh - 400px);">
-        {{ content }}
-    </div>
-    
-    <!-- Footer with proper spacing -->
-    <div class="atom-mt-5">
-        {% include footer.html %}
-    </div>
-</body>
-</html>
+<div class="a-container a-container-lg" style="padding-top:200px">
+    {{ content }}
+</div>
+
+<div class="a-mt-5">
+    {% include footer.html %}
+</div>

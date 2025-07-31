@@ -1,51 +1,86 @@
-            <section class="organism-section" id="introductie">
-                <div class="organism-section__header">
-                    <h2 class="organism-section__title">Wat is het TILTSHIFT Design System?</h2>
-                    <div class="organism-section__description">
-                    <p class="atom-mb-3">Het TILTSHIFT Design System is een modulaire component library gebaseerd op <strong>atomic design principes</strong>. Het helpt teams om snel, consistente en toegankelijke digitale interfaces te bouwen voor overheidsdiensten en publieke organisaties.</p>
+            <section class="o-section" id="introductie">
+                {% include molecules/page-intro.html 
+                   title="Wat is het TILTSHIFT Design System?"
+                   title_element="h2" %}
+                    <div class="o-section__content">
+                    <p class="a-mb-3">Het TILTSHIFT Design System is een modulaire component library gebaseerd op <strong>atomic design principes</strong>. Het helpt teams om snel, consistente en toegankelijke digitale interfaces te bouwen voor overheidsdiensten en publieke organisaties.</p>
                     
-                    <div class="atom-flex atom-gap-4 atom-flex-wrap atom-mb-4 atom-justify-center">
-                        <div class="molecule-card atom-p-4" style="flex: 1 1 280px; max-width: 320px;">
-                            <h3 class="molecule-title-sm">Atomic Design</h3>
-                            <p class="molecule-content atom-m-0">Componenten zijn opgebouwd vanuit de kleinste onderdelen (atomen) naar complexe interfaces (organismen).</p>
+                    <div class="a-flex a-gap-4 a-flex-wrap a-mb-4 a-justify-center">
+                        <div class="a-card a-p-4" style="flex: 1 1 280px; max-width: 320px;">
+                            <h3 class="a-title-sm">Atomic Design</h3>
+                            <p class="a-content a-m-0">Componenten zijn opgebouwd vanuit de kleinste onderdelen (atomen) naar complexe interfaces (organismen).</p>
                         </div>
-                        <div class="molecule-card atom-p-4" style="flex: 1 1 280px; max-width: 320px;">
-                            <h3 class="molecule-title-sm">Design Tokens</h3>
-                            <p class="molecule-content atom-m-0">Centrale waardes voor kleuren, spacing, typography en andere designbeslissingen.</p>
+                        <div class="a-card a-p-4" style="flex: 1 1 280px; max-width: 320px;">
+                            <h3 class="a-title-sm">Design Tokens</h3>
+                            <p class="a-content a-m-0">Centrale waardes voor kleuren, spacing, typography en andere designbeslissingen.</p>
                         </div>
-                        <div class="molecule-card atom-p-4" style="flex: 1 1 280px; max-width: 320px;">
-                            <h3 class="molecule-title-sm">Responsive</h3>
-                            <p class="molecule-content atom-m-0">Alle componenten werken perfect op desktop, tablet en mobiele apparaten.</p>
+                        <div class="a-card a-p-4" style="flex: 1 1 280px; max-width: 320px;">
+                            <h3 class="a-title-sm">Responsive</h3>
+                            <p class="a-content a-m-0">Alle componenten werken perfect op desktop, tablet en mobiele apparaten.</p>
                         </div>
-                        <div class="molecule-card atom-p-4" style="flex: 1 1 280px; max-width: 320px;">
-                            <h3 class="molecule-title-sm">Toegankelijk</h3>
-                            <p class="molecule-content atom-m-0">Gebouwd volgens WCAG richtlijnen met focus op inclusief design.</p>
+                        <div class="a-card a-p-4" style="flex: 1 1 280px; max-width: 320px;">
+                            <h3 class="a-title-sm">Toegankelijk</h3>
+                            <p class="a-content a-m-0">Gebouwd volgens WCAG richtlijnen met focus op inclusief design.</p>
                         </div>
                     </div>
 
-                    <div class="ts-text-block ts-text-block--highlight atom-mb-4">
+                    <div class="ts-text-block ts-text-block--highlight a-mb-4">
                         <h3>Hoe werkt Atomic Design?</h3>
-                        <div class="atom-flex atom-gap-4 atom-mt-3 atom-flex-wrap atom-justify-center">
-                            <div class="atom-text-center atom-min-w-32">
-                                <div class="atom-text-2xl atom-mb-1"></div>
+                        <div class="a-flex a-gap-4 a-mt-3 a-flex-wrap a-justify-center">
+                            <div class="a-text-center a-min-w-32">
+                                <div class="a-text-2xl a-mb-1"></div>
                                 <strong>Utilities</strong>
-                                <p class="atom-text-sm atom-m-0">Basis CSS klassen</p>
+                                <p class="a-text-sm a-m-0">Basis CSS klassen</p>
                             </div>
-                            <div class="atom-text-center atom-min-w-32">
+                            <div class="a-text-center a-min-w-32">
                                 <strong>Atoms</strong>
-                                <p class="atom-text-sm atom-m-0">Buttons, labels, inputs</p>
+                                <p class="a-text-sm a-m-0">Buttons, labels, inputs</p>
                             </div>
-                            <div class="atom-text-center atom-min-w-32">
-                                <div class="atom-text-2xl atom-mb-1"></div>
+                            <div class="a-text-center a-min-w-32">
+                                <div class="a-text-2xl a-mb-1"></div>
                                 <strong>Molecules</strong>
-                                <p class="atom-text-sm atom-m-0">Cards, forms, navigation</p>
+                                <p class="a-text-sm a-m-0">Cards, forms, navigation</p>
                             </div>
-                            <div class="atom-text-center atom-min-w-32">
-                                <div class="atom-text-2xl atom-mb-1"></div>
+                            <div class="a-text-center a-min-w-32">
+                                <div class="a-text-2xl a-mb-1"></div>
                                 <strong>Organisms</strong>
-                                <p class="atom-text-sm atom-m-0">Headers, footers, sections</p>
+                                <p class="a-text-sm a-m-0">Headers, footers, sections</p>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="ts-text-block a-mb-4">
+                        <h3>Entity Patterns</h3>
+                        <p class="a-mb-3">Het TILTSHIFT Design System kent drie core entiteiten, elk met eigen gestandaardiseerde componenten:</p>
+                        
+                        <div class="a-flex a-gap-4 a-flex-wrap a-mb-4 a-justify-center">
+                            <div class="a-card a-p-4" style="flex: 1 1 280px; max-width: 320px;">
+                                <h4 class="a-title-sm">People</h4>
+                                <p class="a-content a-text-sm a-mb-2">Team members, medewerkers, contactpersonen</p>
+                                <ul class="a-text-sm a-m-0">
+                                    <li><code>people-card</code> (molecule)</li>
+                                    <li><code>people-grid</code> (organism)</li>
+                                </ul>
+                            </div>
+                            <div class="a-card a-p-4" style="flex: 1 1 280px; max-width: 320px;">
+                                <h4 class="a-title-sm">Projects</h4>
+                                <p class="a-content a-text-sm a-mb-2">Projecten, case studies, portfolio items</p>
+                                <ul class="a-text-sm a-m-0">
+                                    <li><code>project-card</code> (molecule)</li>
+                                    <li><code>project-grid</code> (organism)</li>
+                                </ul>
+                            </div>
+                            <div class="a-card a-p-4" style="flex: 1 1 280px; max-width: 320px;">
+                                <h4 class="a-title-sm">Organizations</h4>
+                                <p class="a-content a-text-sm a-mb-2">Opdrachtgevers, partners, stakeholders</p>
+                                <ul class="a-text-sm a-m-0">
+                                    <li><code>organization-card</code> (molecule)</li>
+                                    <li><code>organization-grid</code> (organism)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p class="a-text-sm a-text-gray-600">Deze patronen zorgen voor consistente weergave van de belangrijkste data-entiteiten door het hele systeem.</p>
                     </div>
                 </div>
             </section>

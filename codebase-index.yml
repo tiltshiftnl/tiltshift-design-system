@@ -1,0 +1,474 @@
+# Tiltshift Design System Codebase Index
+# This file provides a comprehensive map of the codebase structure for AI/LLM navigation
+
+project:
+  name: Tiltshift Design System
+  type: Jekyll-based Atomic Design System
+  description: A comprehensive design system following atomic design principles
+  architecture: 
+    - Atoms (smallest building blocks)
+    - Molecules (simple component combinations)
+    - Organisms (complex components)
+    - Templates (page layouts)
+    - Pages (final implementations)
+
+architecture_principles:
+  atomic_design:
+    description: Components are organized in increasing complexity
+    hierarchy:
+      atoms: Indivisible building blocks (buttons, labels, typography)
+      molecules: Simple combinations of atoms working together
+      organisms: Complex components that form distinct sections
+      templates: Page-level layout structures
+      pages: Specific instances of templates with real content
+  
+  entity_patterns:
+    description: Consistent patterns for displaying core data entities
+    entities:
+      people: Team members, employees, contacts
+      projects: Work examples, case studies, portfolio items  
+      organizations: Clients, partners, stakeholders
+      subjects: Topics, services, expertise areas
+    pattern_structure:
+      card: Molecule-level component for single entity display
+      grid: Organism-level component for multiple entity layout
+    naming_convention: "[entity]-card.html and [entity]-grid.html"
+    
+  snippet_based:
+    description: Use Jekyll _includes for all components
+    approach:
+      - Every component is a reusable snippet
+      - Parameters allow customization without duplication
+      - Includes can be nested for composition
+    
+  dry_principle:
+    description: "Don't Repeat Yourself - single source of truth"
+    implementation:
+      - Reusable includes with parameters
+      - Shared CSS classes and utilities
+      - Data files for repeated content
+      - Component composition over duplication
+    
+  yagni_principle:
+    description: "You Aren't Gonna Need It - build only what's needed"
+    implementation:
+      - No speculative features
+      - Start simple, extend when required
+      - Remove unused code promptly
+      - Focus on actual use cases
+    
+  solid_principles:
+    single_responsibility: Each component has one clear purpose
+    open_closed: Components are open for extension via parameters, closed for modification
+    liskov_substitution: Components can be replaced with similar ones without breaking
+    interface_segregation: Components expose only necessary parameters
+    dependency_inversion: Higher-level components depend on abstractions (includes)
+    
+  self_hosting:
+    description: The design system must use its own components
+    requirements:
+      - Documentation pages use the actual components
+      - Examples are live implementations
+      - The design system website IS the living styleguide
+      - No external CSS frameworks or component libraries
+  
+  accessibility:
+    description: All components must be WCAG compliant
+    requirements:
+      - Use semantic HTML (buttons for actions, links for navigation)
+      - No clickable divs - use proper interactive elements
+      - Proper ARIA labels where needed
+      - Keyboard navigation support
+      - Screen reader friendly
+
+component_structure:
+  examples_vs_includes:
+    examples:
+      purpose: Show users how to implement components in their projects
+      location: Within documentation pages (atoms.md, molecules.md, etc.)
+      characteristics:
+        - Static HTML showing the final rendered output
+        - Include all necessary classes and structure
+        - Copy-paste ready for users
+        - No Jekyll-specific syntax
+    
+    includes:
+      purpose: Actual component implementations for internal use
+      location: _includes/ directory
+      characteristics:
+        - Accept parameters for customization
+        - Use Jekyll liquid syntax
+        - Compose other includes
+        - Single source of truth
+    
+    relationship:
+      - Examples MUST match the output of includes
+      - Includes are parameterized versions of examples
+      - Documentation shows both the example AND the include usage
+      - Changes to includes automatically update all usages
+
+structure:
+  data:
+    location: _data/
+    files:
+      - company.yml: Company information and metadata
+      - elements.yml: Component definitions for atoms, molecules, and organisms
+      - navigation.yml: Site navigation structure
+      - team.yml: Team member information
+      - subjects.yml: Subject/topic information for expertise areas
+
+  components:
+    atoms:
+      location: _includes/atoms/
+      purpose: Basic building blocks of the design system
+      files:
+        # Brand Identity
+        - logo.html: Logo showcase displaying different logo sizes
+          uses: [logo-atom]
+        - logo-atom.html: Reusable logo atom with parameters (size: small/medium/large/xlarge, alt, src)
+        
+        # Typography
+        - heading.html: Reusable heading atom with parameters (level: 1-6, size, text, class)
+        - text.html: Reusable text atom with parameters (text, size, element, color, class)
+        - typography.html: Complete typography system (headings and body text)
+        
+        # Interactive Elements
+        - link.html: Reusable link atom with parameters (text, href, size, color, target, rel, class)
+        - button.html: Reusable button atom with parameters (variant, size, text, href)
+        - buttons.html: Button showcase displaying different button variations
+          uses: [button]
+        - interactive-elements.html: Basic interactive elements (WCAG compliant buttons/links)
+        
+        # Media & Icons
+        - icon.html: Reusable SVG icon atom with parameters (type, size, color, class)
+        - image.html: Reusable image atom with parameters (src, alt, loading, class)
+        - image-container-showcase.html: Responsive image containers showcase
+        
+        # Layout & Structure
+        - container.html: Responsive container voor content met size variants
+        - separator.html: Reusable separator atom with parameters (type, size, color, spacing, class)
+        
+        # Metadata & Tags
+        - tag.html: Reusable tag/label atom with parameters (variant, size, text, element)
+        - labels.html: Labels & Tags showcase displaying different styles
+          uses: [tag]
+        
+        # Colors
+        - color-swatch.html: Reusable color swatch atom with parameters (color, name, description, text_color)
+        - color-swatch-showcase.html: Color swatch showcase displaying brand colors
+          uses: [color-swatch]
+        
+        # Social
+        - social-link.html: Reusable social link atom with parameters (platform, href, size, variant, class)
+        - social-links.html: Social media links showcase displaying different social link variants
+          uses: [social-link]
+
+    molecules:
+      location: _includes/molecules/
+      purpose: Simple combinations of atoms
+      files:
+        # Navigation
+        - breadcrumbs.html: Navigation path component
+          uses: [link, separator, text]
+        
+        # Content Blocks
+        - page-intro.html: Reusable page introduction with parameters (title, description, title_element)
+          uses: [heading, text]
+        - text-block.html: Flexible text block with parameters (title, subtitle, content, list_items, variant)
+          uses: [heading, text]
+        - text-block-showcase.html: Text block showcase showing default and highlight variants
+        - blockquote.html: Quote display component
+          uses: [text]
+        
+        # Cards
+        - project-card.html: Reusable project card with parameters (image, title, description, tags, etc.)
+          uses: [image, text, heading, tag]
+        - people-card.html: Reusable people card with parameters (name, role, image)
+          uses: [image, heading, text]
+        - organization-card.html: Reusable organization card with parameters (logo, name, type, description)
+          uses: [image, text, heading]
+        - subject-card.html: Reusable subject card with parameters (icon, title, description, category, duration, tags)
+          uses: [text, heading, tag]
+        
+        # Contact & CTAs
+        - cta.html: Call-to-action components
+          uses: [heading, image, text, link]
+        - contact-info.html: Contact information display
+          uses: [heading, icon, link, text]
+        - map.html: Embedded map component
+
+    organisms:
+      location: _includes/organisms/
+      purpose: Complex, complete components
+      files:
+        # Header & Navigation
+        - navigation.html: Responsive navigation component (no positioning - use wrapper for fixed)
+          uses: [logo-atom]
+        - navigation-showcase.html: Simple preview wrapper showing responsive navigation behavior
+          uses: [navigation]
+        - hero.html: Hero section with background images
+          uses: [image, heading, text, button]
+        
+        # Content Layouts
+        - project-grid.html: Grid layout using project-card molecules
+          uses: [project-card]
+        - people-grid.html: Grid layout using people-card molecules
+          uses: [people-card]
+        - organization-grid.html: Grid layout using organization-card molecules
+          uses: [organization-card]
+        - subject-grid.html: Grid layout using subject-card molecules
+          uses: [subject-card]
+        
+        # Footer
+        - footer.html: Complete website footer
+          uses: [logo-atom, heading, text, link, social-link]
+
+    sections:
+      location: _includes/sections/
+      purpose: Page sections and demonstrations
+      files:
+        - brand-guidelines.html: Brand guideline documentation
+        - footer.html: Footer section implementation
+        - implementatie.html: Implementation guide
+        - introductie.html: Introduction section
+        - quick-start.html: Quick start guide
+        - theme-demo.html: Theme demonstration
+        - utilities-examples.html: Utility class examples
+
+  layouts:
+    location: _layouts/
+    files:
+      - default.html: Base layout template
+      - menu.html: Menu/navigation layout
+      - wrapper.html: Content wrapper layout
+
+  pages:
+    location: pages/
+    files:
+      - atoms.md: Atoms documentation page
+      - molecules.md: Molecules documentation page
+      - organisms.md: Organisms documentation page
+      - menu.md: Menu/navigation page
+
+  styling:
+    location: assets/css/
+    architecture: Modular CSS system
+    files:
+      - styles.css: Main compiled styles
+      - tiltshift-atomic.css: Atomic design classes
+      - tiltshift-base.css: Base/reset styles
+      - tiltshift-components.css: Component-specific styles
+      - tiltshift-themes.css: Theme variations
+      - tiltshift-tokens.css: Design tokens (colors, spacing, etc.)
+      - tiltshift-utilities.css: Utility classes
+
+  assets:
+    fonts:
+      location: assets/fonts/AtkinsonHyperlegible/
+      description: Atkinson Hyperlegible font family for accessibility
+    
+    images:
+      location: assets/img/
+      types:
+        - Project images
+        - Workshop photos
+        - Documentation images
+    
+    logos:
+      location: assets/logo/
+      files:
+        - logo_cropped.svg
+        - logo_transparent_cropped.svg
+    
+    team_photos:
+      location: assets/mensen/
+      description: Team member photographs
+
+conventions:
+  naming:
+    atoms: Prefixed with 'a-' (e.g., a-button, a-text)
+    molecules: Descriptive names without specific prefix
+    organisms: Full component names
+    utilities: Functional names (e.g., u-flex, u-gap-2)
+  
+  css_classes:
+    atomic: a-[component-name]
+    modifiers: [component]-[modifier] (e.g., a-button-primary)
+    utilities: u-[property]-[value] (e.g., u-mt-4, u-text-center)
+    responsive: [breakpoint]:[class] (e.g., md:u-flex)
+
+key_patterns:
+  component_composition:
+    - Atoms are standalone elements
+    - Molecules combine 2-5 atoms
+    - Organisms combine molecules and atoms
+    - Sections combine organisms for page regions
+    - All higher-level components MUST use lower-level components (no hardcoded HTML)
+  
+  theming:
+    - CSS custom properties for colors
+    - Theme classes on root elements
+    - Automatic contrast adjustments
+  
+  responsive_design:
+    - Mobile-first approach
+    - Breakpoint utilities
+    - Flexible grid system
+
+development:
+  build_command: jekyll build
+  serve_command: jekyll serve
+  run_script: ./run.sh
+  framework: Jekyll 4.x
+  
+common_tasks:
+  add_component:
+    1. Create HTML file in appropriate _includes/ directory
+    2. Add component definition to _data/elements.yml
+    3. Create/update CSS in appropriate stylesheet
+    4. Add example to relevant page (atoms.md, molecules.md, etc.)
+    5. Ensure the include accepts parameters for customization
+    6. Document both the static example AND the include usage
+  
+  modify_theme:
+    1. Update CSS custom properties in tiltshift-tokens.css
+    2. Test with theme-demo section
+    3. Ensure contrast ratios are maintained
+  
+  add_utility:
+    1. Add utility class to tiltshift-utilities.css
+    2. Document in utilities-examples.html
+    3. Consider responsive variants
+
+implementation_examples:
+  correct_component_pattern:
+    include_file: |
+      <!-- _includes/atoms/button.html -->
+      {%- assign button_href = include.href | default: '#' -%}
+      {%- assign button_variant = include.variant | default: 'primary' -%}
+      {%- assign button_size = include.size | default: 'medium' -%}
+      
+      {%- capture button_classes -%}
+      a-button a-clickable a-hoverable ts-button ts-button--{{ button_variant }}
+      {%- if button_size == 'small' %} ts-button--small{%- endif -%}
+      {%- if button_size == 'large' %} ts-button--large{%- endif -%}
+      {%- if include.class %} {{ include.class }}{%- endif -%}
+      {%- endcapture -%}
+      
+      <a href="{{ button_href }}" 
+         class="{{ button_classes | strip }}"
+         {%- if include.target %} target="{{ include.target }}"{% endif -%}
+         {%- if include.rel %} rel="{{ include.rel }}"{% endif -%}>
+         {{- include.text -}}
+      </a>
+    
+    usage_in_documentation: |
+      <!-- In atoms.md -->
+      ## Button Example
+      
+      ### Static Example (for users to copy):
+      ```html
+      <a href="/contact" class="a-button a-clickable a-hoverable a-button-primary">
+        Contact Us
+      </a>
+      ```
+      
+      ### Include Usage (for internal use):
+      ```liquid
+      {% include atoms/button.html 
+         href="/contact" 
+         text="Contact Us" 
+         class="a-button-primary" %}
+      ```
+    
+    usage_in_molecules: |
+      <!-- _includes/molecules/cta.html -->
+      <div class="m-cta">
+        <h3>{{ include.title }}</h3>
+        <p>{{ include.description }}</p>
+        {% include atoms/button.html 
+           href=include.button_href 
+           text=include.button_text 
+           class="a-button-primary" %}
+      </div>
+  
+  refactoring_examples:
+    consolidation: |
+      <!-- BEFORE: Separate tag and label components with duplicated logic -->
+      <!-- tags.html -->
+      <span class="a-tag a-bg-primary a-text-white">Primary Tag</span>
+      <!-- labels.html -->
+      <span class="a-tag a-text a-bg-primary a-text-white ts-label ts-label--primary">Primary</span>
+      
+      <!-- AFTER: Single reusable tag atom -->
+      {% include atoms/tag.html text="Primary Tag" variant="primary" %}
+      {% include atoms/tag.html text="Primary" variant="primary" %}
+    
+    component_hierarchy: |
+      <!-- BEFORE: Organism using hardcoded HTML -->
+      <!-- _includes/organisms/project-grid.html -->
+      <div class="m-project-preview-card__tags">
+        <span class="a-tag">Python</span>
+        <span class="a-tag">Machine Learning</span>
+      </div>
+      
+      <!-- AFTER: Organism using atom components -->
+      <div class="m-project-preview-card__tags">
+        {% include atoms/tag.html text="Python" %}
+        {% include atoms/tag.html text="Machine Learning" %}
+      </div>
+      
+      <!-- BETTER: Organism using molecule components -->
+      <div class="o-project-grid">
+        {% include molecules/project-preview-card.html 
+           title="Project Title"
+           description="Project description"
+           tags=project_tags %}
+      </div>
+    
+    flexible_positioning: |
+      <!-- BEFORE: Fixed positioning hardcoded in organism CSS -->
+      .o-navigation__desktop {
+        position: fixed;
+        top: 0;
+        z-index: 100;
+      }
+      
+      <!-- AFTER: Clean separation of concerns -->
+      <!-- Navigation component has NO positioning -->
+      <nav class="o-navigation">
+        <div class="o-navigation__desktop">...</div>
+      </nav>
+      
+      <!-- Fixed positioning via wrapper when needed -->
+      <div class="a-fixed a-top-0 a-w-full a-z-100">
+        {% include organisms/navigation.html %}
+      </div>
+      
+      <!-- Preview without any wrapper -->
+      {% include organisms/navigation.html %}
+  
+  anti_patterns:
+    duplication: |
+      <!-- WRONG: Duplicating HTML instead of using includes -->
+      <div class="m-card">
+        <a href="#" class="a-button a-clickable a-hoverable">Click me</a>
+      </div>
+      <div class="m-other-card">
+        <a href="#" class="a-button a-clickable a-hoverable">Click me too</a>
+      </div>
+    
+    over_engineering: |
+      <!-- WRONG: Creating components that aren't needed yet -->
+      {% include atoms/super-flexible-widget.html 
+         mode="standard"
+         layout="horizontal"
+         theme="default"
+         responsive="true"
+         animation="fade"
+         ... 20 more parameters nobody uses %}
+    
+    external_dependencies: |
+      <!-- WRONG: Using external frameworks -->
+      <div class="btn btn-primary">Bootstrap Button</div>
+      <button class="mdc-button">Material Button</button>

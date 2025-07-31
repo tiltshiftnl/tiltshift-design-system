@@ -1,0 +1,20 @@
+<div class="a-space-y-4">
+    <!-- Default text block -->
+{% assign list_items = "Design Thinking workshops,Prototyping en user testing,Agile softwareontwikkeling" | split: "," %}
+{% include molecules/text-block.html 
+   title="Onze aanpak"
+   subtitle="Gebruikersgericht en data-gedreven"
+   content="We geloven in co-creatie met eindgebruikers en het gebruik van data voor betere besluitvorming. Onze agile aanpak zorgt voor snelle iteraties en continue verbetering."
+   list_items=list_items %}
+
+    <!-- Highlight variant -->
+{% include molecules/text-block.html 
+   title="Belangrijk bericht"
+   content="Dit is een gemarkeerd tekstblok voor belangrijke informatie of call-to-actions."
+   variant="highlight" %}
+
+    <!-- Without subtitle -->
+{% include molecules/text-block.html 
+   title="Services"
+   content="Wij bieden verschillende services aan om uw digitale transformatie te ondersteunen." %}
+</div>

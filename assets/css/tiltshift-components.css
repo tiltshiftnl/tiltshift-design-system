@@ -33,7 +33,7 @@
 
 /* Button Component - Refactored with Atomic Design */
 .ts-button {
-  /* Extends molecule-button base */
+  /* Extends m-button base */
   padding: var(--ts-space-2) var(--ts-space-3);
   font-size: var(--ts-text-md);
   font-weight: 600;
@@ -64,7 +64,7 @@
 
 /* Label Component */
 .ts-label {
-  /* Extends molecule-tag atom-text */
+  /* Extends m-tag a-text */
   background-color: var(--ts-color-label-default);
   color: var(--ts-color-black);
   padding: var(--ts-space-0) var(--ts-space-xs);
@@ -73,16 +73,16 @@
 }
 
 .ts-label--primary {
-  /* Uses atom-bg-primary atom-text-white */
+  /* Uses a-bg-primary a-text-white */
 }
 
 .ts-label--secondary {
   background-color: var(--ts-color-label-info);
-  /* Uses atom-text-black */
+  /* Uses a-text-black */
 }
 
 .ts-label--dark {
-  /* Uses atom-bg-black atom-text-white */
+  /* Uses a-bg-black a-text-white */
 }
 
 /* =============================================================================
@@ -93,6 +93,7 @@
 .ts-grid {
   display: grid;
   gap: var(--ts-space-4);
+  margin-bottom: var(--ts-space-6);
 }
 
 .ts-grid--cols-1 { grid-template-columns: 1fr; }
@@ -123,33 +124,33 @@
    ============================================================================= */
 
 /* Section Organism */
-.organism-section {
+.o-section {
   padding: var(--ts-space-3) 0;
 }
 
-.organism-section--compact {
+.o-section--compact {
   padding: var(--ts-space-2) 0;
 }
 
-.organism-section--large {
+.o-section--large {
   padding: var(--ts-space-4) 0;
 }
 
-.organism-section__header {
+.o-section__header {
   text-align: center;
   margin-bottom: var(--ts-space-4);
 }
 
-.organism-section__title {
-  /* Extends molecule-title-lg */
+.o-section__title {
+  /* Extends m-title-lg */
   font-size: var(--ts-text-2xl);
   font-weight: 700;
   margin-bottom: var(--ts-space-2);
   color: var(--ts-color-text);
 }
 
-.organism-section__description {
-  /* Extends molecule-content */
+.o-section__description {
+  /* Extends m-content */
   font-size: var(--ts-text-lg);
   color: var(--ts-color-text);
   opacity: 0.8;
@@ -187,23 +188,45 @@
 }
 
 /* Component Showcase */
-.organism-showcase {
+.o-showcase {
   margin-bottom: var(--ts-space-4);
 }
 
-.organism-showcase__title {
+.o-showcase__title {
   font-size: var(--ts-text-lg);
   font-weight: 600;
   margin-bottom: var(--ts-space-2);
   color: var(--ts-color-text);
 }
 
-.organism-showcase__description {
+.o-showcase__description {
   font-size: var(--ts-text-md);
   color: var(--ts-color-text);
   opacity: 0.8;
   margin-bottom: var(--ts-space-3);
   line-height: 1.5;
+}
+
+.o-showcase__container {
+  position: relative;
+  background-color: var(--ts-color-white);
+}
+
+.o-showcase__toggle {
+  position: absolute;
+  top: var(--ts-space-2);
+  right: var(--ts-space-2);
+  z-index: 10;
+}
+
+.o-showcase__preview {
+  min-height: 100px;
+}
+
+.o-showcase__code pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 /* Alert Component */
@@ -240,21 +263,21 @@
 
 /* Header Component */
 .ts-header {
-  /* Uses atom-py-4 */
+  /* Uses a-py-4 */
   text-align: left;
 }
 
 .ts-header__container {
-  /* Uses molecule-container-lg atom-px-5 */
+  /* Uses m-container-lg a-px-5 */
 }
 
 .ts-header__title {
-  /* Uses molecule-title atom-text-2xl */
+  /* Uses m-title a-text-2xl */
   font-weight: 800;
 }
 
 .ts-header__subtitle {
-  /* Uses molecule-content atom-text-lg */
+  /* Uses m-content a-text-lg */
   margin-bottom: var(--ts-space-3);
 }
 
@@ -283,19 +306,19 @@
 }
 
 .ts-text-block__title {
-  /* Extends molecule-title */
+  /* Extends m-title */
   font-size: var(--ts-text-xl);
   font-weight: 800;
 }
 
 .ts-text-block__subtitle {
-  /* Extends molecule-content */
+  /* Extends m-content */
   font-size: var(--ts-text-lg);
   margin-bottom: var(--ts-space-3);
 }
 
 .ts-text-block__content {
-  /* Extends molecule-content */
+  /* Extends m-content */
 }
 
 .ts-text-block__content p {
@@ -318,13 +341,13 @@
 
 /* Blockquote Component */
 .ts-blockquote {
-  /* Uses atom-max-w-sm atom-mx-auto atom-p-3 */
+  /* Uses a-max-w-sm a-mx-auto a-p-3 */
   margin-bottom: var(--ts-space-4);
   border-left: var(--ts-border-accent) solid var(--ts-color-primary);
 }
 
 .ts-blockquote__text {
-  /* Extends atom-text atom-text-primary */
+  /* Extends a-text a-text-primary */
   display: block;
   font-style: italic;
   font-size: var(--ts-text-lg);
@@ -332,7 +355,7 @@
 }
 
 .ts-blockquote__author {
-  /* Extends atom-text atom-text-sm */
+  /* Extends a-text a-text-sm */
   display: block;
   text-align: right;
   font-style: normal;
@@ -345,7 +368,7 @@
 
 /* Card Component */
 .ts-card {
-  /* Extends molecule-card */
+  /* Extends m-card */
   box-shadow: var(--ts-shadow-md);
   transition: box-shadow 0.3s ease;
 }
@@ -355,23 +378,23 @@
 }
 
 .ts-card__image {
-  /* Extends molecule-image-container */
+  /* Extends m-image-container */
   height: 200px;
 }
 
-/* Image styling handled by molecule-image-container */
+/* Image styling handled by m-image-container */
 
 .ts-card__content {
-  /* Uses atom-p-4 */
+  /* Uses a-p-4 */
 }
 
 .ts-card__title {
-  /* Uses molecule-title-sm */
+  /* Uses m-title-sm */
   font-weight: 800;
 }
 
 .ts-card__text {
-  /* Uses molecule-content atom-m-0 */
+  /* Uses m-content a-m-0 */
 }
 
 .ts-card__footer {
@@ -382,7 +405,7 @@
 
 /* Project Preview Component */
 .ts-project-preview {
-  /* Uses molecule-card atom-block atom-rounded-lg atom-shadow-sm atom-overflow-hidden */
+  /* Uses m-card a-block a-rounded-lg a-shadow-sm a-overflow-hidden */
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
@@ -394,14 +417,14 @@
 }
 
 .ts-project-preview__image {
-  /* Uses molecule-image-container atom-relative */
+  /* Uses m-image-container a-relative */
   height: 240px;
   overflow: hidden;
   position: relative;
 }
 
 .ts-project-preview__image img {
-  /* Uses molecule-image-container img */
+  /* Uses m-image-container img */
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -421,7 +444,7 @@
 }
 
 [class*="ts-project-preview__image--"][class*="-tint"]::before {
-  /* Uses atom-overlay atom-pointer-none atom-z-1 mix-blend-plus-lighter */
+  /* Uses a-overlay a-pointer-none a-z-1 mix-blend-plus-lighter */
   content: '';
   background: linear-gradient(135deg, 
     rgba(var(--tint-r), var(--tint-g), var(--tint-b), 1) 0%, 
@@ -429,7 +452,7 @@
 }
 
 [class*="ts-project-preview__image--"][class*="-tint"]::after {
-  /* Uses atom-overlay atom-pointer-none atom-z-1 mix-blend-multiply */
+  /* Uses a-overlay a-pointer-none a-z-1 mix-blend-multiply */
   content: '';
   background: linear-gradient(135deg, 
     rgba(var(--tint-r), var(--tint-g), var(--tint-b), 0.6) 0%, 
@@ -524,7 +547,7 @@
 }
 
 .ts-project-preview__overlay {
-  /* Uses atom-overlay atom-flex-center */
+  /* Uses a-overlay a-flex-center */
   position: absolute;
   top: 0;
   left: 0;
@@ -563,31 +586,31 @@
 }
 
 .ts-project-preview__overlay-text {
-  /* Uses atom-heading atom-text-white atom-text-lg */
+  /* Uses a-heading a-text-white a-text-lg */
   color: var(--ts-color-white);
   font-size: var(--ts-text-lg);
   font-weight: var(--ts-font-bold);
 }
 
 .ts-project-preview__content {
-  /* Uses atom-p-4 */
+  /* Uses a-p-4 */
 }
 
 .ts-project-preview__meta {
-  /* Uses atom-flex atom-gap-2 atom-mb-2 */
+  /* Uses a-flex a-gap-2 a-mb-2 */
   flex-wrap: wrap;
 }
 
 .ts-project-preview__client {
-  /* Uses atom-text atom-text-sm atom-m-0 */
+  /* Uses a-text a-text-sm a-m-0 */
 }
 
 .ts-project-preview__title {
-  /* Uses molecule-title-sm */
+  /* Uses m-title-sm */
 }
 
 .ts-project-preview__description {
-  /* Uses molecule-content */
+  /* Uses m-content */
   margin-bottom: var(--ts-space-3);
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -596,12 +619,12 @@
 }
 
 .ts-project-preview__tags {
-  /* Uses atom-flex atom-gap-1 */
+  /* Uses a-flex a-gap-1 */
   flex-wrap: wrap;
 }
 
 .ts-project-preview__tag {
-  /* Uses molecule-tag */
+  /* Uses m-tag */
   background-color: var(--ts-color-grey);
 }
 
@@ -628,34 +651,77 @@
 
 /* Person Block Component */
 .ts-person-block {
-  /* Uses atom-block atom-clickable */
+  /* Uses a-block a-clickable */
   text-decoration: none;
   color: inherit;
 }
 
 .ts-person-block:hover {
-  /* Uses atom-hoverable */
+  /* Uses a-hoverable */
 }
 
 .ts-person-block__image {
-  /* Uses atom-rounded-md atom-overflow-hidden atom-mx-auto atom-mb-3 */
+  /* Uses a-rounded-md a-overflow-hidden a-mx-auto a-mb-3 */
   width: 160px;
   height: 160px;
 }
 
 .ts-person-block__image img {
-  /* Uses molecule-image-container img */
+  /* Uses m-image-container img */
 }
 
 .ts-person-block__name {
-  /* Uses atom-heading atom-text-lg atom-mb-1 */
+  /* Uses a-heading a-text-lg a-mb-1 */
   text-align: center;
 }
 
 .ts-person-block__type {
-  /* Uses atom-text atom-text-sm atom-m-0 */
+  /* Uses a-text a-text-sm a-m-0 */
   text-align: center;
   color: var(--ts-color-text);
+}
+
+/* Organization Block Component */
+.ts-organization-block {
+  text-decoration: none;
+  color: inherit;
+  padding: var(--ts-space-4);
+  border: 1px solid var(--ts-color-gray-200);
+  border-radius: var(--ts-radius-md);
+  transition: all 0.2s ease;
+  background: var(--ts-color-white);
+}
+
+.ts-organization-block:hover {
+  border-color: var(--ts-color-primary);
+  box-shadow: var(--ts-shadow-sm);
+}
+
+.m-organization-card__logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-organization-card__logo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.m-organization-card__type {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.m-organization-card__name {
+  font-weight: 600;
+}
+
+.m-organization-card__description {
+  line-height: 1.5;
 }
 
 /* CTA Component */
@@ -674,39 +740,39 @@
 }
 
 .ts-cta__body {
-  /* Uses atom-flex */
+  /* Uses a-flex */
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
 }
 
 .ts-cta__image {
-  /* Uses atom-flex */
+  /* Uses a-flex */
   margin-right: var(--ts-space-3);
   margin-bottom: var(--ts-space-3);
   flex-shrink: 0;
 }
 
 .ts-cta__image img {
-  /* Uses atom-rounded-md */
+  /* Uses a-rounded-md */
   width: 160px;
   height: 160px;
   object-fit: cover;
 }
 
 .ts-cta__right {
-  /* Uses atom-flex-column */
+  /* Uses a-flex-column */
   align-items: flex-start;
   justify-content: space-between;
   flex: 1;
 }
 
 .ts-cta__right p {
-  /* Uses atom-text atom-text-md atom-m-0 */
+  /* Uses a-text a-text-md a-m-0 */
 }
 
 .ts-cta__right a {
-  /* Uses atom-text-primary-dark atom-text-md atom-font-bold */
+  /* Uses a-text-primary-dark a-text-md a-font-bold */
   text-decoration: none;
 }
 
@@ -715,16 +781,104 @@
 }
 
 .ts-cta__text {
-  /* Uses atom-mb-2 */
+  /* Uses a-mb-2 */
 }
 
 /* =============================================================================
    NAVIGATION COMPONENTS
    ============================================================================= */
 
-/* Navigation Component */
+/* Navigation Organism - CSS-only responsive navigation */
+.o-navigation {
+  position: relative;
+}
+
+/* Desktop Navigation */
+.o-navigation__desktop {
+  width: 100%;
+  background-color: var(--ts-color-black);
+  box-shadow: var(--ts-shadow-sm);
+  display: block;
+  overflow: visible;
+}
+
+.o-navigation__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--ts-space-3) var(--ts-space-4);
+  overflow: visible;
+  height: 80px; /* Fixed height for black bar */
+}
+
+.o-navigation__logo {
+  position: relative;
+  z-index: 10;
+  align-self: flex-start; /* Align to top of container */
+}
+
+.o-navigation__logo img {
+  height: auto;
+  vertical-align: top;
+  margin-top: -20px; /* Pull logo up to overlap properly */
+}
+
+.o-navigation__links {
+  display: flex;
+  gap: var(--ts-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.o-navigation__link {
+  color: var(--ts-color-white);
+  text-decoration: none;
+  padding: var(--ts-space-2) var(--ts-space-3);
+  transition: opacity 0.2s ease;
+}
+
+.o-navigation__link:hover,
+.o-navigation__link--active {
+  opacity: 0.8;
+}
+
+/* Mobile Navigation */
+.o-navigation__mobile {
+  width: 100%;
+  background-color: var(--ts-color-white);
+  box-shadow: var(--ts-shadow-sm);
+  display: none;
+}
+
+.o-navigation__hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ts-space-2);
+  text-decoration: none;
+  color: var(--ts-color-black);
+  transition: opacity 0.2s ease;
+}
+
+.o-navigation__hamburger:hover {
+  opacity: 0.7;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .o-navigation__desktop {
+    display: none;
+  }
+  
+  .o-navigation__mobile {
+    display: block;
+  }
+}
+
+/* Legacy Navigation Component (for backwards compatibility) */
 .ts-nav {
-  /* Uses atom-bg-white atom-fixed atom-flex-between atom-w-full atom-z-100 */
+  /* Uses a-bg-white a-fixed a-flex-between a-w-full a-z-100 */
   height: var(--ts-nav-height-mobile);
   padding: 0 var(--ts-space-3);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -737,7 +891,7 @@
 }
 
 .ts-nav__logo {
-  /* Uses atom-flex atom-items-center */
+  /* Uses a-flex a-items-center */
   height: 100%;
 }
 
@@ -760,7 +914,7 @@
 }
 
 .ts-nav__right {
-  /* Uses atom-flex atom-items-center */
+  /* Uses a-flex a-items-center */
   display: none;
 }
 
@@ -771,11 +925,11 @@
 }
 
 .ts-nav__links {
-  /* Uses atom-flex atom-gap-4 atom-m-0 atom-list-none */
+  /* Uses a-flex a-gap-4 a-m-0 a-list-none */
 }
 
 .ts-nav__link {
-  /* Uses atom-text-primary-dark atom-clickable */
+  /* Uses a-text-primary-dark a-clickable */
   font-weight: var(--ts-font-weight-bold);
   transition: all 0.2s ease;
 }
@@ -789,7 +943,7 @@
 
 /* Mobile Menu Toggle Button */
 .ts-nav__mobile-toggle {
-  /* Uses atom-hidden on desktop, atom-flex on mobile */
+  /* Uses a-hidden on desktop, a-flex on mobile */
   display: none;
   background: none;
   border: none;
@@ -995,6 +1149,70 @@
   height: 28px;
 }
 
+/* Social Link Atom - Vierkant met ronde hoeken zoals in de footer */
+.ts-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--ts-radius-sm);
+  background-color: var(--ts-color-primary-dark);
+  color: var(--ts-color-white);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.ts-social-link:hover {
+  background-color: var(--ts-color-primary);
+  transform: translateY(-2px);
+}
+
+/* Size variants */
+.ts-social-link--small {
+  width: 40px;
+  height: 40px;
+}
+
+.ts-social-link--large {
+  width: 56px;
+  height: 56px;
+}
+
+/* Style variants */
+.ts-social-link--secondary {
+  background-color: var(--ts-color-secondary);
+}
+
+.ts-social-link--secondary:hover {
+  background-color: var(--ts-color-secondary-dark);
+}
+
+.ts-social-link--transparent {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ts-social-link--transparent:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Icon sizing */
+.ts-social-link__icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.ts-social-link--small .ts-social-link__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.ts-social-link--large .ts-social-link__icon {
+  width: 26px;
+  height: 26px;
+}
+
 /* Contact Info Block Component */
 .ts-contact-info {
   background-color: var(--ts-color-off-white);
@@ -1085,7 +1303,7 @@
    ============================================================================= */
 
 /* Hero Component */
-.ts-hero {
+.o-hero {
   position: relative;
   min-height: 400px;
   display: flex;
@@ -1095,7 +1313,7 @@
   background-color: var(--ts-color-primary-dark);
 }
 
-.ts-hero__background {
+.o-hero__background {
   position: absolute;
   top: 0;
   left: 0;
@@ -1104,14 +1322,14 @@
   z-index: 0;
 }
 
-.ts-hero__background img {
+.o-hero__background img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.3;
 }
 
-.ts-hero__content {
+.o-hero__content {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -1120,23 +1338,24 @@
   margin: 0 auto;
 }
 
-.ts-hero__title {
+.o-hero__title {
   font-family: var(--ts-font-heading);
   font-size: var(--ts-text-3xl);
   font-weight: var(--ts-font-bold);
   color: var(--ts-color-white);
   margin-bottom: var(--ts-space-4);
+  margin-top: var(--ts-space-8); /* Extra ruimte boven de titel */
   line-height: 1.2;
 }
 
-.ts-hero__subtitle {
+.o-hero__subtitle {
   font-size: var(--ts-text-lg);
   color: var(--ts-color-white);
   margin-bottom: var(--ts-space-6);
   opacity: 0.9;
 }
 
-.ts-hero__actions {
+.o-hero__actions {
   display: flex;
   gap: var(--ts-space-3);
   justify-content: center;
@@ -1144,21 +1363,21 @@
 }
 
 /* Hero Variants */
-.ts-hero--centered {
+.o-hero--centered {
   min-height: 500px;
 }
 
-.ts-hero--compact {
+.o-hero--compact {
   min-height: 200px;
   background-color: var(--ts-color-off-white);
 }
 
-.ts-hero--compact .ts-hero__title {
+.o-hero--compact .o-hero__title {
   font-size: var(--ts-text-2xl);
   color: var(--ts-color-text);
 }
 
-.ts-hero--compact .ts-hero__subtitle {
+.o-hero--compact .o-hero__subtitle {
   color: var(--ts-color-text-secondary);
 }
 
@@ -1344,6 +1563,7 @@
 .ts-grid {
   display: grid;
   gap: var(--ts-space-4);
+  margin-bottom: var(--ts-space-6);
 }
 
 .ts-grid--cols-1 { grid-template-columns: 1fr; }
@@ -1468,4 +1688,57 @@
     margin-bottom: 0;
     flex-direction: row;
   }
+}
+
+/* =============================================================================
+   Project Card Component
+   ============================================================================= */
+
+.m-project-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.m-project-card:hover {
+  transform: translateY(-2px);
+}
+
+.m-project-card__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.m-project-card__overlay {
+  background-color: var(--ts-color-primary-dark);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-project-card:hover .m-project-card__overlay,
+.m-project-card:focus-within .m-project-card__overlay {
+  opacity: 0.9;
+}
+
+.m-project-card__content {
+  background-color: var(--ts-color-white);
+}
+
+.m-project-card__meta {
+  color: var(--ts-color-text-muted);
+}
+
+.m-project-card__title {
+  margin-bottom: var(--ts-space-2);
+}
+
+.m-project-card__description {
+  margin-bottom: var(--ts-space-3);
+}
+
+.m-project-card__tags {
+  margin-top: auto;
 }

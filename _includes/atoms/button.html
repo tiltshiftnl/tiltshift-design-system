@@ -1,0 +1,29 @@
+{%- comment -%}
+Button Atom Component
+Parameters:
+- href: Link URL (default: '#')
+- text: Button text (required)
+- variant: Button variant (primary/secondary, default: primary)
+- size: Button size (small/medium/large, default: medium)
+- class: Additional CSS classes
+- target: Link target attribute
+- rel: Link rel attribute
+{%- endcomment -%}
+
+{%- assign button_href = include.href | default: '#' -%}
+{%- assign button_variant = include.variant | default: 'primary' -%}
+{%- assign button_size = include.size | default: 'medium' -%}
+
+{%- capture button_classes -%}
+a-button a-clickable a-hoverable ts-button ts-button--{{ button_variant }}
+{%- if button_size == 'small' %} ts-button--small{%- endif -%}
+{%- if button_size == 'large' %} ts-button--large{%- endif -%}
+{%- if include.class %} {{ include.class }}{%- endif -%}
+{%- endcapture -%}
+
+<a href="{{ button_href }}" 
+   class="{{ button_classes | strip }}"
+   {%- if include.target %} target="{{ include.target }}"{% endif -%}
+   {%- if include.rel %} rel="{{ include.rel }}"{% endif -%}>
+   {{- include.text -}}
+</a>

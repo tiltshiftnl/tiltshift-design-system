@@ -1,0 +1,44 @@
+{%- comment -%}
+  Social Link Atom
+  
+  Parameters:
+  - platform: The social media platform (github, linkedin, twitter, mastodon, facebook, instagram)
+  - href: The URL to link to
+  - size: Size variant (small, medium, large) - default: medium
+  - variant: Style variant (primary, secondary, transparent) - default: primary
+  - class: Additional CSS classes
+  - target: Link target (default: _blank for external links)
+  - rel: Link relationship (default: noopener noreferrer for external links)
+{%- endcomment -%}
+
+{%- assign platform = include.platform | downcase -%}
+{%- assign href = include.href | default: '#' -%}
+{%- assign size = include.size | default: 'medium' -%}
+{%- assign variant = include.variant | default: 'primary' -%}
+{%- assign target = include.target | default: '_blank' -%}
+{%- assign rel = include.rel | default: 'noopener noreferrer' -%}
+
+{%- capture aria_label -%}
+  {%- case platform -%}
+    {%- when 'github' -%}GitHub
+    {%- when 'linkedin' -%}LinkedIn
+    {%- when 'twitter' -%}Twitter
+    {%- when 'mastodon' -%}Mastodon
+    {%- when 'facebook' -%}Facebook
+    {%- when 'instagram' -%}Instagram
+    {%- else -%}{{ platform | capitalize }}
+  {%- endcase -%}
+{%- endcapture -%}
+
+{%- capture social_link_classes -%}
+ts-social-link ts-social-link--{{ size }} ts-social-link--{{ variant }}
+{%- if include.class %} {{ include.class }}{%- endif -%}
+{%- endcapture -%}
+
+<a href="{{ href }}" 
+   class="{{ social_link_classes | strip }}"
+   aria-label="{{ aria_label | strip }}"
+   {%- if target %} target="{{ target }}"{% endif -%}
+   {%- if rel %} rel="{{ rel }}"{% endif -%}>
+  {%- include atoms/icon.html type=platform class="ts-social-link__icon" -%}
+</a>

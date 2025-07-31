@@ -33,11 +33,14 @@ addresses:
 # Social Media
 social:
   linkedin:
-    url: https://www.linkedin.com/company/tiltshift/
+    url: https://www.linkedin.com/company/tiltshiftnl/
     label: LinkedIn
   github:
-    url: https://github.com/tiltshift-nl
+    url: https://github.com/tiltshiftnl
     label: GitHub
+  mastodon:
+    url: https://mastodon.social/@tiltshift
+    label: Mastodon
 
 # Footer Links
 footer_links:

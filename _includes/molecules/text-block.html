@@ -1,0 +1,43 @@
+{%- comment -%}
+Text Block Molecule
+Parameters:
+- title: The title text (required)
+- subtitle: The subtitle text (optional)
+- content: The main content text (required)
+- list_items: Array of list items (optional)
+- variant: Style variant (default/highlight, default: default)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign block_title = include.title -%}
+{%- assign block_content = include.content | default: "" -%}
+{%- assign block_variant = include.variant | default: "default" -%}
+
+{%- capture block_classes -%}
+ts-text-block
+{%- if block_variant == "highlight" %} ts-text-block--highlight{%- endif -%}
+{%- if include.class %} {{ include.class }}{%- endif -%}
+{%- endcapture -%}
+
+<div class="{{ block_classes | strip }}">
+{% include atoms/heading.html 
+   text=block_title
+   level=3 
+   class="ts-text-block__title" %}
+{% if include.subtitle %}
+{% include atoms/text.html 
+   text=include.subtitle
+   class="ts-text-block__subtitle" %}
+{% endif %}
+    <div class="ts-text-block__content">
+{% include atoms/text.html 
+   text=block_content %}
+        {% if include.list_items %}
+        <ul>
+            {% for item in include.list_items %}
+            <li>{% include atoms/text.html text=item element="span" %}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>

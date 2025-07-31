@@ -1,0 +1,23 @@
+{%- comment -%}
+Text Atom
+Parameters:
+- text: The text content (required)
+- size: Size variant (xs, sm, md, lg, default: md)
+- element: HTML element (p, span, div, default: p)
+- color: Text color class (e.g., gray-600, primary-dark)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign text_element = include.element | default: "p" -%}
+{%- assign text_size = include.size | default: "md" -%}
+
+{%- capture text_classes -%}
+a-text a-text-{{ text_size }}
+{%- if include.color %} a-text-{{ include.color }}{%- endif -%}
+{%- if text_element == "p" %} a-m-0{%- endif -%}
+{%- if include.class %} {{ include.class }}{%- endif -%}
+{%- endcapture -%}
+
+<{{ text_element }} class="{{ text_classes | strip }}">
+  {{- include.text -}}
+</{{ text_element }}>

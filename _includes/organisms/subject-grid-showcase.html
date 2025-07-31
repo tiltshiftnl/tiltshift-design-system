@@ -1,0 +1,11 @@
+<!-- Subject grid using default subjects from the organism -->
+<div class="a-mb-8">
+    <h3 class="a-title-sm a-mb-4">Default Subject Grid</h3>
+    {% include organisms/subject-grid.html %}
+</div>
+
+<!-- Subject grid with custom subjects from data file -->
+<div class="a-mb-8">
+    <h3 class="a-title-sm a-mb-4">Subject Grid met data uit subjects.yml</h3>
+    {% include organisms/subject-grid.html subjects=site.data.subjects.subjects %}
+</div>

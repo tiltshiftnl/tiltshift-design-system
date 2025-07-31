@@ -1,0 +1,62 @@
+{%- comment -%}
+Project Card Molecule
+Parameters:
+- image: Image path
+- image_alt: Alt text for image
+- overlay_text: Text shown on hover (default: "Meer Info")
+- client: Client/organization name
+- title: Project title
+- description: Project description
+- tags: Array of tag strings
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign overlay_text = include.overlay_text | default: "Meer Info" -%}
+
+<div class="m-project-card a-card {{ include.class }}">
+    {% assign project_image = include.image | default: '/assets/img/Information-Radiator-War-Room-Wand-met-Stickies.jpg' | relative_url %}
+    {% assign project_image_alt = include.image_alt | default: include.title %}
+    {% assign project_client = include.client | default: "Gemeente Amsterdam" %}
+    {% assign project_title = include.title | default: "Datalab Innovatie Omgeving" %}
+    {% assign project_description = include.description | default: "Opzetten van een fysieke ruimte voor agile samenwerking en transparante project voortgang." %}
+    
+    <div class="m-project-card__image a-image-container a-relative">
+{% include atoms/image.html 
+   src=project_image
+   alt=project_image_alt %}
+        <div class="m-project-card__overlay a-overlay a-flex-center">
+            {% include atoms/text.html 
+               text=overlay_text 
+               size="lg" 
+               color="white" 
+               element="span" %}
+        </div>
+    </div>
+    <div class="m-project-card__content a-p-4">
+        <div class="m-project-card__meta a-flex a-gap-2 a-mb-2">
+            {% include atoms/text.html 
+               text=project_client 
+               size="sm" 
+               element="span" %}
+        </div>
+        {% include atoms/heading.html 
+           text=project_title 
+           level=4 
+           class="m-project-card__title" %}
+        {% include atoms/text.html 
+           text=project_description 
+           class="m-project-card__description" %}
+        {% if include.tags %}
+        <div class="m-project-card__tags a-flex a-gap-1">
+            {% for tag in include.tags %}
+                {% include atoms/tag.html text=tag %}
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="m-project-card__tags a-flex a-gap-1">
+            {% include atoms/tag.html text="Agile" %}
+            {% include atoms/tag.html text="Management" %}
+        </div>
+        {% endif %}
+    </div>
+</div>

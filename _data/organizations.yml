@@ -1,0 +1,49 @@
+# TILTSHIFT Opdrachtgevers
+organizations:
+  - name: Gemeente Amsterdam
+    type: Gemeente
+    description: Samen werken aan digitale dienstverlening voor alle Amsterdammers.
+    logo: /assets/opdrachtgevers/gemeente-amsterdam.png
+    href: "#"
+    
+  - name: Provincie Flevoland
+    type: Provincie
+    description: Innovatieve oplossingen voor provinciale dienstverlening en gebiedsontwikkeling.
+    logo: /assets/opdrachtgevers/provincie-flevoland.png
+    href: "#"
+    
+  - name: Gemeente Rotterdam
+    type: Gemeente
+    description: Moderne digitale diensten voor een diverse en dynamische stad.
+    logo: /assets/opdrachtgevers/gemeente-rotterdam.png
+    href: "#"
+    
+  - name: Ministerie van VWS
+    type: Ministerie
+    description: Digitale transformatie in de zorg en het sociaal domein.
+    logo: /assets/opdrachtgevers/ministerie-van-volksgezondheid-welzijn-en-sport.png
+    href: "#"
+    
+  - name: Politie
+    type: Overheidsorganisatie
+    description: Veiligheid en dienstverlening door slimme digitale oplossingen.
+    logo: /assets/opdrachtgevers/politie.png
+    href: "#"
+    
+  - name: Careyn
+    type: Zorgorganisatie
+    description: Digitale innovatie voor betere zorg en ondersteuning.
+    logo: /assets/opdrachtgevers/careyn.png
+    href: "#"
+    
+  - name: VU Amsterdam
+    type: Universiteit
+    description: Academische samenwerking voor maatschappelijke innovatie.
+    logo: /assets/opdrachtgevers/vu-university-amsterdam.png
+    href: "#"
+    
+  - name: Amsterdamse Federatie van Woningcorporaties
+    type: Woningcorporatie
+    description: Digitale oplossingen voor betaalbaar en goed wonen.
+    logo: /assets/opdrachtgevers/amsterdamse-federatie-van-woningcorporaties.png
+    href: "#"

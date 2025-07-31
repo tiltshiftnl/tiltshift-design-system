@@ -1,0 +1,50 @@
+<div class="a-space-y-4">
+    <!-- Different Types -->
+    <div>
+        <h4 class="a-text-sm a-text-gray-600 a-mb-2">Verschillende types</h4>
+        <div class="a-flex a-gap-2 a-items-center">
+            <span class="a-text-sm">Item</span>
+            {% include atoms/separator.html type="slash" %}
+            <span class="a-text-sm">Item</span>
+            {% include atoms/separator.html type="pipe" %}
+            <span class="a-text-sm">Item</span>
+            {% include atoms/separator.html type="dot" %}
+            <span class="a-text-sm">Item</span>
+            {% include atoms/separator.html type="arrow" %}
+            <span class="a-text-sm">Item</span>
+        </div>
+    </div>
+    
+    <!-- In Breadcrumb Context -->
+    <div>
+        <h4 class="a-text-sm a-text-gray-600 a-mb-2">In breadcrumb context</h4>
+        <nav class="a-flex a-items-center">
+            <a href="#" class="a-text-sm a-text-primary-dark a-clickable">Home</a>
+            {% include atoms/separator.html %}
+            <a href="#" class="a-text-sm a-text-primary-dark a-clickable">Producten</a>
+            {% include atoms/separator.html %}
+            <span class="a-text-sm a-text-grey">Detail</span>
+        </nav>
+    </div>
+    
+    <!-- Different Sizes -->
+    <div>
+        <h4 class="a-text-sm a-text-gray-600 a-mb-2">Verschillende groottes</h4>
+        <div class="a-flex a-gap-3 a-items-center">
+            {% include atoms/separator.html size="xs" %}
+            {% include atoms/separator.html size="sm" %}
+            {% include atoms/separator.html size="md" %}
+            {% include atoms/separator.html size="lg" %}
+        </div>
+    </div>
+    
+    <!-- Without Spacing -->
+    <div>
+        <h4 class="a-text-sm a-text-gray-600 a-mb-2">Zonder spacing</h4>
+        <div class="a-flex a-items-center">
+            <span class="a-text-sm">Compact</span>
+            {% include atoms/separator.html spacing=false %}
+            <span class="a-text-sm">Layout</span>
+        </div>
+    </div>
+</div>

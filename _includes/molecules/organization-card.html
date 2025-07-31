@@ -1,0 +1,48 @@
+{%- comment -%}
+Organization Card Molecule
+Parameters:
+- logo: Logo/image path for organization
+- name: Organization name
+- type: Organization type (e.g., "Gemeente", "Ministerie", "Waterschap")
+- description: Short description of the organization
+- logo_alt: Alt text for logo (default: name)
+- href: Link URL (optional - if provided, card becomes clickable)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign org_logo_alt = include.logo_alt | default: include.name -%}
+
+{% if include.href %}
+<a href="{{ include.href }}" class="m-organization-card a-block a-clickable ts-organization-block {{ include.class }}">
+{% else %}
+<div class="m-organization-card a-block ts-organization-block {{ include.class }}">
+{% endif %}
+    {% assign org_logo = include.logo | default: '/assets/logo/logo_transparent_cropped.svg' | relative_url %}
+    {% assign org_name = include.name | default: "Organization" %}
+    {% assign org_type = include.type | default: "Type" %}
+    {% assign org_description = include.description | default: "Organization description" %}
+    
+    <div class="m-organization-card__logo a-mb-3">
+{% include atoms/image.html 
+   src=org_logo
+   alt=org_logo_alt
+   class="a-max-h-16" %}
+    </div>
+    {% include atoms/text.html 
+       text=org_type
+       size="sm" 
+       color="gray-600"
+       class="m-organization-card__type a-mb-1" %}
+    {% include atoms/heading.html 
+       text=org_name
+       level=4 
+       class="m-organization-card__name a-mb-2" %}
+    {% include atoms/text.html 
+       text=org_description
+       size="sm"
+       class="m-organization-card__description" %}
+{% if include.href %}
+</a>
+{% else %}
+</div>
+{% endif %}

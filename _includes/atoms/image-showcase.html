@@ -1,0 +1,39 @@
+<div class="a-space-y-4">
+    <!-- Basic Image -->
+    <div>
+        <h4 class="a-text-sm a-text-gray-600 a-mb-2">Basis afbeelding</h4>
+        <div class="a-max-w-sm">
+{% include atoms/image.html 
+   src="/assets/mensen/Johan-Groenen-Partner-Tiltshift.jpg"
+   alt="Johan Groenen - Partner bij Tiltshift" %}
+        </div>
+    </div>
+    
+    <!-- Image with custom classes -->
+    <div>
+        <h4 class="a-text-sm a-text-gray-600 a-mb-2">Afbeelding met custom styling</h4>
+        <div class="a-flex a-gap-3">
+{% include atoms/image.html 
+   src="/assets/img/Workshop-Crazy-Eight-Ideation-Warroom.jpg"
+   alt="Workshop Crazy Eight"
+   class="a-rounded-md a-w-48" %}
+{% include atoms/image.html 
+   src="/assets/img/Straatnotes-Straatcoaches-op-Straat-software-jeugdoverlast-terugdringen.jpg"
+   alt="Straatnotes"
+   class="a-rounded-lg a-shadow-md a-w-48" %}
+        </div>
+    </div>
+    
+    <!-- Different loading strategies -->
+    <div>
+        <h4 class="a-text-sm a-text-gray-600 a-mb-2">Loading strategies</h4>
+        <p class="a-text-xs a-text-gray-500 a-mb-2">Default is lazy loading, maar voor belangrijke afbeeldingen kun je eager loading gebruiken</p>
+        <div class="a-max-w-xs">
+{% include atoms/image.html 
+   src="/assets/img/Information-Radiator-War-Room-Wand-met-Stickies.jpg"
+   alt="Information Radiator"
+   loading="eager"
+   class="a-rounded-md" %}
+        </div>
+    </div>
+</div>

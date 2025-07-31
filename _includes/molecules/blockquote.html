@@ -1,0 +1,29 @@
+{%- comment -%}
+Blockquote Molecule
+Parameters:
+- quote: The quote text (required)
+- author: The author name (optional)
+- organization: The author's organization (optional)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign quote_text = include.quote | default: "Design thinking helpt ons om complexe problemen op te lossen door eerst écht te begrijpen wat gebruikers nodig hebben." -%}
+{%- assign quote_author = include.author | default: "Johan Groenen" -%}
+{%- assign quote_org = include.organization | default: "TILTSHIFT" -%}
+
+{%- capture formatted_quote -%}"{{ quote_text }}"{% endcapture -%}
+{%- capture author_text -%}— {{ quote_author }}{% if quote_org %}, {{ quote_org }}{% endif %}{% endcapture -%}
+
+<blockquote class="m-blockquote a-max-w-sm a-mx-auto a-p-4 a-border-l-4 a-border-primary {{ include.class }}">
+{% include atoms/text.html 
+   text=formatted_quote
+   size="lg" 
+   color="primary" 
+   class="m-blockquote__text a-mb-3" %}
+    <cite class="m-blockquote__author a-block">
+{% include atoms/text.html 
+   text=author_text
+   size="sm" 
+   element="span" %}
+    </cite>
+</blockquote>

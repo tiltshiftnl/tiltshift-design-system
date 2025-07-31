@@ -1,37 +1,42 @@
-<!-- Navigation Organism -->
-<div class="organism-showcase">
-    <h3 class="organism-showcase__title">Navigation</h3>
-    <p class="organism-showcase__description">Hoofdnavigatie met zwarte achtergrond en witte tekst. Responsive met mobile menu.</p>
-    
-    <!-- Desktop Navigation Variant -->
-    <div class="atom-mb-3 atom-bg-off-white atom-p-4 atom-rounded-md atom-overflow-hidden">
-        <nav class="atom-bg-black atom-flex-between atom-w-full atom-px-4 atom-py-2 ts-nav atom-relative">
-            <div class="ts-nav__logo">
-                <img src="{{ "/assets/logo/logo_cropped.svg" | relative_url }}" alt="TILTSHIFT" class="atom-h-60">
-            </div>
-            <div class="ts-nav__right">
-                <ul class="atom-flex atom-gap-4 atom-m-0 atom-p-0 atom-list-none ts-nav__links">
-                    <li><a href="#" class="atom-text-white atom-clickable ts-nav__link">Home</a></li>
-                    <li><a href="#" class="atom-text-white atom-clickable ts-nav__link">Utilities</a></li>
-                    <li><a href="#" class="atom-text-white atom-clickable ts-nav__link">Atoms</a></li>
-                    <li><a href="#" class="atom-text-white atom-clickable ts-nav__link ts-nav__link--active">Molecules</a></li>
-                </ul>
-            </div>
-        </nav>
+{%- comment -%}
+Navigation Organism
+Parameters:
+- class: Additional CSS classes
+{%- endcomment -%}
+
+<nav class="o-navigation {{ include.class }}">
+    <!-- Desktop Navigation -->
+    <div class="o-navigation__desktop a-bg-black a-w-full">
+        <div class="o-navigation__container a-flex a-justify-between a-items-center a-px-4 a-py-3">
+            <a href="{{ site.baseurl }}/" class="o-navigation__logo">
+                {% include atoms/logo-atom.html size="xlarge" %}
+            </a>
+            <ul class="o-navigation__links a-flex a-gap-4 a-m-0 a-list-none">
+                {% for item in site.data.navigation.main %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ item.url }}" 
+                       class="o-navigation__link a-text-white a-clickable{% if page.url == item.url %} o-navigation__link--active{% endif %}">
+                        {{ item.text }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
     
-    <!-- Mobile Navigation Variant -->
-    <div class="atom-mb-3 atom-bg-off-white atom-p-4 atom-rounded-md atom-overflow-hidden">
-        <h4 class="atom-text-sm atom-text-secondary atom-mb-2">Mobile variant (met hamburger menu)</h4>
-        <nav class="atom-bg-white atom-flex-between atom-w-full atom-px-4 atom-py-2 ts-nav ts-nav--mobile atom-relative">
-            <div class="ts-nav__logo">
-                <img src="{{ "/assets/logo/logo_cropped.svg" | relative_url }}" alt="TILTSHIFT" class="atom-h-60">
-            </div>
-            <button class="ts-nav__mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+    <!-- Mobile Navigation -->
+    <div class="o-navigation__mobile a-bg-white a-w-full a-shadow-sm">
+        <div class="o-navigation__container a-flex a-justify-between a-items-center a-px-4 a-py-3">
+            <a href="{{ site.baseurl }}/" class="o-navigation__logo">
+                {% include atoms/logo-atom.html size="medium" %}
+            </a>
+            <a href="{{ site.baseurl }}/menu/" class="o-navigation__hamburger a-text-black">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </a>
+        </div>
     </div>
-</div>
+</nav>

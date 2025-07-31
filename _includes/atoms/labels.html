@@ -1,11 +1,17 @@
-<!-- Label Atoms -->
-<div class="molecule-card atom-p-4 atom-mb-4">
-    <h3 class="molecule-title-sm">Labels</h3>
-    <p class="molecule-content atom-mb-3">Kleine informatieve labels. Gebouwd met <code>molecule-tag</code> + <code>atom-text</code>.</p>
-    <div class="atom-flex atom-gap-2 atom-flex-wrap atom-items-center atom-mb-3 atom-p-3 atom-bg-off-white atom-rounded-md">
-        <span class="molecule-tag atom-text ts-label">Default</span>
-        <span class="molecule-tag atom-text atom-bg-primary atom-text-white ts-label ts-label--primary">Primary</span>
-        <span class="molecule-tag atom-text atom-bg-black atom-text-white ts-label ts-label--dark">Dark</span>
-        <span class="molecule-tag atom-text ts-label ts-label--secondary">Secondary</span>
-    </div>
+<div class="a-flex a-gap-2 a-flex-wrap">
+    {% include atoms/tag.html 
+       text="Default" 
+       variant="default" %}
+    
+    {% include atoms/tag.html 
+       text="Primary" 
+       variant="primary" %}
+    
+    {% include atoms/tag.html 
+       text="Dark" 
+       variant="dark" %}
+    
+    {% include atoms/tag.html 
+       text="Secondary" 
+       variant="secondary" %}
 </div>

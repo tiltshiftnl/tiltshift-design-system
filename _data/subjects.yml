@@ -1,0 +1,63 @@
+# Subject data for the TILTSHIFT Design System
+# Used by subject-card and subject-grid components
+
+subjects:
+  - icon: ""
+    title: "Design Thinking workshops"
+    description: "Samen met teams ontdekken we kansen en creëren we innovatieve oplossingen voor complexe uitdagingen."
+    category: "Workshop"
+    duration: "1-3 dagen"
+    tags:
+      - "Innovatie"
+      - "Co-creatie"
+      - "Strategie"
+    
+  - icon: ""
+    title: "Prototyping en user testing"
+    description: "Snel ideeën valideren door werkende prototypes te bouwen en direct te testen met echte gebruikers."
+    category: "Design"
+    duration: "2-4 weken"
+    tags:
+      - "Validatie"
+      - "UX"
+      - "Testing"
+    
+  - icon: ""
+    title: "Agile softwareontwikkeling"
+    description: "Flexibel en iteratief bouwen met continue feedback loops voor optimale resultaten."
+    category: "Development"
+    duration: "Doorlopend"
+    tags:
+      - "Scrum"
+      - "DevOps"
+      - "CI/CD"
+    
+  - icon: ""
+    title: "User Research"
+    description: "Diepgaand onderzoek naar gebruikersbehoeften en gedrag voor betere producten."
+    category: "Research"
+    duration: "2-6 weken"
+    tags:
+      - "Interviews"
+      - "Analytics"
+      - "Insights"
+    
+  - icon: ""
+    title: "Data analyse en visualisatie"
+    description: "Complexe data omzetten in heldere inzichten en interactieve dashboards."
+    category: "Data"
+    duration: "Variabel"
+    tags:
+      - "Analytics"
+      - "Dashboard"
+      - "BI"
+    
+  - icon: ""
+    title: "Training en coaching"
+    description: "Teams opleiden in moderne werkwijzen en digitale vaardigheden."
+    category: "Training"
+    duration: "1-5 dagen"
+    tags:
+      - "Agile"
+      - "Skills"
+      - "Mindset"

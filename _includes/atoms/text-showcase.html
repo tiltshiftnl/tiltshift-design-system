@@ -1,0 +1,30 @@
+<div class="a-space-y-3">
+    <!-- Default Paragraph -->
+    {% include atoms/text.html 
+       text="Dit is een standaard paragraaf met medium grootte. Lorem ipsum dolor sit amet, consectetur adipiscing elit." %}
+    
+    <!-- Small Text -->
+    {% include atoms/text.html 
+       text="Kleine tekst voor subtiele informatie" 
+       size="sm" %}
+    
+    <!-- Large Text -->
+    {% include atoms/text.html 
+       text="Grote tekst voor nadruk" 
+       size="lg" %}
+    
+    <!-- Colored Text -->
+    {% include atoms/text.html 
+       text="Primaire kleur tekst" 
+       color="primary" %}
+    
+    {% include atoms/text.html 
+       text="Grijze secundaire tekst" 
+       color="gray-600" %}
+    
+    <!-- Span Element -->
+    {% include atoms/text.html 
+       text="Dit is een inline span element" 
+       element="span" 
+       class="a-bg-yellow-100" %}
+</div>

@@ -1,0 +1,24 @@
+{%- comment -%}
+Page Intro Molecule
+A reusable component for page introductions with title and description
+Parameters:
+- title: Page title (required)
+- description: Page description text
+- title_element: HTML element for title (default: h1)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign title_element = include.title_element | default: 'h1' -%}
+
+<div class="m-page-intro o-section__header {{ include.class }}">
+    {% include atoms/heading.html 
+       text=include.title
+       level=1
+       element=title_element
+       class="o-section__title" %}
+    {% if include.description %}
+        {% include atoms/text.html 
+           text=include.description
+           class="o-section__description" %}
+    {% endif %}
+</div>

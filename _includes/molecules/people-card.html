@@ -1,0 +1,39 @@
+{%- comment -%}
+People Card Molecule
+Parameters:
+- image: Image path for person photo
+- name: Person name
+- role: Person role/function
+- image_alt: Alt text for image (default: name)
+- href: Link URL (optional - if provided, card becomes clickable)
+- class: Additional CSS classes
+{%- endcomment -%}
+
+{%- assign member_image_alt = include.image_alt | default: include.name -%}
+
+{% if include.href %}
+<a href="{{ include.href }}" class="m-people-card a-block a-clickable ts-person-block a-min-w-48 {{ include.class }}">
+{% else %}
+<div class="m-people-card a-block ts-person-block a-min-w-48 {{ include.class }}">
+{% endif %}
+    {% assign member_image = include.image | default: '/assets/mensen/Johan-Groenen-Partner-Tiltshift.jpg' | relative_url %}
+    {% assign member_name = include.name | default: "Person" %}
+    {% assign member_role = include.role | default: "Role" %}
+    <div class="a-rounded-md a-overflow-hidden a-mx-auto a-mb-3 ts-person-block__image">
+{% include atoms/image.html 
+   src=member_image
+   alt=member_image_alt %}
+    </div>
+    {% include atoms/heading.html 
+       text=member_name
+       level=4 
+       class="a-mb-1 ts-person-block__name" %}
+    {% include atoms/text.html 
+       text=member_role
+       size="sm" 
+       class="ts-person-block__type" %}
+{% if include.href %}
+</a>
+{% else %}
+</div>
+{% endif %}

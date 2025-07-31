@@ -1,0 +1,37 @@
+{%- comment -%}
+Tag/Label Atom Component
+Parameters:
+- text: Tag text content (required)
+- variant: Visual variant (default/primary/secondary/dark/bordered, default: default)
+- size: Tag size (small/medium, default: medium)
+- class: Additional CSS classes
+- element: HTML element to use (span/a, default: span)
+- href: Link URL (only when element is 'a')
+{%- endcomment -%}
+
+{%- assign tag_element = include.element | default: 'span' -%}
+{%- assign tag_variant = include.variant | default: 'default' -%}
+{%- assign tag_size = include.size | default: 'medium' -%}
+
+{%- capture tag_classes -%}
+a-tag a-text
+{%- case tag_variant -%}
+  {%- when 'primary' %} a-bg-primary a-text-white ts-label ts-label--primary
+  {%- when 'secondary' %} ts-label ts-label--secondary
+  {%- when 'dark' %} a-bg-black a-text-white ts-label ts-label--dark
+  {%- when 'bordered' %} a-bg-white a-border
+  {%- else %} a-bg-off-white ts-label
+{%- endcase -%}
+{%- if tag_size == 'small' %} a-text-sm{%- endif -%}
+{%- if include.class %} {{ include.class }}{%- endif -%}
+{%- endcapture -%}
+
+{%- if tag_element == 'a' -%}
+<a href="{{ include.href | default: '#' }}" class="{{ tag_classes | strip }}">
+  {{- include.text -}}
+</a>
+{%- else -%}
+<span class="{{ tag_classes | strip }}">
+  {{- include.text -}}
+</span>
+{%- endif -%}
