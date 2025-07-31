@@ -1,4 +1,17 @@
-/* TILTSHIFT Design Tokens */
+/* Tiltshift Design Tokens */
+
+/* HelveticaNeue Font Faces */
+@font-face {
+    font-family: 'HelveticaNeueLTPro-Bd';
+    src: url('/assets/fonts/HelveticaNeueLTPro-Bd/font.woff2') format('woff2'),
+         url('/assets/fonts/HelveticaNeueLTPro-Bd/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueRegular';
+    src: url('/assets/fonts/HelveticaNeueRegular/helvetica-regular.woff2') format('woff2'),
+         url('/assets/fonts/HelveticaNeueRegular/helvetica-regular.woff') format('woff');
+}
 
 /* AtkinsonHyperlegible Font Faces */
 @font-face {
@@ -66,7 +79,7 @@
   /* Font families */
   --ts-font-primary: 'AtkinsonHyperlegible', 'HelveticaNeueRegular', sans-serif;
   --ts-font-primary-bold: 'HelveticaNeueLTPro-Bd', 'AtkinsonHyperlegible', sans-serif;
-  --ts-font-heading: 'HelveticaNeueLTPro-Bd', 'AtkinsonHyperlegible', sans-serif;
+  --ts-font-heading: 'HelveticaNeueLTPro-Bd', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
   --ts-font-script: 'Courier New', Consolas, monospace;
 
   /* Line heights */

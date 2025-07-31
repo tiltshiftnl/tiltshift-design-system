@@ -1,0 +1,11 @@
+<!-- Project card showcase -->
+<div class="a-max-w-sm">
+    {% assign tags = "Agile,Development,Innovation" | split: "," %}
+    {% include molecules/project-card.html 
+       image="/assets/img/Information-Radiator-War-Room-Wand-met-Stickies.jpg"
+       image_alt="Datalab Innovatie"
+       client="Gemeente Amsterdam"
+       title="Datalab Innovatie Omgeving"
+       description="Opzetten van een fysieke ruimte voor agile samenwerking en transparante project voortgang."
+       tags=tags %}
+</div>

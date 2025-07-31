@@ -24,7 +24,7 @@
             {% elsif include.element_id == "labels" %}
                 <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="#tag" class="a-text-primary-dark">tag</a></p>
             {% elsif include.element_id == "logo" %}
-                <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="#logo-atom" class="a-text-primary-dark">logo-atom</a></p>
+                <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="#logo" class="a-text-primary-dark">logo</a></p>
             {% elsif include.element_id == "social-links" %}
                 <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="#social-link" class="a-text-primary-dark">social-link</a></p>
             {% endif %}
@@ -53,12 +53,12 @@
             {% endif %}
         {% when "organisms" %}
             {% comment %} Always show Gebruikt section for organisms {% endcomment %}
-            {% if include.element_id == "footer" %}
-                <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="/atoms#logo-atom" class="a-text-primary-dark">logo-atom</a>, <a href="/atoms#heading-showcase" class="a-text-primary-dark">heading</a>, <a href="/atoms#text-showcase" class="a-text-primary-dark">text</a>, <a href="/atoms#link-showcase" class="a-text-primary-dark">link</a>, <a href="/atoms#social-link" class="a-text-primary-dark">social-link</a></p>
+            {% if include.element_id == "footer-showcase" %}
+                <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="/atoms#logo" class="a-text-primary-dark">logo</a>, <a href="/atoms#heading-showcase" class="a-text-primary-dark">heading</a>, <a href="/atoms#text-showcase" class="a-text-primary-dark">text</a>, <a href="/atoms#link-showcase" class="a-text-primary-dark">link</a>, <a href="/atoms#social-link" class="a-text-primary-dark">social-link</a></p>
             {% elsif include.element_id == "hero" %}
                 <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="/atoms#image-showcase" class="a-text-primary-dark">image</a>, <a href="/atoms#heading-showcase" class="a-text-primary-dark">heading</a>, <a href="/atoms#text-showcase" class="a-text-primary-dark">text</a>, <a href="/atoms#button" class="a-text-primary-dark">button</a></p>
             {% elsif include.element_id == "navigation" %}
-                <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="/atoms#logo-atom" class="a-text-primary-dark">logo-atom</a></p>
+                <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="/atoms#logo" class="a-text-primary-dark">logo</a></p>
             {% elsif include.element_id == "project-grid" %}
                 <p class="a-text-xs a-text-gray-600 a-mt-1">Gebruikt: <a href="/molecules#project-card" class="a-text-primary-dark">project-card</a></p>
             {% elsif include.element_id == "people-grid" %}
@@ -84,7 +84,7 @@
         {% comment %} Preview {% endcomment %}
         <div class="o-showcase__preview preview-{{ unique_id }}" id="preview-{{ unique_id }}">
             <div class="a-p-4">
-                {% if include.element_id == "navigation" %}
+                {% if include.element_id == "navigation-showcase" %}
                     {% comment %} Special case for navigation to avoid conflicts {% endcomment %}
                     {% include organisms/navigation-showcase.html %}
                 {% else %}

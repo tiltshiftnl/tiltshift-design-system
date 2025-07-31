@@ -123,9 +123,9 @@ structure:
       purpose: Basic building blocks of the design system
       files:
         # Brand Identity
-        - logo.html: Logo showcase displaying different logo sizes
-          uses: [logo-atom]
-        - logo-atom.html: Reusable logo atom with parameters (size: small/medium/large/xlarge, alt, src)
+        - logo-showcase.html: Logo showcase displaying different logo sizes
+          uses: [logo]
+        - logo.html: Reusable logo atom with parameters (size: small/medium/large/xlarge, alt, src)
         
         # Typography
         - heading.html: Reusable heading atom with parameters (level: 1-6, size, text, class)
@@ -203,7 +203,7 @@ structure:
       files:
         # Header & Navigation
         - navigation.html: Responsive navigation component (no positioning - use wrapper for fixed)
-          uses: [logo-atom]
+          uses: [logo]
         - navigation-showcase.html: Simple preview wrapper showing responsive navigation behavior
           uses: [navigation]
         - hero.html: Hero section with background images
@@ -221,7 +221,7 @@ structure:
         
         # Footer
         - footer.html: Complete website footer
-          uses: [logo-atom, heading, text, link, social-link]
+          uses: [logo, heading, text, link, social-link]
 
     sections:
       location: _includes/sections/

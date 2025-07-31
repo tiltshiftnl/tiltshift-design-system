@@ -1,13 +1,32 @@
-<div class="a-flex a-gap-4 a-items-center a-p-3 a-bg-off-white a-rounded-md a-flex-wrap">
-    <!-- Small Logo (24px) -->
-    {% include atoms/logo-atom.html size="small" %}
+{%- comment -%}
+Logo Atom Component
+Parameters:
+- size: Logo size (small/medium/large/xlarge, default: medium)
+- alt: Alt text (default: 'Tiltshift')
+- src: Logo source (default: cropped logo)
+- class: Additional CSS classes
+{%- endcomment -%}
 
-    <!-- Medium Logo (36px) -->
-    {% include atoms/logo-atom.html size="medium" %}
+{%- assign logo_size = include.size | default: 'medium' -%}
+{%- assign logo_alt = include.alt | default: 'Tiltshift' -%}
+{%- assign logo_src = include.src | default: '/assets/logo/logo_cropped.svg' | relative_url -%}
 
-    <!-- Large Logo (48px) -->
-    {% include atoms/logo-atom.html size="large" %}
+{%- capture logo_classes -%}
+a-logo
+{%- case logo_size -%}
+  {%- when 'small' %} a-logo--small
+  {%- when 'large' %} a-logo--large
+  {%- when 'xlarge' %} a-logo--xlarge
+  {%- else %} a-logo--medium
+{%- endcase -%}
+{%- if include.class %} {{ include.class }}{%- endif -%}
+{%- endcapture -%}
 
-    <!-- Extra Large Logo (140px) -->
-    {% include atoms/logo-atom.html size="xlarge" %}
-</div>
+<img src="{{ logo_src }}" 
+     alt="{{ logo_alt }}" 
+     class="{{ logo_classes | strip }}"
+     {%- if logo_size == 'small' %} style="height: 24px;"
+     {%- elsif logo_size == 'large' %} style="height: 48px;"
+     {%- elsif logo_size == 'xlarge' %} style="height: 140px;"
+     {%- else %} style="height: 36px;"
+     {%- endif -%}>

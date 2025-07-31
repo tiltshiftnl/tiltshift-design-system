@@ -1,4 +1,4 @@
-# TILTSHIFT Design System
+# Tiltshift Design System
 
 Een complete component library voor digitale transformatie projecten.
 
@@ -7,7 +7,7 @@ Een complete component library voor digitale transformatie projecten.
 Include de CSS bestanden in de juiste volgorde:
 
 ```html
-<!-- TILTSHIFT Design System -->
+<!-- Tiltshift Design System -->
 <link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-base.css">
 <link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-tokens.css">
 <link rel="stylesheet" href="https://cdn.tiltshift.nl/tiltshift-utilities.css">

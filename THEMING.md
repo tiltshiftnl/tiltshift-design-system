@@ -1,4 +1,4 @@
-# 🎨 TILTSHIFT Theme System
+# 🎨 Tiltshift Theme System
 
 Maak je website eenvoudig **gedurfder**, **subtieler**, of **moderner** met één CSS class!
 

@@ -1,7 +1,7 @@
 # Atoms - Logical order: Brand → Typography → Interactive → Media → Layout → Social
 atoms:
   # Brand Identity
-  - id: logo
+  - id: logo-showcase
     title: Logo
     description: Het Tiltshift logo in verschillende groottes. Combineer met utility classes voor positioning.
   
@@ -14,22 +14,20 @@ atoms:
     title: Text
     description: Herbruikbare text atom voor paragraphs en spans. Configureerbare size en kleur.
   
-  - id: typography
-    title: Typography & Headings
-    description: Complete typography systeem met headings en body text. Gebruik <code>a-heading</code> of <code>a-title</code> voor koppen, <code>a-text</code> voor body text.
   
   # Interactive Elements
   - id: link-showcase
     title: Link
     description: Herbruikbare link atom met consistente styling. Ondersteunt externe links en kleuren.
   
-  - id: buttons
+  - id: buttons-showcase
     title: Buttons
     description: Basis button element. Gebouwd met <code>a-button</code> + <code>a-clickable</code> + <code>a-hoverable</code>.
   
-  - id: interactive-elements
-    title: Interactive Elements
-    description: Basis interactieve elementen met <code>a-clickable</code> en <code>a-hoverable</code>.
+  - id: button-showcase
+    title: Button
+    description: Individuele button atom met text, href en variant parameters.
+  
   
   # Media & Icons
   - id: icon-showcase
@@ -45,18 +43,19 @@ atoms:
     description: Responsive afbeelding containers. Gebouwd met <code>a-image-container</code>.
   
   # Layout & Structure
-  - id: container
-    title: Container
-    description: Responsive container voor content. Gebruikt <code>a-container</code> met size variants.
   
   - id: separator-showcase
     title: Separator
     description: Visuele scheider atom voor breadcrumbs en lijsten. Types zijn slash, pipe, dot, arrow.
   
   # Metadata & Tags
-  - id: labels
+  - id: labels-showcase
     title: Labels & Tags
     description: Kleine informatieve labels/tags voor categorisering. Gebouwd met <code>a-tag</code> + kleur utilities.
+  
+  - id: tag-showcase
+    title: Tag
+    description: Individuele tag atom met text en variant parameters.
   
   # Colors
   - id: color-swatch-showcase
@@ -64,14 +63,18 @@ atoms:
     description: Kleur weergave atom met automatische tekst contrast. Toont kleurnaam, hex code en beschrijving.
   
   # Social
-  - id: social-links
+  - id: social-links-showcase
     title: Social Links
     description: Social media links met iconen. Flexibele grootte en kleuren.
+  
+  - id: social-link-showcase
+    title: Social Link
+    description: Individuele social link atom met platform en url parameters.
 
 # Molecules - Logical order: Navigation → Content → Cards → Contact
 molecules:
   # Navigation
-  - id: breadcrumbs
+  - id: breadcrumbs-showcase
     title: Breadcrumbs
     description: Navigatie pad component. Gebruikt <code>a-flex</code>, <code>a-items-center</code>, en <code>a-gap-2</code>.
   
@@ -84,16 +87,16 @@ molecules:
     title: Text Block
     description: Flexibel tekstblok met titel, subtitel, content en optionele lijst. Ondersteunt highlight variant.
   
-  - id: blockquote
+  - id: blockquote-showcase
     title: Blockquote
     description: Citaat component. Combineert <code>a-max-w-sm</code>, <code>a-mx-auto</code>, en typography atoms.
   
   # Cards
-  - id: project-card
+  - id: project-card-showcase
     title: Project Card
     description: Card component voor projecten met afbeelding, metadata en tags.
   
-  - id: people-card
+  - id: people-card-showcase
     title: People Card
     description: Herbruikbare people card voor personen. Combineert <code>a-block</code>, <code>a-image-container</code>, en typography atoms.
   
@@ -106,39 +109,39 @@ molecules:
     description: Herbruikbare subject card voor onderwerpen en diensten. Toont categorie, titel, beschrijving, duur en tags.
   
   # Contact & CTAs
-  - id: cta
+  - id: cta-showcase
     title: Call-to-Action
     description: Contact CTA component met afbeelding, tekst en contactgegevens.
   
-  - id: contact-info
+  - id: contact-info-showcase
     title: Contact Info
     description: Contact informatie component met iconen en links.
   
-  - id: map
+  - id: map-showcase
     title: Map
     description: Embedded map component voor locatie weergave.
 
 # Organisms - Logical order: Header/Nav → Content → Footer
 organisms:
   # Header & Navigation
-  - id: navigation
+  - id: navigation-showcase
     title: Navigation
     description: Responsive navigatie component met desktop en mobile varianten.
   
-  - id: hero
+  - id: hero-showcase
     title: Hero Section
     description: Hero sectie voor prominente content met achtergrondafbeelding, titel, subtitel en call-to-action.
   
   # Content Layouts
-  - id: project-grid
+  - id: project-grid-showcase
     title: Project Grid
     description: Grid layout voor project previews met hover effecten en metadata.
   
-  - id: people-grid
+  - id: people-grid-showcase
     title: People Grid
     description: Grid layout voor people cards met foto's, namen en rollen.
   
-  - id: organization-grid
+  - id: organization-grid-showcase
     title: Organization Grid
     description: Grid layout voor organization cards met logo's, types en beschrijvingen.
   
@@ -146,7 +149,7 @@ organisms:
     title: Subject Grid
     description: Grid layout voor subject cards met categorieën, titels en beschrijvingen.
   
-  # Footer
-  - id: footer
+  - id: footer-showcase
     title: Footer
-    description: Complete website footer met branded styling. Combineert logo, contact informatie, adressen en sociale media links.
+    description: Footer sectie met bedrijfsinformatie, navigatie links, contact gegevens en social media links.
+  

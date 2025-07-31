@@ -1,8 +1,8 @@
-# Jekyll Configuration for TILTSHIFT Design System CDN
+# Jekyll Configuration for Tiltshift Design System CDN
 
 # Basic settings
-title: "TILTSHIFT Design System"
-description: "CDN for TILTSHIFT design system components"
+title: "Tiltshift Design System"
+description: "CDN for Tiltshift design system components"
 baseurl: ""
 url: "https://cdn.tiltshift.nl"
 

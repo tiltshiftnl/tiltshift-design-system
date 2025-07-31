@@ -14,8 +14,9 @@
         <div class="ts-contact-info__item">
             {% include atoms/icon.html type="location" class="ts-contact-info__icon" %}
             <div class="ts-contact-info__address">
-                {% include atoms/text.html text="Danzigerbocht 45-F" element="div" %}
-                {% include atoms/text.html text="1013 AM Amsterdam" element="div" %}
+                {% include atoms/text.html text=site.data.company.addresses.visiting.street element="div" %}
+                {% capture postal_code_city %}{{ site.data.company.addresses.visiting.postal_code }} {{ site.data.company.addresses.visiting.city }}{% endcapture %}
+                {% include atoms/text.html text=postal_code_city element="div" %}
             </div>
         </div>
     </div>

@@ -1,12 +1,13 @@
 ---
 layout: default
-title: TILTSHIFT Design System
+title: Tiltshift Design System
 description: Een modulair design systeem gebaseerd op atomic design principes voor digitale transformatie projecten.
 ---
 
+
 {% include molecules/page-intro.html 
-   title=page.title
-   description=page.description %}
+    title=page.title
+    description=page.description %}
 
 
 ## Kernprincipes
@@ -49,7 +50,7 @@ description: Een modulair design systeem gebaseerd op atomic design principes vo
 </div>
 
 {% include molecules/page-intro.html 
-   title="Begin direct met het TILTSHIFT Design System"
+   title="Begin direct met het Tiltshift Design System"
    title_element="h3" %}
 
 ### 1. CSS Bestanden
@@ -95,14 +96,14 @@ Pas de hele huisstijl aan met één class:
 ```
 
 {% include molecules/page-intro.html 
-   title="Het TILTSHIFT merk"
+   title="Het Tiltshift merk"
    title_element="h3" %}
 
 {% include molecules/text-block.html 
-   title="Het TILTSHIFT Logo"
+   title="Het Tiltshift Logo"
    content="Het Tiltshift-logo laat zien wat we doen: we helpen organisaties om net even anders te kijken. Tiltshift betekent letterlijk: de lens kantelen, spelen met perspectief. Dat is precies wat we doen bij digitale transformatie: het is geen revolutie, maar een andere invalshoek kiezen." %}
 
-{% include atoms/logo.html %}
+{% include atoms/logo.html size="large" %}
 
 
 ## Merkwaarden
@@ -222,7 +223,7 @@ Pas de hele huisstijl aan met één class:
 
 ## Entity Patterns
 
-Het TILTSHIFT Design System kent vier core entiteiten:
+Het Tiltshift Design System kent vier core entiteiten:
 
 ### People
 Team members, medewerkers, contactpersonen

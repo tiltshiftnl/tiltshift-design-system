@@ -5,12 +5,10 @@ description: Molecules zijn samengestelde componenten die zijn opgebouwd uit mee
 permalink: /molecules/
 ---
 
-<section class="o-section">
-    {% include molecules/page-intro.html 
-       title=page.title 
-       description=page.description %}
+{% include molecules/page-intro.html 
+    title=page.title 
+    description=page.description %}
 
-    {% for molecule in site.data.elements.molecules %}
-        {% include showcase.html element_id=molecule.id element_type="molecules" %}
-    {% endfor %}
-</section>
+{% for molecule in site.data.elements.molecules %}
+    {% include showcase.html element_id=molecule.id element_type="molecules" %}
+{% endfor %}

@@ -1,4 +1,4 @@
-/* TILTSHIFT Theme System - Voor eenvoudige globale aanpassingen */
+/* Tiltshift Theme System - Voor eenvoudige globale aanpassingen */
 
 /* =============================================================================
    THEME MODIFIERS - Voeg deze classes toe aan <body> of <html>
@@ -237,7 +237,7 @@
 
 /* GEDURFDER - Zelfde kleuren, maar grotere fonts en meer contrast */
 .ts-style-gedurfd {
-  /* Behoud de originele TILTSHIFT kleuren */
+  /* Behoud de originele Tiltshift kleuren */
   --ts-color-primary: #d63638;
   --ts-color-primary-dark: #1e59a6;
   
@@ -263,7 +263,7 @@
 
 /* SUBTIELER - Zelfde kleuren, maar kleinere fonts en minder contrast */
 .ts-style-subtiel {
-  /* Behoud de originele TILTSHIFT kleuren */
+  /* Behoud de originele Tiltshift kleuren */
   --ts-color-primary: #d63638;
   --ts-color-primary-dark: #1e59a6;
   
@@ -460,7 +460,7 @@
 
 /* ELEGANT - Zelfde kleuren, maar verfijnde verhoudingen */
 .ts-style-elegant {
-  /* Behoud de originele TILTSHIFT kleuren */
+  /* Behoud de originele Tiltshift kleuren */
   --ts-color-primary: #d63638;
   --ts-color-primary-dark: #1e59a6;
   

@@ -1,1 +1,95 @@
-{% include footer.html %}
+<!-- Tiltshift Footer -->
+{% assign company = site.data.company %}
+<footer class="ts-footer">
+    <div class="ts-footer__inner">
+        <div class="ts-footer__blue-sheet"></div>
+        <div class="ts-footer__red-sheet"></div>
+        
+        <div class="ts-footer__columns-row">
+            <div class="ts-footer__logo">
+                <a href="{{ site.baseurl }}/">
+{% include atoms/logo.html 
+   size="large"
+   src="/assets/logo/logo_transparent_cropped.svg"
+   alt=company.name %}
+                </a>
+            </div>
+            
+            <div class="ts-footer__columns">
+                <div class="ts-footer__column">
+{% include atoms/heading.html 
+   text="Contact"
+   level=3
+   class="ts-footer__column-title" %}
+                    <div class="ts-footer__column-inner">
+{% include atoms/link.html 
+   text=company.contact.phone.display
+   href=company.contact.phone.href %}
+{% capture email_href %}mailto:{{ company.contact.email }}{% endcapture %}
+{% include atoms/link.html 
+   text=company.contact.email
+   href=email_href %}
+                        <p>&nbsp;</p>
+{% capture kvk_text %}KvK {{ company.registration.kvk }}{% endcapture %}
+{% include atoms/text.html text=kvk_text %}
+{% capture btw_text %}BTW {{ company.registration.btw }}{% endcapture %}
+{% include atoms/text.html text=btw_text %}
+                    </div>
+                </div>
+                
+                <div class="ts-footer__column">
+{% include atoms/heading.html 
+   text="Bezoekadres"
+   level=3
+   class="ts-footer__column-title" %}
+                    <div class="ts-footer__column-inner">
+{% include atoms/text.html text=company.addresses.visiting.name %}
+{% include atoms/text.html text=company.addresses.visiting.street %}
+{% capture address_line %}{{ company.addresses.visiting.postal_code }} {{ company.addresses.visiting.city }}{% endcapture %}
+{% include atoms/text.html text=address_line %}
+{% include atoms/link.html 
+   text="Op de kaart"
+   href=company.addresses.visiting.maps_url
+   target="_blank" %}
+                    </div>
+                </div>
+                
+                <div class="ts-footer__column">
+{% include atoms/heading.html 
+   text="Postadres"
+   level=3
+   class="ts-footer__column-title" %}
+                    <div class="ts-footer__column-inner">
+{% include atoms/text.html text=company.addresses.postal.name %}
+{% include atoms/text.html text=company.addresses.postal.street %}
+{% capture postal_address_line %}{{ company.addresses.postal.postal_code }} {{ company.addresses.postal.city }}{% endcapture %}
+{% include atoms/text.html text=postal_address_line %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ts-footer__socials ts-social-links">
+{% include atoms/social-link.html 
+   platform="linkedin"
+   href=company.social.linkedin.url
+   variant="transparent" %}
+{% include atoms/social-link.html 
+   platform="github"
+   href=company.social.github.url
+   variant="transparent" %}
+{% include atoms/social-link.html 
+   platform="mastodon"
+   href=company.social.mastodon.url
+   variant="transparent" %}
+        </div>
+        
+        <div class="ts-footer__links-section">
+            {% for link in company.footer_links %}
+{% include atoms/link.html 
+   text=link.text
+   href=link.url %}
+            {% endfor %}
+        </div>
+    </div>
+</footer>

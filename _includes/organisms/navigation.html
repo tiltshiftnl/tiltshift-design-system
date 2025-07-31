@@ -9,7 +9,7 @@ Parameters:
     <div class="o-navigation__desktop a-bg-black a-w-full">
         <div class="o-navigation__container a-flex a-justify-between a-items-center a-px-4 a-py-3">
             <a href="{{ site.baseurl }}/" class="o-navigation__logo">
-                {% include atoms/logo-atom.html size="xlarge" %}
+                {% include atoms/logo.html size="xlarge" %}
             </a>
             <ul class="o-navigation__links a-flex a-gap-4 a-m-0 a-list-none">
                 {% for item in site.data.navigation.main %}
@@ -28,7 +28,7 @@ Parameters:
     <div class="o-navigation__mobile a-bg-white a-w-full a-shadow-sm">
         <div class="o-navigation__container a-flex a-justify-between a-items-center a-px-4 a-py-3">
             <a href="{{ site.baseurl }}/" class="o-navigation__logo">
-                {% include atoms/logo-atom.html size="medium" %}
+                {% include atoms/logo.html size="medium" %}
             </a>
             <a href="{{ site.baseurl }}/menu/" class="o-navigation__hamburger a-text-black">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

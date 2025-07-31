@@ -5,12 +5,10 @@ description: Organisms zijn complexe componenten die zijn opgebouwd uit meerdere
 permalink: /organisms/
 ---
 
-<section class="o-section">
-    {% include molecules/page-intro.html 
-       title=page.title 
-       description=page.description %}
+{% include molecules/page-intro.html 
+    title=page.title 
+    description=page.description %}
 
-    {% for organism in site.data.elements.organisms %}
-        {% include showcase.html element_id=organism.id element_type="organisms" %}
-    {% endfor %}
-</section>
+{% for organism in site.data.elements.organisms %}
+    {% include showcase.html element_id=organism.id element_type="organisms" %}
+{% endfor %}
