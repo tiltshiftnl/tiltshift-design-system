@@ -16,7 +16,7 @@ Parameters:
 {% else %}
 <div class="m-people-card a-block ts-person-block a-min-w-48 {{ include.class }}">
 {% endif %}
-    {% assign member_image = include.image | default: '/assets/mensen/Johan-Groenen-Partner-Tiltshift.jpg' | relative_url %}
+    {% assign member_image = include.image | default: '/assets/mensen/Johan-Groenen-Partner-Tiltshift.jpg' | absolute_url %}
     {% assign member_name = include.name | default: "Person" %}
     {% assign member_role = include.role | default: "Role" %}
     <div class="a-rounded-md a-overflow-hidden a-mx-auto a-mb-3 ts-person-block__image">

@@ -10,6 +10,6 @@ Parameters:
 {%- if include.class %}{{ include.class }}{% endif -%}
 {%- endcapture -%}
 {%- capture image_tag -%}
-<img src="{{ include.src }}" alt="{{ include.alt }}"{%- if image_classes != "" %} class="{{ image_classes | strip }}"{% endif %} loading="{{ include.loading | default: 'lazy' }}">
+<img src="{{ include.src | absolute_url }}" alt="{{ include.alt }}"{%- if image_classes != "" %} class="{{ image_classes | strip }}"{% endif %} loading="{{ include.loading | default: 'lazy' }}">
 {%- endcapture -%}
 {{- image_tag | strip -}}

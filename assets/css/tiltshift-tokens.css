@@ -1,36 +1,39 @@
+---
+layout: none
+---
 /* Tiltshift Design Tokens */
 
 /* HelveticaNeue Font Faces */
 @font-face {
     font-family: 'HelveticaNeueLTPro-Bd';
-    src: url('/assets/fonts/HelveticaNeueLTPro-Bd/font.woff2') format('woff2'),
-         url('/assets/fonts/HelveticaNeueLTPro-Bd/font.woff') format('woff');
+    src: url('{{ site.url }}/assets/fonts/HelveticaNeueLTPro-Bd/font.woff2') format('woff2'),
+         url('{{ site.url }}/assets/fonts/HelveticaNeueLTPro-Bd/font.woff') format('woff');
 }
 
 @font-face {
     font-family: 'HelveticaNeueRegular';
-    src: url('/assets/fonts/HelveticaNeueRegular/helvetica-regular.woff2') format('woff2'),
-         url('/assets/fonts/HelveticaNeueRegular/helvetica-regular.woff') format('woff');
+    src: url('{{ site.url }}/assets/fonts/HelveticaNeueRegular/helvetica-regular.woff2') format('woff2'),
+         url('{{ site.url }}/assets/fonts/HelveticaNeueRegular/helvetica-regular.woff') format('woff');
 }
 
 /* AtkinsonHyperlegible Font Faces */
 @font-face {
     font-family: "AtkinsonHyperlegible";
-    src: url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2');
+    src: url('{{ site.url }}/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2');
 }
 @font-face {
     font-family: "AtkinsonHyperlegible";
-    src: url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2');
+    src: url('{{ site.url }}/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2');
     font-weight: bold;
 }
 @font-face {
     font-family: "AtkinsonHyperlegible";
-    src: url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Italic-102a.woff2') format('woff2');
+    src: url('{{ site.url }}/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-Italic-102a.woff2') format('woff2');
     font-style: italic;
 }
 @font-face {
     font-family: "AtkinsonHyperlegible";
-    src: url('/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-BoldItalic-102a.woff2') format('woff2');
+    src: url('{{ site.url }}/assets/fonts/AtkinsonHyperlegible/WOFF2/Atkinson-Hyperlegible-BoldItalic-102a.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
 }

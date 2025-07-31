@@ -17,7 +17,7 @@ Parameters:
 {% else %}
 <div class="m-organization-card a-block ts-organization-block {{ include.class }}">
 {% endif %}
-    {% assign org_logo = include.logo | default: '/assets/logo/logo_transparent_cropped.svg' | relative_url %}
+    {% assign org_logo = include.logo | default: '{{ site.url }}/assets/logo/logo_transparent_cropped.svg' | relative_url %}
     {% assign org_name = include.name | default: "Organization" %}
     {% assign org_type = include.type | default: "Type" %}
     {% assign org_description = include.description | default: "Organization description" %}

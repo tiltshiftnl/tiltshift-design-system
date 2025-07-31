@@ -14,7 +14,7 @@ Parameters:
 {%- assign overlay_text = include.overlay_text | default: "Meer Info" -%}
 
 <div class="m-project-card a-card {{ include.class }}">
-    {% assign project_image = include.image | default: '/assets/img/Information-Radiator-War-Room-Wand-met-Stickies.jpg' | relative_url %}
+    {% assign project_image = include.image | default: '/assets/img/Information-Radiator-War-Room-Wand-met-Stickies.jpg' %}
     {% assign project_image_alt = include.image_alt | default: include.title %}
     {% assign project_client = include.client | default: "Gemeente Amsterdam" %}
     {% assign project_title = include.title | default: "Datalab Innovatie Omgeving" %}

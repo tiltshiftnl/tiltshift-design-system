@@ -192,6 +192,20 @@ Pas de hele huisstijl aan met één class:
 </div>
 
 
+## Favicon
+
+Voor een consistente merkbeleving over alle digitale kanalen gebruikt het design system de Tiltshift favicon.
+
+```html
+<!-- Favicon implementatie -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/assets/favicon/favicon-16x16.png">
+<link rel="shortcut icon" href="{{ site.url }}/assets/favicon/favicon.ico">
+```
+
+De favicon bestanden zijn beschikbaar in `/assets/favicon/`
+
+
 ## Kleuren
 
 {% include molecules/text-block.html 

@@ -9,7 +9,7 @@ Parameters:
 
 {%- assign logo_size = include.size | default: 'medium' -%}
 {%- assign logo_alt = include.alt | default: 'Tiltshift' -%}
-{%- assign logo_src = include.src | default: '/assets/logo/logo_cropped.svg' | relative_url -%}
+{%- assign logo_src = include.src | default: '/assets/logo/logo_cropped.svg' | absolute_url -%}
 
 {%- capture logo_classes -%}
 a-logo
