@@ -157,6 +157,13 @@ Pas de hele huisstijl aan met één class:
            category="Tagline"
         %}
     </div>
+    <div class="o-subject-grid__item">
+        {% include molecules/subject-card.html 
+           title="Aan de slag"
+           description="Overeind. Mouwen omhoog. Aan de slag. Niet lullen maar poetsen."
+           category="Tagline"
+        %}
+    </div>
 </div>
 
 
